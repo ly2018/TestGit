@@ -1,0 +1,10 @@
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Utils\bin\Debug\netcoreapp2.0\Vic.Core.Utils.deps.json
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Utils\bin\Debug\netcoreapp2.0\Vic.Core.Utils.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Utils\bin\Debug\netcoreapp2.0\Vic.Core.Utils.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Utils\bin\Debug\netcoreapp2.0\AipSdk.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Utils\obj\Debug\netcoreapp2.0\Vic.Core.Utils.csproj.CoreCompileInputs.cache
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Utils\obj\Debug\netcoreapp2.0\Vic.Core.Utils.AssemblyInfoInputs.cache
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Utils\obj\Debug\netcoreapp2.0\Vic.Core.Utils.AssemblyInfo.cs
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Utils\obj\Debug\netcoreapp2.0\Vic.Core.Utils.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Utils\obj\Debug\netcoreapp2.0\Vic.Core.Utils.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Utils\obj\Debug\netcoreapp2.0\Vic.Core.Utils.csprojResolveAssemblyReference.cache

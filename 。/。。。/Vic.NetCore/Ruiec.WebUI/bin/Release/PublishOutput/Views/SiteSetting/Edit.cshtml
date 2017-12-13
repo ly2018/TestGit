@@ -1,0 +1,150 @@
+﻿@model Vic.Core.Application.Dtos.SiteSettingDto
+@{
+    ViewBag.Title = "网站配置管理";
+}
+<div id="content-header">
+    <div id="breadcrumb">
+        <a href="/" title="首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+        <a href="/SiteSetting/Index" class="tip-bottom" title="@ViewBag.Title"><i class="icon-home"></i>@ViewBag.Title</a>
+        <a href="#" class="tip-bottom">编辑</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-content nopadding">
+                    <form class="form-horizontal" id="form-horizontal" url="/SiteSetting/Edit" action="" method="post">
+                        <div class="control-group">
+                            <input type="hidden" name="ID" value="@Model.ID" />
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">编码：</label>
+                            <div class="controls">
+                                <input type="text" name="Code" value="@Model.Code" class="span7" placeholder="" isNot="true" verify="isAll" msg="编码不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">网站标题：</label>
+                            <div class="controls">
+                                <input type="text" name="Title" value="@Model.Title" class="span7" placeholder="" isNot="true" verify="isAll" msg="网站标题不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">详细地址：</label>
+                            <div class="controls">
+                                <input type="text" name="ContractAddress" value="@Model.ContractAddress" class="span7" placeholder="" isNot="true" verify="isAll" msg="详细地址不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">邮箱：</label>
+                            <div class="controls">
+                                <input type="text" name="ContractEmail" value="@Model.ContractEmail" class="span7" placeholder="" isNot="true" verify="isAll" msg="邮箱不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">联系电话：</label>
+                            <div class="controls">
+                                <input type="text" name="ContractPhone" value="@Model.ContractPhone" class="span7" placeholder="" isNot="true" verify="isAll" msg="联系电话不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">QQ：</label>
+                            <div class="controls">
+                                <input type="text" name="ContractQQ" value="@Model.ContractQQ" class="span7" placeholder="" isNot="true" verify="isAll" msg="QQ不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">是否后台站点：</label>
+                            <div class="controls">
+                                <span class="fl pdr15"><label><i class="radio_btn"><input type="radio" name="IsAdmin" @(Model.IsAdmin ? "checked" : "") value="true" /></i>是</label></span>
+                                <span class="fl pdr15"><label><i class="radio_btn"><input type="radio" name="IsAdmin" @(!Model.IsAdmin ? "checked" : "") value="false" /></i>否</label></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">语言类型：</label>
+                            <div class="controls">
+                                <select name="LanguageTypeID" id="LanguageTypeID" value="@Model.LanguageTypeID" class="span7">
+                                    @if (ViewBag.LangList != null)
+                                    {
+                                        foreach (var item in ViewBag.LangList as List<Vic.Core.Application.Dtos.LanguageTypeDto>)
+                                        {
+                                            @if (Model.LanguageTypeID == item.ID)
+                                            {
+                                                <option selected value="@item.ID">@(string.Format("{0}/{1}", item.Code, item.Title))</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@item.ID">@(string.Format("{0}/{1}", item.Code, item.Title))</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">网站Logo：</label>
+                            <div class="controls">
+                                <span class="fl pdr15"><input type="text" id="txt_ImageUrl_ImagesLogo" value="@Model.Logo" name="Logo" class="input normal" isNot="false" readonly="readonly" /></span>
+                                <a href="javascript:void(0)" onclick="$('#uploadphotoLogo').click();" class="btn bgc_c">上传图片</a>
+                                <span class="ts_msg c_6"></span>
+                                <img id="orgimg" src="/images/spinner.gif" style="display:none;" />
+                                <input type="file" id="uploadphotoLogo" style="position:absolute;top:-999em;left:-999em;" onchange="G.ImgUpload('photoLogo', 'txt_ImageUrl_ImagesLogo',1,false)" accept="image/*" capture="camera" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">网站Ico：</label>
+                            <div class="controls">
+                                <span class="fl pdr15"><input type="text" id="txt_ImageUrl_ImagesLogoIco" value="@Model.LogoIco" name="LogoIco" class="input normal" isNot="false" readonly="readonly" /></span>
+                                <a href="javascript:void(0)" onclick="$('#uploadphotoLogoIco').click();" class="btn bgc_c">上传图片</a>
+                                <span class="ts_msg c_6"></span>
+                                <img id="orgimg" src="/images/spinner.gif" style="display:none;" />
+                                <input type="file" id="uploadphotoLogoIco" style="position:absolute;top:-999em;left:-999em;" onchange="G.ImgUpload('photoLogoIco', 'txt_ImageUrl_ImagesLogoIco',1,false)" accept="image/*" capture="camera" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">网站二维码：</label>
+                            <div class="controls">
+                                <span class="fl pdr15"><input type="text" id="txt_ImageUrl_ImagesQrCode" value="@Model.QrCode" name="QrCode" class="input normal" isNot="false" readonly="readonly" /></span>
+                                <a href="javascript:void(0)" onclick="$('#uploadphotoQrCode').click();" class="btn bgc_c">上传图片</a>
+                                <span class="ts_msg c_6"></span>
+                                <img id="orgimg" src="/images/spinner.gif" style="display:none;" />
+                                <input type="file" id="uploadphotoQrCode" style="position:absolute;top:-999em;left:-999em;" onchange="G.ImgUpload('photoQrCode', 'txt_ImageUrl_ImagesQrCode',1,false)" accept="image/*" capture="camera" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">版权信息：</label>
+                            <div class="controls">
+                                <input type="text" name="SiteRight" value="@Model.SiteRight" class="span7" placeholder="" isNot="true" verify="isAll" msg="版权信息不能为空！" />
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <label class="control-label">&nbsp;&nbsp;</label><button type="submit" class="btn btn-success">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-primary goLastPage">返回上一页</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/Validate/jquery.form.min.js"></script>
+<script src="~/js/Validate/jquery.ruiValidate.js"></script>
+<script src="~/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        //表单验证
+        if ($(".form-horizontal").size() > 0) {
+            var _FormValidate = new $.rui_validate();
+            _FormValidate.initload();
+            _FormValidate.initForm({
+                FormObj: $(".form-horizontal").eq(0),
+                FormIdName: 'form-horizontal',
+                //ShowTip: "Highlights",
+                SubBtn: 'btn btn-success',   //提交按钮的class
+                CallBack: ""
+            });
+        }
+    });
+</script>

@@ -1,0 +1,14 @@
+D:\NHibernate\Project\LiYangTools\LYTools\DBHelper\bin\Debug\DBHelper.dll
+D:\NHibernate\Project\LiYangTools\LYTools\DBHelper\bin\Debug\DBHelper.pdb
+D:\NHibernate\Project\LiYangTools\LYTools\DBHelper\obj\Debug\DBHelper.dll
+D:\NHibernate\Project\LiYangTools\LYTools\DBHelper\obj\Debug\DBHelper.pdb
+E:\Project_LiYang\Projects\LiYangTools\LYTools\DBHelper\bin\Debug\DBHelper.dll
+E:\Project_LiYang\Projects\LiYangTools\LYTools\DBHelper\bin\Debug\DBHelper.pdb
+E:\Project_LiYang\Projects\LiYangTools\LYTools\DBHelper\obj\Debug\DBHelper.dll
+E:\Project_LiYang\Projects\LiYangTools\LYTools\DBHelper\obj\Debug\DBHelper.pdb
+E:\LY_Project\WorkPlace_2017\LYTools\DBHelper\bin\Debug\DBHelper.dll
+E:\LY_Project\WorkPlace_2017\LYTools\DBHelper\bin\Debug\DBHelper.pdb
+E:\LY_Project\WorkPlace_2017\LYTools\DBHelper\obj\Debug\DBHelper.dll
+E:\LY_Project\WorkPlace_2017\LYTools\DBHelper\obj\Debug\DBHelper.pdb
+E:\LY_Project\WorkPlace_2017\LYTools\DBHelper\obj\Debug\DBHelper.csprojResolveAssemblyReference.cache
+E:\LY_Project\WorkPlace_2017\LYTools\DBHelper\obj\Debug\DBHelper.csproj.CoreCompileInputs.cache

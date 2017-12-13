@@ -1,0 +1,4 @@
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Component.Data\bin\Debug\netcoreapp1.1\Vic.Component.Data.deps.json
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Component.Data\bin\Debug\netcoreapp1.1\Vic.Component.Data.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Component.Data\obj\Debug\netcoreapp1.1\Vic.Component.Data.csprojResolveAssemblyReference.cache
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Component.Data\obj\Debug\netcoreapp1.1\Vic.Component.Data.AssemblyInfo.cs

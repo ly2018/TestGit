@@ -1,0 +1,53 @@
+2017-10-11 14:30:21.5560|Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.0.0-rtm-26452 initialized 'TradeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2017-10-11 14:30:22.5820|Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (80ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [T_AM_User] AS [t])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END 
+2017-10-11 14:30:23.2070|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:992/   
+2017-10-11 14:30:23.9950|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|INFO|Authorization failed for user: (null). 
+2017-10-11 14:30:23.9950|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'. 
+2017-10-11 14:30:23.9950|Microsoft.AspNetCore.Mvc.ChallengeResult|INFO|Executing ChallengeResult with authentication schemes (B-B3C1-49DA-6C6B-08D). 
+2017-10-11 14:30:24.0190|Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|INFO|AuthenticationScheme: B-B3C1-49DA-6C6B-08D was challenged. 
+2017-10-11 14:30:24.0190|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action Ruiec.WebUI.Controllers.HomeController.Home (Ruiec.WebUI) in 52.9764ms 
+2017-10-11 14:30:24.0630|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 874.8117ms 302  
+2017-10-11 14:30:24.0830|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:992/Login/UserLogin?ReturnUrl=%2F   
+2017-10-11 14:30:24.1140|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method Ruiec.WebUI.Controllers.LoginController.UserLogin (Ruiec.WebUI) with arguments ((null)) - ModelState is Valid 
+2017-10-11 14:30:31.7520|Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor|INFO|Executing ViewResult, running view at path /Views/Login/UserLogin.cshtml. 
+2017-10-11 14:30:32.1030|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action Ruiec.WebUI.Controllers.LoginController.UserLogin (Ruiec.WebUI) in 8014.3785ms 
+2017-10-11 14:30:32.1030|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 8023.8217ms 200 text/html; charset=utf-8 
+2017-10-11 14:30:32.4260|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:992/css/matrix/matrix-login.css   
+2017-10-11 14:30:32.4270|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:992/images/login_user.jpg   
+2017-10-11 14:30:32.4270|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:992/js/jquery-1.9.1.min.js   
+2017-10-11 14:30:32.4720|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|INFO|Sending file. Request path: '/images/login_user.jpg'. Physical path: 'E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.WebUI\bin\Release\PublishOutput\wwwroot\images\login_user.jpg' 
+2017-10-11 14:30:32.4760|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|INFO|Sending file. Request path: '/css/matrix/matrix-login.css'. Physical path: 'E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.WebUI\bin\Release\PublishOutput\wwwroot\css\matrix\matrix-login.css' 
+2017-10-11 14:30:32.4760|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 56.8734ms 200 text/css 
+2017-10-11 14:30:32.4920|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|INFO|Sending file. Request path: '/js/jquery-1.9.1.min.js'. Physical path: 'E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.WebUI\bin\Release\PublishOutput\wwwroot\js\jquery-1.9.1.min.js' 
+2017-10-11 14:30:32.4920|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 64.7762ms 200 application/javascript 
+2017-10-11 14:30:32.5060|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:992/js/Validate/jquery.form.min.js   
+2017-10-11 14:30:32.5060|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:992/js/Validate/jquery.ruiValidate.js   
+2017-10-11 14:30:32.5060|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:992/images/login_pwd.jpg   
+2017-10-11 14:30:32.5060|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:992/images/login_reset.jpg   
+2017-10-11 14:30:32.5060|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|INFO|Sending file. Request path: '/images/login_pwd.jpg'. Physical path: 'E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.WebUI\bin\Release\PublishOutput\wwwroot\images\login_pwd.jpg' 
+2017-10-11 14:30:32.5060|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|INFO|Sending file. Request path: '/images/login_reset.jpg'. Physical path: 'E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.WebUI\bin\Release\PublishOutput\wwwroot\images\login_reset.jpg' 
+2017-10-11 14:30:32.5300|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 103.423ms 200 image/jpeg 
+2017-10-11 14:30:32.5600|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 51.4871ms 200 image/jpeg 
+2017-10-11 14:30:32.5600|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 53.5269ms 200 image/jpeg 
+2017-10-11 14:30:32.5700|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|INFO|Sending file. Request path: '/js/Validate/jquery.form.min.js'. Physical path: 'E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.WebUI\bin\Release\PublishOutput\wwwroot\js\Validate\jquery.form.min.js' 
+2017-10-11 14:30:32.5700|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|INFO|Sending file. Request path: '/js/Validate/jquery.ruiValidate.js'. Physical path: 'E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.WebUI\bin\Release\PublishOutput\wwwroot\js\Validate\jquery.ruiValidate.js' 
+2017-10-11 14:30:32.5700|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 64.1314ms 200 application/javascript 
+2017-10-11 14:30:32.5700|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 64.7473ms 200 application/javascript 
+2017-10-11 14:30:32.5700|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:992/images/login_bg.jpg   
+2017-10-11 14:30:32.6100|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|INFO|Sending file. Request path: '/images/login_bg.jpg'. Physical path: 'E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.WebUI\bin\Release\PublishOutput\wwwroot\images\login_bg.jpg' 
+2017-10-11 14:30:32.6150|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:992/Login/GetValidateCode?time=1507703432606   
+2017-10-11 14:30:32.6150|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method Ruiec.WebUI.Controllers.LoginController.GetValidateCode (Ruiec.WebUI) with arguments ((null)) - ModelState is Valid 
+2017-10-11 14:30:32.6940|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 113.1493ms 200 image/jpeg 
+2017-10-11 14:30:34.1770|Microsoft.AspNetCore.Mvc.Internal.FileContentResultExecutor|INFO|Executing FileResult, sending file as  
+2017-10-11 14:30:34.1770|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action Ruiec.WebUI.Controllers.LoginController.GetValidateCode (Ruiec.WebUI) in 1566.1385ms 
+2017-10-11 14:30:34.1770|Microsoft.AspNetCore.Session.DistributedSession|INFO|Session started; Key:e59719f8-f028-f99d-5855-7c7ad757cf92, Id:10fd9cc5-93c6-a723-c273-fa8633cf4c6e 
+2017-10-11 14:30:34.1910|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:992/images/logo.png   
+2017-10-11 14:30:34.1910|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 1575.2995ms 200 image/png 
+2017-10-11 14:30:34.2280|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|INFO|Sending file. Request path: '/images/logo.png'. Physical path: 'E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.WebUI\bin\Release\PublishOutput\wwwroot\images\logo.png' 
+2017-10-11 14:30:34.2280|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 37.3618ms 200 image/png 

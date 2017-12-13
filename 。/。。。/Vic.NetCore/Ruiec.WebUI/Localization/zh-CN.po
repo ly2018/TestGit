@@ -1,0 +1,8 @@
+﻿msgid "Hello world!"
+msgstr "你好大佬!"
+
+msgid "There is one item."
+msgid_plural "你好大佬There are {0} items."
+msgstr[0] "你好大佬Existuje jedna položka."
+msgstr[1] "你好大佬Existují {0} položky."
+msgstr[2] "你好大佬Existuje {0} položek."

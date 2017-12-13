@@ -1,0 +1,165 @@
+﻿@using PerpetuumSoft.Knockout
+@model Vic.Core.ViewModels.Article_ViewModel
+@{
+    var ko = Html.CreateKnockoutContext();
+    ViewBag.Title = "Article";
+}
+<link rel="stylesheet" href="~/Themes/BootStrap/css/uniform.css" />
+<link rel="stylesheet" href="~/Themes/BootStrap/css/select2.css" />
+<style type="text/css">
+    .Bghidden, .Bg_ch_hidden {
+        display: none;
+    }
+
+    .Bgshow {
+        display: block;
+    }
+</style>
+<div id="content-header">
+    <div id="breadcrumb">
+     <a href="/" title="首页" class="tip-bottom"><i class="icon-home"></i> 首页</a> 
+    <a href="/Vic.Core/Article/Index" title="Article管理" class="tip-bottom"><i class="icon-home"></i>Article管理</a> 
+    <a href="/Vic.Core/Article/Create" class="tip-bottom">新增</a> </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-content nopadding">
+                    <form class="form-horizontal" id="form-horizontal" url="/Vic.Core/Article/Create" action="" method="post">
+                        <div class="control-group">
+                        </div>
+                        <div class="control-group">
+<label class="control-label">ArticleTypeID：</label>
+<div class="controls">
+<input type="text" name="ArticleTypeID" data-bind="value:ArticleTypeID" value="" class="span7" placeholder="" isNot="true" verify="isAll" msg="ArticleTypeID不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">Author：</label>
+<div class="controls">
+<input type="text" name="Author" data-bind="value:Author" value="" class="span7" placeholder="" isNot="true" verify="isAll" msg="Author不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">BrowseNum：</label>
+<div class="controls">
+<input type="text"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="BrowseNum" data-bind="value:BrowseNum" value="" class="span7" placeholder="" isNot="true" verify="isAll" msg="BrowseNum不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">Content：</label>
+<div class="controls">
+<input type="text" name="Content" data-bind="value:Content" value="" class="span7" placeholder="" isNot="true" verify="isAll" msg="Content不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">CreateTime：</label>
+<div class="controls">
+<input type="text" name="CreateTime" data-bind="value:CreateTime" value="" class="span7" placeholder="" isNot="true" verify="isAll" msg="CreateTime不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">Description：</label>
+<div class="controls">
+<input type="text" name="Description" data-bind="value:Description" value="" class="span7" placeholder="" isNot="true" verify="isAll" msg="Description不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">Images：</label>
+<div class="controls">
+<span class="fl pdr15"><input type="text" id="txt_ImageUrl_Images" data-bind="value:Images" name="Images" class="input normal" isNot="false" readonly="readonly" value="" /></span>
+<a href="javascript:void(0)" onclick="$('#uploadphoto').click();" class="btn bgc_c">上传图片</a>
+<span class="ts_msg c_6"></span>
+<img id="orgimg" src="/Themes/images/spinner.gif" style="display:none;" />
+<input type="file" id="uploadphoto" style="position:absolute;top:-999em;left:-999em;" onchange="G.ImgUpload('photo', 'txt_ImageUrl_Images',2,false)" accept="image/*" capture="camera" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">LanguageTypeID：</label>
+<div class="controls">
+<input type="text" name="LanguageTypeID" data-bind="value:LanguageTypeID" value="" class="span7" placeholder="" isNot="true" verify="isAll" msg="LanguageTypeID不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">LastUpdateTime：</label>
+<div class="controls">
+<input type="text" name="LastUpdateTime" data-bind="value:LastUpdateTime" value="" class="span7" placeholder="" isNot="true" verify="isAll" msg="LastUpdateTime不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">PublishDate：</label>
+<div class="controls">
+<input type="text" name="PublishDate" data-bind="value:PublishDate" value="" class="span7" placeholder="" isNot="true" verify="isAll" msg="PublishDate不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">Remark：</label>
+<div class="controls">
+<input type="text" name="Remark" data-bind="value:Remark" value="" class="span7" placeholder="" isNot="true" verify="isAll" msg="Remark不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">SeoTitle：</label>
+<div class="controls">
+<input type="text" name="SeoTitle" data-bind="value:SeoTitle" value="" class="span7" placeholder="" isNot="true" verify="isAll" msg="SeoTitle不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">SerialNumber：</label>
+<div class="controls">
+<input type="text"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="SerialNumber" data-bind="value:SerialNumber" value="" class="span7" placeholder="" isNot="true" verify="isAll" msg="SerialNumber不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">Source：</label>
+<div class="controls">
+<input type="text" name="Source" data-bind="value:Source" value="" class="span7" placeholder="" isNot="true" verify="isAll" msg="Source不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">Title：</label>
+<div class="controls">
+<input type="text" name="Title" data-bind="value:Title" value="" class="span7" placeholder="" isNot="true" verify="isAll" msg="Title不能为空！" />
+</div>
+</div>
+
+                        <div class="form-actions">
+                            <label class="control-label">&nbsp;&nbsp;</label><button type="submit" class="btn btn-success">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                             <a class="btn btn-primary goLastPage">返回上一页</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--控件样式-->
+<script type="text/javascript" src="~/Themes/BootStrap/js/jquery.uniform.js"></script>
+<script type="text/javascript" src="~/Themes/BootStrap/js/select2.min.js"></script>
+<script type="text/javascript" src="~/Themes/BootStrap/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="~/Themes/BootStrap/js/matrix.tables.js"></script>
+<script type="text/javascript" src="~/Themes/BootStrap/js/jquery.ui.custom.js"></script>
+<script type="text/javascript" src="~/Themes/BootStrap/js/bootstrap-datepicker.js"></script>
+<!--表单验证-->
+<script type="text/javascript" src="~/Themes/Scripts/RValidate/jquery.form.min.js"></script>
+<script type="text/javascript" src="~/Themes/Scripts/RValidate/jquery.ruiValidate.js"></script>
+<script type="text/javascript" src="~/Themes/Scripts/DateTimePicker/jquery.datetimepicker.js"></script>
+@ko.Apply(Model)
+<script type="text/javascript">
+    $(function () {
+
+        //表单验证
+        if ($(".form-horizontal").size() > 0) {
+            var _FormValidate = new $.rui_validate();
+            _FormValidate.initload();
+            _FormValidate.initForm({
+                FormObj: $(".form-horizontal").eq(0),
+                FormIdName: 'form-horizontal',
+                //ShowTip: "Highlights",
+                SubBtn:'btn btn-success',   //提交按钮的class
+                CallBack: ""
+            });
+        }
+    });
+</script>

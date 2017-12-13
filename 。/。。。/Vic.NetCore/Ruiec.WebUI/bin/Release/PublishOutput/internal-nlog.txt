@@ -1,0 +1,9 @@
+2017-09-28 09:05:47.9782 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Info
+2017-09-28 13:34:18.0256 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Info
+2017-09-28 20:32:21.5552 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Info
+2017-09-28 21:15:16.6592 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Info
+2017-09-29 07:59:13.7774 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Info
+2017-09-29 08:31:14.6814 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Info
+2017-09-29 08:50:45.3924 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Info
+2017-10-11 14:30:19.9510 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Info
+2017-12-12 17:15:10.2042 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Info

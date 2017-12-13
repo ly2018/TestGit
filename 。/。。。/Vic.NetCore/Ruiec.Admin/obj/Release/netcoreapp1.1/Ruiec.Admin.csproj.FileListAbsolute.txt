@@ -1,0 +1,17 @@
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\bin\Release\netcoreapp1.1\Ruiec.Admin.deps.json
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\bin\Release\netcoreapp1.1\Ruiec.Admin.runtimeconfig.json
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\bin\Release\netcoreapp1.1\Ruiec.Admin.runtimeconfig.dev.json
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\bin\Release\netcoreapp1.1\Ruiec.Admin.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\bin\Release\netcoreapp1.1\Ruiec.Admin.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\bin\Release\netcoreapp1.1\Vic.Core.Application.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\bin\Release\netcoreapp1.1\Vic.Core.Data.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\bin\Release\netcoreapp1.1\Vic.Core.Domain.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\bin\Release\netcoreapp1.1\Vic.Core.Utils.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\bin\Release\netcoreapp1.1\Vic.Core.Data.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\bin\Release\netcoreapp1.1\Vic.Core.Application.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\bin\Release\netcoreapp1.1\Vic.Core.Utils.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\bin\Release\netcoreapp1.1\Vic.Core.Domain.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\obj\Release\netcoreapp1.1\Ruiec.Admin.csprojResolveAssemblyReference.cache
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\obj\Release\netcoreapp1.1\Ruiec.Admin.AssemblyInfo.cs
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\obj\Release\netcoreapp1.1\Ruiec.Admin.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Admin\obj\Release\netcoreapp1.1\Ruiec.Admin.pdb

@@ -1,0 +1,21 @@
+﻿@using Vic.Core.Application.Dtos
+@model List<MenuDto>
+@{
+    var parentList = Model.Where(a => !a.IsTopMenu && a.Type == (int)Vic.Core.Utils.Enum.AM_Enum.MenuTypeEnum.ParentMenu).OrderBy(a => a.SerialNumber);
+    foreach (var parent in parentList)
+    {
+        var childMenu = Model.Where(a => a.ParentId == parent.ID).OrderBy(a => a.SerialNumber);
+        <li class="submenu">
+            <a href="@(childMenu.Any() ? parent.Url : "#")" onclick="MenuHandle(this);"><i sysimg="null"></i> <span>@parent.Name</span> </a>
+            @if (childMenu.Any())
+            {
+                <ul style="display: none;">
+                    @foreach (var child in childMenu)
+                    {
+                        <li sysimg="null"><a target="mainframe" href="@child.Url">@child.Name</a></li>
+                    }
+                </ul>
+            }
+        </li>
+    }
+}

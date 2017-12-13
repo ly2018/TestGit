@@ -1,0 +1,83 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using $NameSpace$.Application.Dtos;
+using $NameSpace$.Domain.Entities;
+
+namespace $NameSpace$.Application.IServices
+{
+    public interface I$ClassName$AppService
+    {
+        #region customer define interface
+        /// <summary>
+        /// create signal record
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
+        bool Create($ClassName$Dto dto);
+        /// <summary>
+        /// delete by ids
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns></returns>
+        bool DeleteBatch(List<Guid> ids);
+        /// <summary>
+        /// delete by ids
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns></returns>
+        bool Delete(Guid id);
+        /// <summary>
+        /// edit signal dto
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
+        bool Edit($ClassName$Dto dto);
+        /// <summary>
+        /// query by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        $ClassName$Dto Get(Guid id);
+        /// <summary>
+        /// query all form table
+        /// </summary>
+        /// <returns></returns>
+        List<$ClassName$Dto> List();
+        /// <summary>
+        /// query list by lanbuda expression
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+		List<$ClassName$Dto> QueryList(Expression<Func<$ClassName$, bool>> predicate);
+        /// <summary>
+        /// query pager by lanbuda expression
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="curPage"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
+		List<$ClassName$Dto> PageList(Expression<Func<$ClassName$, bool>> predicate, int pageSize, int curPage, out int count);
+        /// <summary>
+        ///query signal record by lanbuda expression
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        $ClassName$Dto Get(Expression<Func<$ClassName$, bool>> predicate);
+        /// <summary>
+        ///query total count by lanbuda expression
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        int Count(Expression<Func<$ClassName$, bool>> predicate);
+
+        /// <summary>
+        ///query properties by lanbuda expression
+        /// </summary>
+        IQueryable<object> QueryProperty(Expression<Func<$ClassName$, bool>> predicate, Expression<Func<$ClassName$, object>> selector);
+        #endregion
+    }
+}

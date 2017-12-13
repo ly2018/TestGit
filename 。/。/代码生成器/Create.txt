@@ -1,0 +1,71 @@
+@using PerpetuumSoft.Knockout
+@model $NameSpaceStr$
+@{
+    var ko = Html.CreateKnockoutContext();
+    ViewBag.Title = "$ClassName$";
+}
+<link rel="stylesheet" href="~/Themes/BootStrap/css/uniform.css" />
+<link rel="stylesheet" href="~/Themes/BootStrap/css/select2.css" />
+<style type="text/css">
+    .Bghidden, .Bg_ch_hidden {
+        display: none;
+    }
+
+    .Bgshow {
+        display: block;
+    }
+</style>
+<div id="content-header">
+    <div id="breadcrumb">
+     <a href="/" title="首页" class="tip-bottom"><i class="icon-home"></i> 首页</a> 
+    <a href="$Url$Index" title="$ClassName$管理" class="tip-bottom"><i class="icon-home"></i>$ClassName$管理</a> 
+    <a href="$Url$Create" class="tip-bottom">新增</a> </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-content nopadding">
+                    <form class="form-horizontal" id="form-horizontal" url="$Url$Create" action="" method="post">
+                        <div class="control-group">
+                        </div>
+                        $CreateHtml$
+                        <div class="form-actions">
+                            <label class="control-label">&nbsp;&nbsp;</label><button type="submit" class="btn btn-success">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                             <a class="btn btn-primary goLastPage">返回上一页</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--控件样式-->
+<script type="text/javascript" src="~/Themes/BootStrap/js/jquery.uniform.js"></script>
+<script type="text/javascript" src="~/Themes/BootStrap/js/select2.min.js"></script>
+<script type="text/javascript" src="~/Themes/BootStrap/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="~/Themes/BootStrap/js/matrix.tables.js"></script>
+<script type="text/javascript" src="~/Themes/BootStrap/js/jquery.ui.custom.js"></script>
+<script type="text/javascript" src="~/Themes/BootStrap/js/bootstrap-datepicker.js"></script>
+<!--表单验证-->
+<script type="text/javascript" src="~/Themes/Scripts/RValidate/jquery.form.min.js"></script>
+<script type="text/javascript" src="~/Themes/Scripts/RValidate/jquery.ruiValidate.js"></script>
+<script type="text/javascript" src="~/Themes/Scripts/DateTimePicker/jquery.datetimepicker.js"></script>
+@ko.Apply(Model)
+<script type="text/javascript">
+    $(function () {
+
+        //表单验证
+        if ($(".form-horizontal").size() > 0) {
+            var _FormValidate = new $.rui_validate();
+            _FormValidate.initload();
+            _FormValidate.initForm({
+                FormObj: $(".form-horizontal").eq(0),
+                FormIdName: 'form-horizontal',
+                //ShowTip: "Highlights",
+                SubBtn:'btn btn-success',   //提交按钮的class
+                CallBack: ""
+            });
+        }
+    });
+</script>

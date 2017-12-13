@@ -1,0 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Text;
+using $NameSpace$.Domain.Entities;
+
+namespace $NameSpace$.Domain.IRepositories
+{
+    public interface I$ClassName$Repository : IRepository<$ClassName$, Guid>
+    {
+    }
+}

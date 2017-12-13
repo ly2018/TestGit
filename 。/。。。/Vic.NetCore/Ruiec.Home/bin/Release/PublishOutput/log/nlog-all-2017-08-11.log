@@ -1,0 +1,277 @@
+2017-08-11 18:05:39.7404|Microsoft.EntityFrameworkCore.Query.Internal.SqlServerQueryCompilationContextFactory|DEBUG|Compiling query model: 
+'(from User <generated>_1 in DbSet<User>
+select <generated>_1)
+.Any()' 
+2017-08-11 18:05:39.8194|Microsoft.EntityFrameworkCore.Query.Internal.SqlServerQueryCompilationContextFactory|DEBUG|Optimized query model: 
+'(from User <generated>_1 in DbSet<User>
+select <generated>_1)
+.Any()' 
+2017-08-11 18:05:40.0924|Microsoft.EntityFrameworkCore.Query.Internal.SqlServerQueryCompilationContextFactory|DEBUG|TRACKED: False
+(QueryContext queryContext) => IEnumerable<bool> _ToSequence(
+    element: bool GetResult(
+        valueBuffers: IEnumerable<ValueBuffer> _Query(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT CASE
+                    WHEN EXISTS (
+                        SELECT 1
+                        FROM [T_AM_User] AS [t])
+                    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+                END
+            , 
+            queryIndex: default(System.Nullable`1[System.Int32])
+        )
+    )
+)
+ 
+2017-08-11 18:05:40.1694|Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerConnection|DEBUG|Opening connection to database 'VicCore' on server '192.168.20.92,32577'. 
+2017-08-11 18:05:40.5654|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|INFO|Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [T_AM_User] AS [t])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END 
+2017-08-11 18:05:40.6114|Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerConnection|DEBUG|Closing connection to database 'VicCore' on server '192.168.20.92,32577'. 
+2017-08-11 18:05:40.6784|Microsoft.Extensions.DependencyInjection.DataProtectionServices|INFO|User profile not available. Using 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\4.0.30319.0\AutoGenKeys\S-1-5-82-1532296937-3415783963-4216138386-3769229818-4211908612\DataProtection' as key repository and Windows DPAPI to encrypt keys at rest. 
+2017-08-11 18:05:40.7444|Microsoft.AspNetCore.Hosting.Internal.WebHost|DEBUG|Hosting starting 
+2017-08-11 18:05:40.8514|Microsoft.AspNetCore.Hosting.Internal.WebHost|DEBUG|Hosting started 
+2017-08-11 18:05:41.0654|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMR" started. 
+2017-08-11 18:05:41.1814|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:994/   
+2017-08-11 18:05:41.2694|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|DEBUG|The request path / does not match a supported file type 
+2017-08-11 18:05:41.3474|Microsoft.AspNetCore.DataProtection.Repositories.RegistryXmlRepository|DEBUG|Reading data from registry key 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\4.0.30319.0\AutoGenKeys\S-1-5-82-1532296937-3415783963-4216138386-3769229818-4211908612\DataProtection', value 'key-569dc676-d03b-4303-923e-1d0b669a8e0f'. 
+2017-08-11 18:05:41.3624|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|DEBUG|Found key {569dc676-d03b-4303-923e-1d0b669a8e0f}. 
+2017-08-11 18:05:41.3954|Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver|DEBUG|Considering key {569dc676-d03b-4303-923e-1d0b669a8e0f} with expiration date 2017-08-30 08:38:10Z as default key. 
+2017-08-11 18:05:41.4034|Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor|DEBUG|Decrypting secret element using Windows DPAPI. 
+2017-08-11 18:05:41.4034|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.CngCbcAuthenticatedEncryptorDescriptor|DEBUG|Opening CNG algorithm 'AES' from provider '(null)' with chaining mode CBC. 
+2017-08-11 18:05:41.4174|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.CngCbcAuthenticatedEncryptorDescriptor|DEBUG|Opening CNG algorithm 'SHA256' from provider '(null)' with HMAC. 
+2017-08-11 18:05:41.4174|Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider|DEBUG|Using key {569dc676-d03b-4303-923e-1d0b669a8e0f} as the default key. 
+2017-08-11 18:05:41.4174|Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector|TRACE|Performing protect operation to key {569dc676-d03b-4303-923e-1d0b669a8e0f} with purposes ('E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Home\bin\Release\PublishOutput', 'SessionMiddleware'). 
+2017-08-11 18:05:41.6314|Microsoft.AspNetCore.Routing.RouteBase|DEBUG|Request successfully matched the route with name 'default' and template '{controller=Home}/{action=Index}/{id?}'. 
+2017-08-11 18:05:41.7284|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|DEBUG|Executing action Ruiec.Home.Controllers.HomeController.Index (Ruiec.Home) 
+2017-08-11 18:05:41.7704|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method Ruiec.Home.Controllers.HomeController.Index (Ruiec.Home) with arguments ((null)) - ModelState is Valid 
+2017-08-11 18:05:41.7704|Ruiec.Home.Controllers.HomeController|DEBUG|Logger 测试1 
+2017-08-11 18:05:41.7704|Ruiec.Home.Controllers.HomeController|ERROR|Logger 测试2 
+2017-08-11 18:05:41.7754|Ruiec.Home.Controllers.HomeController|INFO|Logger 测试3 
+2017-08-11 18:05:41.7754|Ruiec.Home.Controllers.HomeController|WARN|Logger 测试4 
+2017-08-11 18:05:41.7754|Vic.Core.Application.Services.DepartmentAppService|ERROR|Logger 测试 
+2017-08-11 18:05:41.8224|Microsoft.EntityFrameworkCore.Query.Internal.SqlServerQueryCompilationContextFactory|DEBUG|Compiling query model: 
+'from Department it in DbSet<Department>
+where it.ID != __Empty_0
+select it' 
+2017-08-11 18:05:41.8224|Microsoft.EntityFrameworkCore.Query.Internal.SqlServerQueryCompilationContextFactory|DEBUG|Optimized query model: 
+'from Department it in DbSet<Department>
+where it.ID != __Empty_0
+select it' 
+2017-08-11 18:05:41.8834|Microsoft.EntityFrameworkCore.Query.Internal.SqlServerQueryCompilationContextFactory|DEBUG|TRACKED: True
+(QueryContext queryContext) => IEnumerable<Department> _ShapedQuery(
+    queryContext: queryContext, 
+    shaperCommandContext: SelectExpression: 
+        SELECT [it].[FID], [it].[FCode], [it].[FContactNumber], [it].[FCreateTime], [it].[FCreatorID], [it].[FIsDeleted], [it].[FLastUpdateTime], [it].[FLastUpdateUserID], [it].[FManager], [it].[FName], [it].[FParentId], [it].[FRemarks]
+        FROM [T_AM_Department] AS [it]
+        WHERE [it].[FID] <> @__Empty_0
+    , 
+    shaper: UnbufferedEntityShaper<Department>
+)
+ 
+2017-08-11 18:05:41.9104|Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerConnection|DEBUG|Opening connection to database 'VicCore' on server '192.168.20.92,32577'. 
+2017-08-11 18:05:41.9664|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|INFO|Executed DbCommand (48ms) [Parameters=[@__Empty_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [it].[FID], [it].[FCode], [it].[FContactNumber], [it].[FCreateTime], [it].[FCreatorID], [it].[FIsDeleted], [it].[FLastUpdateTime], [it].[FLastUpdateUserID], [it].[FManager], [it].[FName], [it].[FParentId], [it].[FRemarks]
+FROM [T_AM_Department] AS [it]
+WHERE [it].[FID] <> @__Empty_0 
+2017-08-11 18:05:41.9894|Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerConnection|DEBUG|Closing connection to database 'VicCore' on server '192.168.20.92,32577'. 
+2017-08-11 18:05:42.0074|Microsoft.EntityFrameworkCore.Query.Internal.SqlServerQueryCompilationContextFactory|ERROR|An exception occurred in the database while iterating the results of a query.
+System.InvalidOperationException: An exception occured while reading a database value for property 'Department.IsDeleted'. The expected type was 'System.Int32' but the actual value was of type 'System.Boolean'. ---> System.InvalidCastException: Unable to cast object of type 'System.Boolean' to type 'System.Int32'.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.TryReadValue[TValue](ValueBuffer valueBuffer, Int32 index, IPropertyBase property)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.ThrowReadValueException[TValue](Exception exception, Object value, IPropertyBase property)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.TryReadValue[TValue](ValueBuffer valueBuffer, Int32 index, IPropertyBase property)
+   at lambda_method(Closure , ValueBuffer )
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.UnbufferedEntityShaper`1.Shape(QueryContext queryContext, ValueBuffer valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.QueryMethodProvider.<_ShapedQuery>d__3`1.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__15`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext() An exception occured while reading a database value for property 'Department.IsDeleted'. The expected type was 'System.Int32' but the actual value was of type 'System.Boolean'.
+2017-08-11 18:05:42.0394|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action Ruiec.Home.Controllers.HomeController.Index (Ruiec.Home) in 288.3414ms 
+2017-08-11 18:05:52.4954|Microsoft.AspNetCore.Session.SessionMiddleware|ERROR|Error closing the session. No connection is available to service this operation: EVAL
+2017-08-11 18:05:52.5544|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|ERROR|An unhandled exception has occurred: An exception occured while reading a database value for property 'Department.IsDeleted'. The expected type was 'System.Int32' but the actual value was of type 'System.Boolean'. An exception occured while reading a database value for property 'Department.IsDeleted'. The expected type was 'System.Int32' but the actual value was of type 'System.Boolean'.
+2017-08-11 18:05:52.6934|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|DEBUG|The request path /Home/Error does not match a supported file type 
+2017-08-11 18:05:52.6934|Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector|TRACE|Performing protect operation to key {569dc676-d03b-4303-923e-1d0b669a8e0f} with purposes ('E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Home\bin\Release\PublishOutput', 'SessionMiddleware'). 
+2017-08-11 18:05:52.6934|Microsoft.AspNetCore.Routing.RouteBase|DEBUG|Request successfully matched the route with name 'default' and template '{controller=Home}/{action=Index}/{id?}'. 
+2017-08-11 18:05:52.6964|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|DEBUG|Executing action Ruiec.Home.Controllers.HomeController.Error (Ruiec.Home) 
+2017-08-11 18:05:52.6964|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method Ruiec.Home.Controllers.HomeController.Error (Ruiec.Home) with arguments ((null)) - ModelState is Valid 
+2017-08-11 18:05:52.6964|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|DEBUG|Executed action method Ruiec.Home.Controllers.HomeController.Error (Ruiec.Home), returned result Microsoft.AspNetCore.Mvc.ViewResult. 
+2017-08-11 18:05:53.0354|Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine|DEBUG|View lookup cache miss for view 'Error' in controller 'Home'. 
+2017-08-11 18:05:53.0584|Microsoft.AspNetCore.Mvc.Razor.Internal.RazorCompilationService|DEBUG|Code generation for the Razor file at '/Views/Shared/Error.cshtml' started. 
+2017-08-11 18:05:53.3024|Microsoft.AspNetCore.Mvc.Razor.Internal.RazorCompilationService|DEBUG|Code generation for the Razor file at '/Views/Shared/Error.cshtml' completed in 243.6596ms. 
+2017-08-11 18:05:53.3054|Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRoslynCompilationService|DEBUG|Compilation of the generated code for the Razor file at '/Views/Shared/Error.cshtml' started. 
+2017-08-11 18:05:56.1894|Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRoslynCompilationService|DEBUG|Compilation of the generated code for the Razor file at '/Views/Shared/Error.cshtml' completed in 2883.3096ms. 
+2017-08-11 18:05:56.2144|Microsoft.AspNetCore.Mvc.Razor.Internal.RazorCompilationService|DEBUG|Code generation for the Razor file at '/Views/_ViewStart.cshtml' started. 
+2017-08-11 18:05:56.2144|Microsoft.AspNetCore.Mvc.Razor.Internal.RazorCompilationService|DEBUG|Code generation for the Razor file at '/Views/_ViewStart.cshtml' completed in 3.644ms. 
+2017-08-11 18:05:56.2144|Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRoslynCompilationService|DEBUG|Compilation of the generated code for the Razor file at '/Views/_ViewStart.cshtml' started. 
+2017-08-11 18:05:56.2414|Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRoslynCompilationService|DEBUG|Compilation of the generated code for the Razor file at '/Views/_ViewStart.cshtml' completed in 22.7075ms. 
+2017-08-11 18:05:56.2414|Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor|DEBUG|The view 'Error' was found. 
+2017-08-11 18:05:56.2414|Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor|INFO|Executing ViewResult, running view at path /Views/Shared/Error.cshtml. 
+2017-08-11 18:05:56.3254|Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine|DEBUG|View lookup cache miss for view '_Layout' in controller 'Home'. 
+2017-08-11 18:05:56.3254|Microsoft.AspNetCore.Mvc.Razor.Internal.RazorCompilationService|DEBUG|Code generation for the Razor file at '/Views/Shared/_Layout.cshtml' started. 
+2017-08-11 18:05:56.4204|Microsoft.AspNetCore.Mvc.Razor.Internal.RazorCompilationService|DEBUG|Code generation for the Razor file at '/Views/Shared/_Layout.cshtml' completed in 92.8344ms. 
+2017-08-11 18:05:56.4204|Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRoslynCompilationService|DEBUG|Compilation of the generated code for the Razor file at '/Views/Shared/_Layout.cshtml' started. 
+2017-08-11 18:05:56.5564|Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRoslynCompilationService|DEBUG|Compilation of the generated code for the Razor file at '/Views/Shared/_Layout.cshtml' completed in 135.5259ms. 
+2017-08-11 18:05:56.7264|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action Ruiec.Home.Controllers.HomeController.Error (Ruiec.Home) in 4029.4728ms 
+2017-08-11 18:05:56.7264|Microsoft.AspNetCore.Session.SessionMiddleware|ERROR|Error closing the session. No connection is available to service this operation: EVAL
+2017-08-11 18:05:56.7264|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMS" started. 
+2017-08-11 18:05:56.7264|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMT" started. 
+2017-08-11 18:05:56.7264|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:994/css/site.min.css?v=SZ56l9iAMjwsC3lg_8ONpBnEfYbGculXCgb-yhj7aKs   
+2017-08-11 18:05:56.7264|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:994/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU   
+2017-08-11 18:05:56.7454|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|INFO|Sending file. Request path: '/js/site.min.js'. Physical path: 'E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Home\bin\Release\PublishOutput\wwwroot\js\site.min.js' 
+2017-08-11 18:05:56.7454|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|INFO|Sending file. Request path: '/css/site.min.css'. Physical path: 'E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Home\bin\Release\PublishOutput\wwwroot\css\site.min.css' 
+2017-08-11 18:05:56.7614|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMS" completed keep alive response. 
+2017-08-11 18:05:56.7614|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMT" completed keep alive response. 
+2017-08-11 18:05:56.7614|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 30.3447ms 200 application/javascript 
+2017-08-11 18:05:56.7614|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 30.2074ms 200 text/css 
+2017-08-11 18:05:56.7764|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMR" completed keep alive response. 
+2017-08-11 18:05:56.7764|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 15631.239ms 500 text/html; charset=utf-8 
+2017-08-11 18:05:57.5534|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:994/favicon.ico   
+2017-08-11 18:05:57.5534|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|INFO|Sending file. Request path: '/favicon.ico'. Physical path: 'E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Home\bin\Release\PublishOutput\wwwroot\favicon.ico' 
+2017-08-11 18:05:57.5764|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMS" completed keep alive response. 
+2017-08-11 18:05:57.5764|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 23.3202ms 200 image/x-icon 
+2017-08-11 18:06:10.2354|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:994/   
+2017-08-11 18:06:10.2354|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|DEBUG|The request path / does not match a supported file type 
+2017-08-11 18:06:10.2354|Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector|TRACE|Performing protect operation to key {569dc676-d03b-4303-923e-1d0b669a8e0f} with purposes ('E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Home\bin\Release\PublishOutput', 'SessionMiddleware'). 
+2017-08-11 18:06:10.2354|Microsoft.AspNetCore.Routing.RouteBase|DEBUG|Request successfully matched the route with name 'default' and template '{controller=Home}/{action=Index}/{id?}'. 
+2017-08-11 18:06:10.2354|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|DEBUG|Executing action Ruiec.Home.Controllers.HomeController.Index (Ruiec.Home) 
+2017-08-11 18:06:10.2354|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method Ruiec.Home.Controllers.HomeController.Index (Ruiec.Home) with arguments ((null)) - ModelState is Valid 
+2017-08-11 18:06:10.2354|Ruiec.Home.Controllers.HomeController|DEBUG|Logger 测试1 
+2017-08-11 18:06:10.2464|Ruiec.Home.Controllers.HomeController|ERROR|Logger 测试2 
+2017-08-11 18:06:10.2464|Ruiec.Home.Controllers.HomeController|INFO|Logger 测试3 
+2017-08-11 18:06:10.2464|Ruiec.Home.Controllers.HomeController|WARN|Logger 测试4 
+2017-08-11 18:06:10.2464|Vic.Core.Application.Services.DepartmentAppService|ERROR|Logger 测试 
+2017-08-11 18:06:10.2464|Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerConnection|DEBUG|Opening connection to database 'VicCore' on server '192.168.20.92,32577'. 
+2017-08-11 18:06:10.2634|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|INFO|Executed DbCommand (0ms) [Parameters=[@__Empty_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [it].[FID], [it].[FCode], [it].[FContactNumber], [it].[FCreateTime], [it].[FCreatorID], [it].[FIsDeleted], [it].[FLastUpdateTime], [it].[FLastUpdateUserID], [it].[FManager], [it].[FName], [it].[FParentId], [it].[FRemarks]
+FROM [T_AM_Department] AS [it]
+WHERE [it].[FID] <> @__Empty_0 
+2017-08-11 18:06:10.2634|Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerConnection|DEBUG|Closing connection to database 'VicCore' on server '192.168.20.92,32577'. 
+2017-08-11 18:06:10.2634|Microsoft.EntityFrameworkCore.Query.Internal.SqlServerQueryCompilationContextFactory|ERROR|An exception occurred in the database while iterating the results of a query.
+System.InvalidOperationException: An exception occured while reading a database value for property 'Department.IsDeleted'. The expected type was 'System.Int32' but the actual value was of type 'System.Boolean'. ---> System.InvalidCastException: Unable to cast object of type 'System.Boolean' to type 'System.Int32'.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.TryReadValue[TValue](ValueBuffer valueBuffer, Int32 index, IPropertyBase property)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.ThrowReadValueException[TValue](Exception exception, Object value, IPropertyBase property)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.TryReadValue[TValue](ValueBuffer valueBuffer, Int32 index, IPropertyBase property)
+   at lambda_method(Closure , ValueBuffer )
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.UnbufferedEntityShaper`1.Shape(QueryContext queryContext, ValueBuffer valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.QueryMethodProvider.<_ShapedQuery>d__3`1.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__15`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext() An exception occured while reading a database value for property 'Department.IsDeleted'. The expected type was 'System.Int32' but the actual value was of type 'System.Boolean'.
+2017-08-11 18:06:10.2634|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action Ruiec.Home.Controllers.HomeController.Index (Ruiec.Home) in 32.1073ms 
+2017-08-11 18:06:10.2634|Microsoft.AspNetCore.Session.SessionMiddleware|ERROR|Error closing the session. No connection is available to service this operation: EVAL
+2017-08-11 18:06:10.2814|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|ERROR|An unhandled exception has occurred: An exception occured while reading a database value for property 'Department.IsDeleted'. The expected type was 'System.Int32' but the actual value was of type 'System.Boolean'. An exception occured while reading a database value for property 'Department.IsDeleted'. The expected type was 'System.Int32' but the actual value was of type 'System.Boolean'.
+2017-08-11 18:06:10.2814|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|DEBUG|The request path /Home/Error does not match a supported file type 
+2017-08-11 18:06:10.2814|Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector|TRACE|Performing protect operation to key {569dc676-d03b-4303-923e-1d0b669a8e0f} with purposes ('E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Home\bin\Release\PublishOutput', 'SessionMiddleware'). 
+2017-08-11 18:06:10.2814|Microsoft.AspNetCore.Routing.RouteBase|DEBUG|Request successfully matched the route with name 'default' and template '{controller=Home}/{action=Index}/{id?}'. 
+2017-08-11 18:06:10.2814|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|DEBUG|Executing action Ruiec.Home.Controllers.HomeController.Error (Ruiec.Home) 
+2017-08-11 18:06:10.2814|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method Ruiec.Home.Controllers.HomeController.Error (Ruiec.Home) with arguments ((null)) - ModelState is Valid 
+2017-08-11 18:06:10.2924|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|DEBUG|Executed action method Ruiec.Home.Controllers.HomeController.Error (Ruiec.Home), returned result Microsoft.AspNetCore.Mvc.ViewResult. 
+2017-08-11 18:06:10.2924|Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine|DEBUG|View lookup cache hit for view 'Error' in controller 'Home'. 
+2017-08-11 18:06:10.2924|Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor|DEBUG|The view 'Error' was found. 
+2017-08-11 18:06:10.2924|Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor|INFO|Executing ViewResult, running view at path /Views/Shared/Error.cshtml. 
+2017-08-11 18:06:10.2924|Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine|DEBUG|View lookup cache hit for view '_Layout' in controller 'Home'. 
+2017-08-11 18:06:10.2924|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action Ruiec.Home.Controllers.HomeController.Error (Ruiec.Home) in 4.8239ms 
+2017-08-11 18:06:10.2924|Microsoft.AspNetCore.Session.SessionMiddleware|ERROR|Error closing the session. No connection is available to service this operation: EVAL
+2017-08-11 18:06:10.3154|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMT" completed keep alive response. 
+2017-08-11 18:06:10.3154|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 80.6629ms 500 text/html; charset=utf-8 
+2017-08-11 18:07:41.0394|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMT" reset. 
+2017-08-11 18:07:41.0394|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMS" reset. 
+2017-08-11 18:07:41.0394|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMT" disconnecting. 
+2017-08-11 18:07:41.0394|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMS" disconnecting. 
+2017-08-11 18:07:41.0394|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMS" sending FIN. 
+2017-08-11 18:07:41.0394|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMT" disconnecting. 
+2017-08-11 18:07:41.0394|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMS" disconnecting. 
+2017-08-11 18:07:41.0394|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMT" sending FIN. 
+2017-08-11 18:07:41.0394|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMS" sent FIN with status "0". 
+2017-08-11 18:07:41.0394|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMT" sent FIN with status "0". 
+2017-08-11 18:07:41.0394|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMT" stopped. 
+2017-08-11 18:07:41.0394|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMR" reset. 
+2017-08-11 18:07:41.0394|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMR" disconnecting. 
+2017-08-11 18:07:41.0394|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMR" stopped. 
+2017-08-11 18:07:41.0394|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70K22T3CMS" stopped. 
+2017-08-11 18:26:33.9804|Microsoft.AspNetCore.Hosting.Internal.WebHost|DEBUG|Hosting shutdown 
+2017-08-11 19:26:47.0154|Microsoft.EntityFrameworkCore.Query.Internal.SqlServerQueryCompilationContextFactory|DEBUG|Compiling query model: 
+'(from User <generated>_1 in DbSet<User>
+select <generated>_1)
+.Any()' 
+2017-08-11 19:26:47.0494|Microsoft.EntityFrameworkCore.Query.Internal.SqlServerQueryCompilationContextFactory|DEBUG|Optimized query model: 
+'(from User <generated>_1 in DbSet<User>
+select <generated>_1)
+.Any()' 
+2017-08-11 19:26:47.1764|Microsoft.EntityFrameworkCore.Query.Internal.SqlServerQueryCompilationContextFactory|DEBUG|TRACKED: False
+(QueryContext queryContext) => IEnumerable<bool> _ToSequence(
+    element: bool GetResult(
+        valueBuffers: IEnumerable<ValueBuffer> _Query(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT CASE
+                    WHEN EXISTS (
+                        SELECT 1
+                        FROM [T_AM_User] AS [t])
+                    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+                END
+            , 
+            queryIndex: default(System.Nullable`1[System.Int32])
+        )
+    )
+)
+ 
+2017-08-11 19:26:47.2084|Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerConnection|DEBUG|Opening connection to database 'VicCore' on server '192.168.20.92,32577'. 
+2017-08-11 19:26:47.3434|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|INFO|Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [T_AM_User] AS [t])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END 
+2017-08-11 19:26:47.3784|Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerConnection|DEBUG|Closing connection to database 'VicCore' on server '192.168.20.92,32577'. 
+2017-08-11 19:26:47.4144|Microsoft.Extensions.DependencyInjection.DataProtectionServices|INFO|User profile not available. Using 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\4.0.30319.0\AutoGenKeys\S-1-5-82-1532296937-3415783963-4216138386-3769229818-4211908612\DataProtection' as key repository and Windows DPAPI to encrypt keys at rest. 
+2017-08-11 19:26:47.4424|Microsoft.AspNetCore.Hosting.Internal.WebHost|DEBUG|Hosting starting 
+2017-08-11 19:26:47.4984|Microsoft.AspNetCore.Hosting.Internal.WebHost|DEBUG|Hosting started 
+2017-08-11 19:26:47.6694|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70LFD8LLTR" started. 
+2017-08-11 19:26:47.7324|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.20.92:994/Home/Contact   
+2017-08-11 19:26:47.7944|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|DEBUG|The request path /Home/Contact does not match a supported file type 
+2017-08-11 19:26:47.8084|Microsoft.AspNetCore.DataProtection.Repositories.RegistryXmlRepository|DEBUG|Reading data from registry key 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\4.0.30319.0\AutoGenKeys\S-1-5-82-1532296937-3415783963-4216138386-3769229818-4211908612\DataProtection', value 'key-569dc676-d03b-4303-923e-1d0b669a8e0f'. 
+2017-08-11 19:26:47.8084|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|DEBUG|Found key {569dc676-d03b-4303-923e-1d0b669a8e0f}. 
+2017-08-11 19:26:47.8214|Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver|DEBUG|Considering key {569dc676-d03b-4303-923e-1d0b669a8e0f} with expiration date 2017-08-30 08:38:10Z as default key. 
+2017-08-11 19:26:47.8214|Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor|DEBUG|Decrypting secret element using Windows DPAPI. 
+2017-08-11 19:26:47.8384|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.CngCbcAuthenticatedEncryptorDescriptor|DEBUG|Opening CNG algorithm 'AES' from provider '(null)' with chaining mode CBC. 
+2017-08-11 19:26:47.8384|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.CngCbcAuthenticatedEncryptorDescriptor|DEBUG|Opening CNG algorithm 'SHA256' from provider '(null)' with HMAC. 
+2017-08-11 19:26:47.8384|Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider|DEBUG|Using key {569dc676-d03b-4303-923e-1d0b669a8e0f} as the default key. 
+2017-08-11 19:26:47.8554|Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector|TRACE|Performing protect operation to key {569dc676-d03b-4303-923e-1d0b669a8e0f} with purposes ('E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Home\bin\Release\PublishOutput', 'SessionMiddleware'). 
+2017-08-11 19:26:47.9454|Microsoft.AspNetCore.Routing.RouteBase|DEBUG|Request successfully matched the route with name 'default' and template '{controller=Home}/{action=Index}/{id?}'. 
+2017-08-11 19:26:48.0074|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|DEBUG|Executing action Ruiec.Home.Controllers.HomeController.Contact (Ruiec.Home) 
+2017-08-11 19:26:48.0494|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method Ruiec.Home.Controllers.HomeController.Contact (Ruiec.Home) with arguments ((null)) - ModelState is Valid 
+2017-08-11 19:26:48.0494|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|DEBUG|Executed action method Ruiec.Home.Controllers.HomeController.Contact (Ruiec.Home), returned result Microsoft.AspNetCore.Mvc.ViewResult. 
+2017-08-11 19:26:48.1174|Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine|DEBUG|View lookup cache miss for view 'Contact' in controller 'Home'. 
+2017-08-11 19:26:48.1174|Microsoft.AspNetCore.Mvc.Razor.Internal.RazorCompilationService|DEBUG|Code generation for the Razor file at '/Views/Home/Contact.cshtml' started. 
+2017-08-11 19:26:48.3704|Microsoft.AspNetCore.Mvc.Razor.Internal.RazorCompilationService|DEBUG|Code generation for the Razor file at '/Views/Home/Contact.cshtml' completed in 239.0123ms. 
+2017-08-11 19:26:48.3704|Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRoslynCompilationService|DEBUG|Compilation of the generated code for the Razor file at '/Views/Home/Contact.cshtml' started. 
+2017-08-11 19:26:49.0784|Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRoslynCompilationService|DEBUG|Compilation of the generated code for the Razor file at '/Views/Home/Contact.cshtml' completed in 705.5384ms. 
+2017-08-11 19:26:49.0784|Microsoft.AspNetCore.Mvc.Razor.Internal.RazorCompilationService|DEBUG|Code generation for the Razor file at '/Views/_ViewStart.cshtml' started. 
+2017-08-11 19:26:49.0854|Microsoft.AspNetCore.Mvc.Razor.Internal.RazorCompilationService|DEBUG|Code generation for the Razor file at '/Views/_ViewStart.cshtml' completed in 3.7134ms. 
+2017-08-11 19:26:49.0854|Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRoslynCompilationService|DEBUG|Compilation of the generated code for the Razor file at '/Views/_ViewStart.cshtml' started. 
+2017-08-11 19:26:49.1094|Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRoslynCompilationService|DEBUG|Compilation of the generated code for the Razor file at '/Views/_ViewStart.cshtml' completed in 22.8217ms. 
+2017-08-11 19:26:49.1094|Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor|DEBUG|The view 'Contact' was found. 
+2017-08-11 19:26:49.1174|Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor|INFO|Executing ViewResult, running view at path /Views/Home/Contact.cshtml. 
+2017-08-11 19:26:49.1784|Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine|DEBUG|View lookup cache miss for view '_Layout' in controller 'Home'. 
+2017-08-11 19:26:49.1784|Microsoft.AspNetCore.Mvc.Razor.Internal.RazorCompilationService|DEBUG|Code generation for the Razor file at '/Views/Shared/_Layout.cshtml' started. 
+2017-08-11 19:26:49.2494|Microsoft.AspNetCore.Mvc.Razor.Internal.RazorCompilationService|DEBUG|Code generation for the Razor file at '/Views/Shared/_Layout.cshtml' completed in 69.5103ms. 
+2017-08-11 19:26:49.2494|Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRoslynCompilationService|DEBUG|Compilation of the generated code for the Razor file at '/Views/Shared/_Layout.cshtml' started. 
+2017-08-11 19:26:49.3614|Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRoslynCompilationService|DEBUG|Compilation of the generated code for the Razor file at '/Views/Shared/_Layout.cshtml' completed in 112.0539ms. 
+2017-08-11 19:26:49.5164|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action Ruiec.Home.Controllers.HomeController.Contact (Ruiec.Home) in 1508.3725ms 
+2017-08-11 19:27:04.8844|Microsoft.AspNetCore.Session.SessionMiddleware|ERROR|Error closing the session. No connection is available to service this operation: EVAL
+2017-08-11 19:27:04.9004|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70LFD8LLTR" completed keep alive response. 
+2017-08-11 19:27:04.9004|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 17180.5636ms 200 text/html; charset=utf-8 
+2017-08-11 19:28:47.6584|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70LFD8LLTR" reset. 
+2017-08-11 19:28:47.6634|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70LFD8LLTR" disconnecting. 
+2017-08-11 19:28:47.6634|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70LFD8LLTR" disconnecting. 
+2017-08-11 19:28:47.6634|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70LFD8LLTR" sending FIN. 
+2017-08-11 19:28:47.6804|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70LFD8LLTR" stopped. 
+2017-08-11 19:28:47.6804|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL70LFD8LLTR" sent FIN with status "-4081". 
+2017-08-11 19:47:46.6344|Microsoft.AspNetCore.Hosting.Internal.WebHost|DEBUG|Hosting shutdown 

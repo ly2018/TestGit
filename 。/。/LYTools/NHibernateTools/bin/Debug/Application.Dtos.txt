@@ -1,0 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.ComponentModel.DataAnnotations;
+
+namespace $NameSpace$.Application.Dtos
+{
+    public class $ClassName$Dto : $NameSpace$.Application.Dtos.BaseDto
+    {
+        $content$
+    }
+}

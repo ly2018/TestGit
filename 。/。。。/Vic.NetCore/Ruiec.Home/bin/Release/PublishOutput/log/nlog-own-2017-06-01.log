@@ -1,0 +1,5 @@
+2017-06-01 16:45:07.9730|Ruiec.Home.Controllers.HomeController|DEBUG|  Logger 测试1 
+2017-06-01 16:45:07.9730|Ruiec.Home.Controllers.HomeController|ERROR|  Logger 测试2 
+2017-06-01 16:45:07.9890|Ruiec.Home.Controllers.HomeController|INFO|  Logger 测试3 
+2017-06-01 16:45:07.9890|Ruiec.Home.Controllers.HomeController|WARN|  Logger 测试4 
+2017-06-01 16:45:07.9890|Vic.Core.Application.Services.DepartmentAppService|ERROR|  Logger 测试 

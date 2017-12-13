@@ -1,0 +1,90 @@
+@model $NameSpace$.Utils.ResponseData.PageDataResponse<$NameSpace$.Application.Dtos.$ClassName$Dto>
+@{
+    ViewBag.Title = "$ClassName$管理";
+}
+
+<div id="content-header">
+    <div id="breadcrumb">
+        <a href="/" title="首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+        <a href="#" class="current">@ViewBag.Title</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <h5>
+                        @ViewBag.Title&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-mini btn-success" onclick="G.RedirectToUrl('/$ClassName$/Create');">新增</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="submit" class="btn btn-mini btn-danger commonDelete" url="/$ClassName$/Delete">批量删除</button>
+
+                    </h5>
+                </div>
+                <div class="chat-message well">
+                    <form>
+                        <span class="input-box">
+                            关键字查询：<input type="text" style="width:40%;margin-left:10px;" id="msg-box" name="key" placeholder="请输入名称、单号等关键字进行模糊查询" value="@Model.QueryData.Key" />
+                            &nbsp;&nbsp;开始时间：<input type="text" style="width:10%;margin-left:10px;" id="msg-box1" name="BeginTime" value="@(Model.QueryData.BeginTime != null ? Model.QueryData.BeginTime.Value.ToString("yyyy-MM-dd") : "")">
+                            &nbsp;&nbsp;结束时间：<input type="text" style="width:10%;margin-left:10px;" id="msg-box2" name="EndTime" value="@(Model.QueryData.EndTime != null ? Model.QueryData.EndTime.Value.ToString("yyyy-MM-dd") : "")">
+                            <input type="submit" class="btn btn-success" style="margin-left:20px;" onclick="G.QueryList('/$ClassName$/Index')" value="查询">
+                        </span>
+                    </form>
+                </div>
+                <div class="widget-content ">
+                    <table class="table table-bordered table-striped with-check">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" id="title-table-checkbox" name="title-table-checkbox" />
+                                </th>
+                                $HeadHtml$
+                                <th>
+                                    操作
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                if (Model.Data != null && Model.Data.Any())
+                                {
+
+                                    foreach (var item in Model.Data)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="@item.ID"/>
+                                            </td>
+                                           $BodyHtml$
+                                            <td>
+                                                <div style="text-align:center">
+                                                    <button class="btn btn-primary btn-mini singleEdit" url="/$ClassName$/Edit">编辑</button>
+                                                    <button class="btn btn-danger btn-mini singleDelete" url="/$ClassName$/Delete">删除</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+
+                            }
+                        </tbody>
+                    </table>
+                    <div class="pages">
+                        @Html.Raw(Model.PageHTML)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript">
+    $('#msg-box1,#msg-box2').datetimepicker({
+        onGenerate: function (ct) {
+            $(this).find('.xdsoft_date.xdsoft_weekend')
+        },
+        weekends: ['01.01.2014', '02.01.2014', '03.01.2014', '04.01.2014', '05.01.2014', '06.01.2014'],
+        timepicker: false
+    });
+</script>

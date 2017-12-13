@@ -1,0 +1,52 @@
+﻿@using Vic.Core.Application.Dtos
+@model List<MenuDto>
+@{
+    var parentList = Model.Where(a => a.IsTopMenu && a.Type == (int)Vic.Core.Utils.Enum.AM_Enum.MenuTypeEnum.ParentMenu).OrderBy(a => a.SerialNumber);
+    int count = 1;
+    foreach (var parent in parentList)
+    {
+        var childMenu = Model.Where(a => a.ParentId == parent.ID).OrderBy(a => a.SerialNumber);
+
+        @if (childMenu.Any())
+        {
+            <li class="dropdown" id="@("profile-messages"+count)">
+                <a title="" href="@(childMenu.Any() ? parent.Url : "#")" data-toggle="dropdown" data-target="@("profile-messages" + count)" class="dropdown-toggle">
+                    <i class="icon icon-user"></i> <span class="text">@(parent.Name.Contains("欢迎您") ? string.Format(parent.Name, ViewBag.AdminName) : parent.Name)</span><b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    @foreach (var child in childMenu)
+                    {
+                        if (@child.Url.ToLower() == "/login/userlogoutasync")
+                        {
+                            <li><a href="@child.Url"><i sysimg="null"></i> @child.Name</a></li>
+                        }
+                        else
+                        {
+                            <li><a target="mainframe" href="@child.Url"><i sysimg="null"></i> @child.Name</a></li>
+                        }
+                        <li class="divider"></li>
+                    }
+                </ul>
+            </li>
+        }
+        else
+        {
+            <li class="">
+                @if (parent.Url.ToLower() == "#")
+                {
+                    <a title="" href="@parent.Url">
+                        <i sysimg="null"></i> <span class="text">@parent.Name</span>
+                    </a>
+                }
+                else
+                {
+                    <a target="mainframe" title="" href="@parent.Url">
+                        <i sysimg="null"></i> <span class="text">@parent.Name</span>
+                    </a>
+                }
+            </li>
+        }
+
+        count++;
+    }
+}

@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "邮件模板管理";
+}
+<div id="content-header">
+    <div id="breadcrumb">
+        <a href="/" title="首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+        <a href="/MailTemplate/Index" title="@ViewBag.Title" class="tip-bottom"><i class="icon-home"></i>@ViewBag.Title</a>
+        <a href="/MailTemplate/Create" class="tip-bottom">新增</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-content nopadding">
+                    <form class="form-horizontal" id="form-horizontal" url="/MailTemplate/Create" action="" method="post">
+                        <div class="control-group">
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">调用枚举：</label>
+                            <div class="controls">
+                                <input type="text" name="CallEnumKey" class="span7" placeholder="" isNot="true" verify="isAll" msg="调用枚举不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">模板标题：</label>
+                            <div class="controls">
+                                <input type="text" name="Title" class="span7" placeholder="" isNot="true" verify="isAll" msg="模板标题不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">邮件标题：</label>
+                            <div class="controls">
+                                <input type="text" name="MailTitle" class="span7" placeholder="" isNot="true" verify="isAll" msg="邮件标题不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">语言类型：</label>
+                            <div class="controls">
+                                <select name="LanguageTypeID" id="LanguageTypeID" class="span7">
+                                    @if (ViewBag.LangList != null)
+                                    {
+                                        foreach (var item in ViewBag.LangList as List<Vic.Core.Application.Dtos.LanguageTypeDto>)
+                                        {
+                                            <option value="@item.ID">@(string.Format("{0}/{1}", item.Code, item.Title))</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">详情：</label>
+                            <div class="controls">
+                                <div style="width:80%;">
+                                    <script type="text/javascript" charset="utf-8" src="~/XHEditor/xheditor-1.1.14-zh-cn.min.js"></script>
+                                    <textarea cols="60" name="Content" rows="8" class="xheditor" id="toolContext" style="height:264px;width:72%"></textarea>
+                                    <br />
+                                    <a href="javascript:void(0)" title="增加编辑器长度" onclick="G.IncreaseEditorHeight($(this).prev().prev().attr('id').replace('container', 'iframearea'))" style="margin:0 0.5em; font-size:18px;">+</a>
+                                    <a href="javascript:void(0)" title="减少编辑器长度" onclick="G.DecreaseEditorHeight($(this).prev().prev().prev().attr('id').replace('container', 'iframearea'))" style="margin:0 0.5em; font-size:18px">-</a>
+                                    <input type="hidden" id="XHEditor_Hidden_Text" value="" />
+                                    <script type="text/javascript">
+                                        var descriptionEditor = $('#toolContext').xheditor({ upImgUrl: "/Upload/UploadEditImgage?ImgPathEnum=2&IsFullPath=true", upImgExt: "jpg,jpeg,gif,png", skin: 'default' });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">是否默认：</label>
+                            <div class="controls">
+                                <span class="fl pdr15"><label><i class="radio_btn"><input type="radio" name="IsDefault" checked value="true" /></i>是</label></span>
+                                <span class="fl pdr15"><label><i class="radio_btn"><input type="radio" name="IsDefault" value="false" /></i>否</label></span>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <label class="control-label">&nbsp;&nbsp;</label><button type="submit" class="btn btn-success">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-primary goLastPage">返回上一页</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--表单验证-->
+<script src="~/js/Validate/jquery.form.min.js"></script>
+<script src="~/js/Validate/jquery.ruiValidate.js"></script>
+<script src="~/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript">
+                                        $(function () {
+
+                                            //表单验证
+                                            if ($(".form-horizontal").size() > 0) {
+                                                var _FormValidate = new $.rui_validate();
+                                                _FormValidate.initload();
+                                                _FormValidate.initForm({
+                                                    FormObj: $(".form-horizontal").eq(0),
+                                                    FormIdName: 'form-horizontal',
+                                                    //ShowTip: "Highlights",
+                                                    SubBtn: 'btn btn-success',   //提交按钮的class
+                                                    CallBack: ""
+                                                });
+                                            }
+                                        });
+</script>

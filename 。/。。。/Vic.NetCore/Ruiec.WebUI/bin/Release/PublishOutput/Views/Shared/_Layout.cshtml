@@ -1,0 +1,38 @@
+﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+<!DOCTYPE html>
+<html lang="zh-CN" class="static Ruiec-admin">
+<head>
+    <meta charset="utf-8" />
+    @Html.Raw(JavaScriptSnippet.FullScript)
+    <link href="~/css/bootstrap/bootstrap.min.css" rel="stylesheet"  asp-append-version="true"/>
+    <link href="~/css/bootstrap/bootstrap-responsive.min.css" rel="stylesheet"  asp-append-version="true"/>
+    <link href="~/css/matrix/matrix-style.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/matrix/matrix-media.css" rel="stylesheet"  asp-append-version="true"/>
+    <link href="~/css/matrix/jquery.gritter.css" rel="stylesheet"  asp-append-version="true"/>
+
+    <link href="~/css/bootstrap/uniform.css" rel="stylesheet"  asp-append-version="true"/>
+    <link href="~/css/bootstrap/select2.css" rel="stylesheet"  asp-append-version="true"/>
+
+    <script src="~/js/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.ui.custom.js" asp-append-version="true"></script>
+    <script src="~/js/bootstrap.min.js" asp-append-version="true"></script>
+    <script src="~/js/matrix.js" asp-append-version="true"></script>
+    <script src="~/js/custom.js" asp-append-version="true"></script>
+    <!--[if lt IE 9]>
+     <script src="~/js/html5.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <script>(function (d) { d.className = "dyn" + d.className.substring(6, d.className.length); })(document.documentElement);</script>
+</head>
+<body>
+    <div class="zone zone-content">
+        @RenderBody()
+    </div>
+    @RenderSection("Scripts", required: false)
+    <script src="~/js/jquery.uniform.js" asp-append-version="true"></script>
+    <script src="~/js/select2.min.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.dataTables.min.js" asp-append-version="true"></script>
+    <script src="~/js/matrix.tables.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.ui.custom.js" asp-append-version="true"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Ruiec.Common.ViewModels;
+using Ruiec.Common.Contracts;
+using Orchard;
+using Orchard.Data;
+using Orchard.Themes;
+using Orchard.Utility.Extensions;
+using Orchard.Core.Security.Models;
+using Orchard.Utility;
+using Ruiec.Common.Services;
+using Orchard.Localization;
+using AutoMapper;
+using Orchard.Security;
+using Ruiec.Common.Models;
+using Ruiec.Common.Common;
+
+
+namespace Ruiec.Admin.Controllers
+{
+      
+    public class $ClassName$Controller : Controller
+    {
+        #region 数据接口
+        private JsonRequestBehavior JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+        private readonly I$ClassName$Contract _I$ClassName$Contract;
+        private readonly IUser _currUser;
+        private readonly IAuthenticationService _IAuthenticationService;
+        private readonly ITransactionManager _transactionManager;
+        #endregion
+
+        #region 构造器
+        public $ClassName$Controller(ITransactionManager transactionManager, IAuthenticationService IAuthenticationService, I$ClassName$Contract I$ClassName$Contract)
+        {
+            _I$ClassName$Contract = I$ClassName$Contract;
+            _transactionManager = transactionManager;
+            _IAuthenticationService = IAuthenticationService;
+            _currUser = _IAuthenticationService.GetAuthenticatedUser();
+        }
+        #endregion
+
+        #region 首页
+        /// <summary>
+        /// 首页列表分页及模糊查询
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [Themed]
+        [HttpGet]
+        public ActionResult Index($ClassName$_ViewModel model)
+        {
+            //分页及模糊查询
+            $ClassName$_ViewModel VM = new $ClassName$_ViewModel();
+            int Count;
+            List<$ClassName$> List = new List<$ClassName$>();
+           
+		    var parameterExpression = System.Linq.Expressions.Expression.Parameter(typeof($ClassName$));
+            var filter = (System.Linq.Expressions.Expression)System.Linq.Expressions.Expression.Constant(true);
+            if (!string.IsNullOrEmpty(model.Key))
+            {
+                model.Key = model.Key.Trim();
+                VM.Key = model.Key;
+                filter = (System.Linq.Expressions.Expression)System.Linq.Expressions.Expression.Constant(false);
+                filter = filter.GotoOrElse(parameterExpression.GotoEqual("ID", model.Key));
+                //filter = filter.GotoOrElse(parameterExpression.GotoContains("IP", model.Key));
+            }
+            else
+            {
+                filter = filter.GotoOrElse(parameterExpression.GotoNotEqual("ID", model.Key));
+            }
+            if (model.BeginTime != null && model.EndTime != null && model.BeginTime <= model.EndTime)
+            {
+                VM.BeginTime = model.BeginTime;
+                VM.EndTime = model.EndTime;
+                filter = filter.GotoAndAlso(parameterExpression.GotoGreaterThanByDateTime("CreateTime", model.BeginTime));
+                filter = filter.GotoAndAlso(parameterExpression.GotoLessThanByDateTime("CreateTime", model.EndTime));
+            }
+            var queryLambdaFilter = System.Linq.Expressions.Expression.Lambda<Func<$ClassName$, bool>>(filter, parameterExpression);
+            List = _I$ClassName$Contract.PageList(queryLambdaFilter, model.PageSize, model.CurPage, out Count);
+
+            VM.$ClassName$List = Mapper.Map<List<$ClassName$>, List<$ClassName$_ViewModel>>(List, opts => opts.CreateMissingTypeMaps = true);
+            VM.PagerHTML = Common.Common.Common.PageHtml(Count, model.CurPage, model.PageSize, this.HttpContext);
+            return View(VM);
+        }
+        #endregion
+
+        #region 列表
+        /// <summary>
+        /// 表达式查询列表
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [Themed]
+        [HttpPost]
+        public JsonResult List($ClassName$_ViewModel model)
+        {
+            List<$ClassName$> List = new List<$ClassName$>();
+            if (!string.IsNullOrEmpty(model.Key))
+            {
+                List = _I$ClassName$Contract.QueryList(a => a.ID == model.Key);
+            }
+            else
+            {
+                List = _I$ClassName$Contract.QueryList(a => !string.IsNullOrEmpty(a.ID));
+            }
+            return Json(new OperateMessage<List<$ClassName$>>(List, List.Count), JsonRequestBehavior.AllowGet);
+        }
+        #endregion
+
+        #region 新增
+        /// <summary>
+        /// 新增页面
+        /// </summary>
+        /// <returns></returns>
+        [Themed]
+        [HttpGet]
+        public ActionResult Create()
+        {
+            $ClassName$_ViewModel VM =new $ClassName$_ViewModel();
+            return View(VM);
+        }
+
+        /// <summary>
+        /// 保存新增
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult Create($ClassName$_ViewModel model)
+        {
+            bool IsSucceed = _I$ClassName$Contract.Create(new $ClassName$()
+            {
+                ID = Guid.NewGuid().GuidTo16String(),
+                $tempAdd$
+            });
+            if (IsSucceed)
+            {
+                return Json(new OperateMessage<string>("/Ruiec.Admin/$ClassName$/Index"), JsonRequestBehavior);
+            }
+            return Json(new OperateMessage<$ClassName$_ViewModel>(IsSucceed ? OperateResult.Success : OperateResult.Fail, true, IsSucceed ? "添加成功！" : "添加失败！"), JsonRequestBehavior);
+
+        }
+        #endregion
+
+        #region 编辑
+        /// <summary>
+        /// 编辑页面
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Themed]
+        public ActionResult Edit()
+        {
+            $ClassName$ currModel = _I$ClassName$Contract.Get(Request.QueryString["ID"]);
+            $ClassName$_ViewModel VM = Mapper.Map<$ClassName$, $ClassName$_ViewModel>(currModel, opts => opts.CreateMissingTypeMaps = true);
+            return View(VM);
+        }
+
+        /// <summary>
+        /// 保存编辑
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult Edit($ClassName$_ViewModel model)
+        {
+            string errs = "";
+            if (!Common.Common.Common.IsModelStateValidate(this.ModelState, out errs))
+            {
+                return Json(new OperateMessage<$ClassName$_ViewModel>(OperateResult.Fail, true, errs), JsonRequestBehavior);
+            }
+            $ClassName$ currModel = _I$ClassName$Contract.Get(model.ID);
+            if (currModel == null)
+            {
+                return Json(new OperateMessage<$ClassName$_ViewModel>(OperateResult.Fail, true, "修改失败，修改的类容不存在！"), JsonRequestBehavior);
+            }
+            $tempEdit$
+            bool IsSucceed = _I$ClassName$Contract.Edit(currModel);
+            if (IsSucceed)
+            {
+                return Json(new OperateMessage<string>("/Ruiec.Admin/$ClassName$/Index"), JsonRequestBehavior);
+            }
+            return Json(new OperateMessage<$ClassName$_ViewModel>(IsSucceed ? OperateResult.Success : OperateResult.Fail, true, IsSucceed ? "修改成功！" : "修改失败！"), JsonRequestBehavior);
+        }
+        #endregion
+
+        #region 删除
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult Delete()
+        {
+            string[] arr = Request.Form["Ids"].Split(',');
+            if (arr.Length <= 0)
+            {
+                return Json(new { ret = "-999", msg = "请选择要删除的记录！" }, JsonRequestBehavior);
+            }
+            bool IsSucceed = _I$ClassName$Contract.Delete(arr);
+            return Json(new { ret = IsSucceed ? "0000" : "-999", msg = IsSucceed ? "删除成功！" : "删除失败，请先删除外键关联记录！" }, JsonRequestBehavior);
+        }
+        #endregion
+    }
+}

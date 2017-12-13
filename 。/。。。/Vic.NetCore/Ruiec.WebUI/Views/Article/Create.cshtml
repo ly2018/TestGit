@@ -1,0 +1,153 @@
+﻿@{
+    ViewBag.Title = "文章管理";
+}
+<div id="content-header">
+    <div id="breadcrumb">
+        <a href="/" title="首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+        <a href="/Article/Index" title="@ViewBag.Title" class="tip-bottom"><i class="icon-home"></i>@ViewBag.Title</a>
+        <a href="/Article/Create" class="tip-bottom">新增</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-content nopadding">
+                    <form class="form-horizontal" id="form-horizontal" url="/Article/Create" action="" method="post">
+                        <div class="control-group">
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">文章类型：</label>
+                            <div class="controls">
+                                <select name="ArticleTypeID" id="ArticleTypeID" class="span7">
+                                    @if (ViewBag.TypeList != null)
+                                    {
+                                        foreach (var item in ViewBag.TypeList as List<Vic.Core.Application.Dtos.ArticleTypeDto>)
+                                        {
+                                            <option value="@item.ID">@(item.Title)</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">语言类型：</label>
+                            <div class="controls">
+                                <select name="LanguageTypeID" id="LanguageTypeID" class="span7">
+                                    @if (ViewBag.LangList != null)
+                                    {
+                                        foreach (var item in ViewBag.LangList as List<Vic.Core.Application.Dtos.LanguageTypeDto>)
+                                        {
+                                            <option value="@item.ID">@(string.Format("{0}/{1}", item.Code, item.Title))</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">标题：</label>
+                            <div class="controls">
+                                <input type="text" name="Title" class="span7" placeholder="" isNot="true" verify="isAll" msg="标题不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">SEO标题：</label>
+                            <div class="controls">
+                                <input type="text" name="SeoTitle" class="span7" placeholder="" isNot="true" verify="isAll" msg="SEO标题不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">来源：</label>
+                            <div class="controls">
+                                <input type="text" name="Source" class="span7" placeholder="" isNot="true" verify="isAll" msg="来源不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">作者：</label>
+                            <div class="controls">
+                                <input type="text" name="Author" class="span7" placeholder="" isNot="true" verify="isAll" msg="作者不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">发布日期：</label>
+                            <div class="controls">
+                                <input type="text" name="PublishDate" id="PublishDate" value="" cla class="span7" placeholder="" isNot="true" verify="isAll" msg="发布日期不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">图片：</label>
+                            <div class="controls">
+                                <span class="fl pdr15"><input type="text" id="txt_ImageUrl_Images" name="Images" class="input normal" isNot="false" readonly="readonly" /></span>
+                                <a href="javascript:void(0)" onclick="$('#uploadphoto').click();" class="btn bgc_c">上传图片</a>
+                                <span class="ts_msg c_6"></span>
+                                <img id="orgimg" src="/images/spinner.gif" style="display:none;" />
+                                <input type="file" id="uploadphoto" style="position:absolute;top:-999em;left:-999em;" onchange="G.ImgUpload('photo', 'txt_ImageUrl_Images',2,false)" accept="image/*" capture="camera" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">简介：</label>
+                            <div class="controls">
+                                <textarea id="textarea_editor_content" class="textarea_editor span7" name="Description" data-bind="text:Description" rows="6" placeholder="Enter text ..."></textarea>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">详情：</label>
+                            <div class="controls">
+                                <div style="width:80%;">
+                                    <script type="text/javascript" charset="utf-8" src="~/XHEditor/xheditor-1.1.14-zh-cn.min.js"></script>
+                                    <textarea cols="60" name="Content" rows="8" class="xheditor" id="toolContext" style="height:264px;width:72%"></textarea>
+                                    <br />
+                                    <a href="javascript:void(0)" title="增加编辑器长度" onclick="G.IncreaseEditorHeight($(this).prev().prev().attr('id').replace('container', 'iframearea'))" style="margin:0 0.5em; font-size:18px;">+</a>
+                                    <a href="javascript:void(0)" title="减少编辑器长度" onclick="G.DecreaseEditorHeight($(this).prev().prev().prev().attr('id').replace('container', 'iframearea'))" style="margin:0 0.5em; font-size:18px">-</a>
+                                    <input type="hidden" id="XHEditor_Hidden_Text" value="" data-bind="value:Content" />
+                                    <script type="text/javascript">
+                                        var descriptionEditor = $('#toolContext').xheditor({ upImgUrl: "/Upload/UploadEditImgage?ImgPathEnum=2&IsFullPath=true", upImgExt: "jpg,jpeg,gif,png", skin: 'default' });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">备注：</label>
+                            <div class="controls">
+                                <input type="text" name="Remark" class="span7" placeholder="" isNot="true" verify="isAll" msg="备注不能为空！" />
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <label class="control-label">&nbsp;&nbsp;</label><button type="submit" class="btn btn-success">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-primary goLastPage">返回上一页</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--表单验证-->
+<script src="~/js/Validate/jquery.form.min.js"></script>
+<script src="~/js/Validate/jquery.ruiValidate.js"></script>
+<script src="~/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript">
+        $('#PublishDate').datetimepicker({
+        onGenerate: function (ct) {
+            $(this).find('.xdsoft_date.xdsoft_weekend')
+        },
+        weekends: ['01.01.2014', '02.01.2014', '03.01.2014', '04.01.2014', '05.01.2014', '06.01.2014'],
+        timepicker: false
+    });
+    $(function () {
+
+        //表单验证
+        if ($(".form-horizontal").size() > 0) {
+            var _FormValidate = new $.rui_validate();
+            _FormValidate.initload();
+            _FormValidate.initForm({
+                FormObj: $(".form-horizontal").eq(0),
+                FormIdName: 'form-horizontal',
+                //ShowTip: "Highlights",
+                SubBtn: 'btn btn-success',   //提交按钮的class
+                CallBack: ""
+            });
+        }
+    });
+</script>

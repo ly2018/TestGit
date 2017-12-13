@@ -1,0 +1,166 @@
+﻿@{
+    Layout = null;
+}
+@using Vic.Core.Utils.Models
+@model  LoginModel
+@{
+    ViewBag.Title = "艺术品交易所后台管理-登录";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>登录</title>
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/css/matrix/matrix-login.css" rel="stylesheet" />
+    <link href="~/images/logo.png" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body class="Login_Page" id="main">
+
+    <div class="login_container">
+        <!--login_form为登录class ，url异步处理接口-->
+        <form class="login_form form-horizontal" id="login_form" url='/Login/UserLoginAsync' method="post">
+            <input type="hidden" id="ErrorInfo" value="@ViewBag.ErrorInfo"/>
+            <input type="hidden" id="ReturnUrl" value="@ViewBag.ReturnUrl" />
+            <div class="form_line">
+                <span class="ico"><img src="~/images/login_user.jpg" width="40px" height="40px"></span>
+                <span class="label_input"><input type="text" name="UserName" id="username" isNot="true" verify="isLoginName" msg='请输入您的用户名' class="middle_input" value="am" placeholder="请输入您的用户名" /></span>
+            </div>
+            <div class="form_line">
+                <span class="ico"><img src="~/images/login_pwd.jpg" width="40px" height="40px"></span>
+                <span class="label_input"><input type="password" name="Password" class="middle_input" value="coresys" isNot="true" verify="isAll" msg='请输入您的密码' placeholder="请输入您的密码" /></span>
+            </div>
+            <div class="form_line">
+                <input type="text" value="" class="yzm_infos" name="VerifyCode" id="inputcode" isNot="true" verify="isAll" msg='请输入验证码' placeholder="请输入验证码" />
+                <a href="javascript:void(0)" class="fr"><img id="followvaliCode" src="~/images/login_reset.jpg" /></a>
+                <span class="fr"><img id="valiCode" width="77px" height="40px" /></span>
+            </div>
+            <div class="form_line">
+                <span class="label_input label_input_two">
+                    <input type="text" name="PhoneCode" class="middle_input" style="width:228px;float:left;" value="" isNot="true" verify="isAll" msg='请输入手机验证码' placeholder="请输入手机验证码" />
+                    <a href="javascript:void(0)" onclick="sendMessage()" id="getCode" class="bgc_c fr btn" style="width:159px;">发送手机验证码</a>
+                </span>
+            </div>
+            <div class="form_line">
+                <input type="submit" value="登&nbsp;&nbsp;录" class="sub_btn bgc_black c_wite fl btn" />
+                <input type="reset" value="重&nbsp;&nbsp;置" onclick="this.FormObj.reset()" class="bgc_c fr btn" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+<script src="~/js/jquery-1.9.1.min.js"></script>
+<script src="~/js/Validate/jquery.form.min.js"></script>
+<script src="~/js/Validate/jquery.ruiValidate.js"></script>
+<script>
+    $(loadTopWindow());
+    function loadTopWindow() {
+        if (window.top != null && window.top.document.URL != document.URL) {
+            window.top.location = document.URL;
+        }
+    }
+    $(function () {
+        //首次加载
+        RefressImgCode();
+
+        //单击验证码事件
+        //单击“换一张”事件
+        $("#valiCode,#followvaliCode").bind("click", function () {
+            RefressImgCode();
+        });
+
+        //表单验证
+        if ($(".form-horizontal").size() > 0) {
+            var _FormValidate = new $.rui_validate();
+            _FormValidate.initload();
+            _FormValidate.initForm({
+                //ShowTip: "Highlights",
+                FormObj: $("#login_form"),
+                FormIdName: 'login_form',
+                SubBtn: 'btn-success',
+                CallBack: ""
+            });
+        }
+    });
+
+    $(function () {
+        //设定界面布局
+        setLayout();
+
+        //绑定窗口改变事件
+        $(window).resize(function () {
+            setLayout();
+        });
+
+        //设定界面布局
+        function setLayout() {
+            var _theHeight = $(window).height();
+            if (_theHeight * 0.6 >= 345) {
+                $(".Login_Page").css({
+                    "overflow": "hidden"
+                })
+            } else {
+                $(".Login_Page").css({
+                    "overflow-x": "hidden",
+                    "overflow-y": "auto"
+                })
+            }
+        }
+    });
+
+    var InterValObj; //timer变量，控制时间
+    var count = 60; //间隔函数，1秒执行
+    var curCount;//当前剩余秒数
+    function sendMessage() {
+        //获取输入的用户名
+        var username = $("#username").val();
+        if (username == undefined || username == "") {
+            alert("请输入用户名");
+            RefressImgCode();
+            return false;
+        }
+        //获取输入的图形验证码
+        var imageCode = $("#inputcode").val();
+        if (imageCode == undefined || imageCode == "") {
+            alert("请输入图形验证码");
+            RefressImgCode();
+            return false;
+        }
+        curCount = count;
+        if (username != undefined && username != "") {
+            //向后台发送处理数据
+            $.post("/Login/GetPhoneCode/", { "userName": username, "imgCode": imageCode }, function (ret) {
+                if (ret.result == 1) {
+                    //设置效果，开始计时
+                    $("#getCode").removeAttr('onclick');
+                    $("#getCode").text("发送中(" + curCount + ")");
+                    InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+                }
+                alert(ret.message);
+            })
+        }
+        else {
+            alert("请输入用户名");
+        }
+    }
+    //刷新图形验证码
+    function RefressImgCode() {
+        $("#valiCode").attr("src", "/Login/GetValidateCode?time=" + (new Date()).getTime());
+    }
+
+    //timer处理函数
+    function SetRemainTime() {
+        if (curCount == 0) {
+            $("#getCode").text("获取验证码");
+            $("#getCode").attr('onclick', 'sendMessage()');
+            window.clearInterval(InterValObj);//停止计时器
+            $("#getCode").removeAttr("disabled");//启用按钮
+        }
+        else {
+            curCount--;
+            $("#getCode").text("发送中(" + curCount + ")");
+        }
+    }
+</script>

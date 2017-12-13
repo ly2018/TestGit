@@ -1,0 +1,160 @@
+﻿@{
+    ViewBag.Title = "CustomerUser管理";
+}
+<div id="content-header">
+    <div id="breadcrumb">
+        <a href="/" title="首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+        <a href="/CustomerUser/Index" title="@ViewBag.Title" class="tip-bottom"><i class="icon-home"></i>@ViewBag.Title</a>
+        <a href="/CustomerUser/Create" class="tip-bottom">新增</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-content nopadding">
+                    <form class="form-horizontal" id="form-horizontal" url="/CustomerUser/Create" action="" method="post">
+                        <div class="control-group">
+                        </div>
+						<div class="control-group">
+<label class="control-label">认证状态枚举：</label>
+<div class="controls">
+<input type="text"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="AuthenticationVerify" class="span7" placeholder="" isNot="true" verify="isAll" msg="认证状态枚举不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">身份证正面：</label>
+<div class="controls">
+<span class="fl pdr15"><input type="text" id="txt_ImageUrl_CardFrontPhoto" name="CardFrontPhoto" class="input normal" isNot="false" readonly="readonly"/></span>
+<a href="javascript:void(0)" onclick="$('#uploadphoto').click();" class="btn bgc_c">上传图片</a>
+<span class="ts_msg c_6"></span>
+<img id="orgimg" src="/images/spinner.gif" style="display:none;" />
+<input type="file" id="uploadphoto" style="position:absolute;top:-999em;left:-999em;" onchange="G.ImgUpload('photo', 'txt_ImageUrl_CardFrontPhoto',2,false)" accept="image/*" capture="camera" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">身份证手持：</label>
+<div class="controls">
+<span class="fl pdr15"><input type="text" id="txt_ImageUrl_CardHandHeldPhoto" name="CardHandHeldPhoto" class="input normal" isNot="false" readonly="readonly"/></span>
+<a href="javascript:void(0)" onclick="$('#uploadphoto').click();" class="btn bgc_c">上传图片</a>
+<span class="ts_msg c_6"></span>
+<img id="orgimg" src="/images/spinner.gif" style="display:none;" />
+<input type="file" id="uploadphoto" style="position:absolute;top:-999em;left:-999em;" onchange="G.ImgUpload('photo', 'txt_ImageUrl_CardHandHeldPhoto',2,false)" accept="image/*" capture="camera" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">身份证反面：</label>
+<div class="controls">
+<span class="fl pdr15"><input type="text" id="txt_ImageUrl_CardNegativePhoto" name="CardNegativePhoto" class="input normal" isNot="false" readonly="readonly"/></span>
+<a href="javascript:void(0)" onclick="$('#uploadphoto').click();" class="btn bgc_c">上传图片</a>
+<span class="ts_msg c_6"></span>
+<img id="orgimg" src="/images/spinner.gif" style="display:none;" />
+<input type="file" id="uploadphoto" style="position:absolute;top:-999em;left:-999em;" onchange="G.ImgUpload('photo', 'txt_ImageUrl_CardNegativePhoto',2,false)" accept="image/*" capture="camera" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">邮箱：</label>
+<div class="controls">
+<input type="text" name="Email" class="span7" placeholder="" isNot="true" verify="isAll" msg="邮箱不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">身份证号：</label>
+<div class="controls">
+<input type="text" name="IDCard" class="span7" placeholder="" isNot="true" verify="isAll" msg="身份证号不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">手机号：</label>
+<div class="controls">
+<input type="text" name="Mobile" class="span7" placeholder="" isNot="true" verify="isAll" msg="手机号不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">昵称：</label>
+<div class="controls">
+<input type="text" name="NickName" class="span7" placeholder="" isNot="true" verify="isAll" msg="昵称不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">登录密码：</label>
+<div class="controls">
+<input type="text" name="PassWord" class="span7" placeholder="" isNot="true" verify="isAll" msg="登录密码不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">姓名：</label>
+<div class="controls">
+<input type="text" name="RealName" class="span7" placeholder="" isNot="true" verify="isAll" msg="姓名不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">推荐人：</label>
+<div class="controls">
+<input type="text" name="RecommendID" class="span7" placeholder="" isNot="true" verify="isAll" msg="推荐人不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">用户状态：</label>
+<div class="controls">
+<input type="text"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="Status" class="span7" placeholder="" isNot="true" verify="isAll" msg="用户状态不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">资金密码：</label>
+<div class="controls">
+<input type="text" name="TPassWord" class="span7" placeholder="" isNot="true" verify="isAll" msg="资金密码不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">交易账户：</label>
+<div class="controls">
+<input type="text"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="TradeAccount" class="span7" placeholder="" isNot="true" verify="isAll" msg="交易账户不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">会员类型：</label>
+<div class="controls">
+<input type="text"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="Type" class="span7" placeholder="" isNot="true" verify="isAll" msg="会员类型不能为空！" />
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">认证审核结果：</label>
+<div class="controls">
+<input type="text"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="VerifyResult" class="span7" placeholder="" isNot="true" verify="isAll" msg="认证审核结果不能为空！" />
+</div>
+</div>
+
+                        <div class="form-actions">
+                            <label class="control-label">&nbsp;&nbsp;</label><button type="submit" class="btn btn-success">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-primary goLastPage">返回上一页</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--表单验证-->
+<script src="~/js/Validate/jquery.form.min.js"></script>
+<script src="~/js/Validate/jquery.ruiValidate.js"></script>
+<script src="~/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript">
+    //实例化编辑器
+    //descriptionEditor.setSource(document.getElementById("XHEditor_Hidden_Text").value);
+    $(function () {
+
+        //表单验证
+        if ($(".form-horizontal").size() > 0) {
+            var _FormValidate = new $.rui_validate();
+            _FormValidate.initload();
+            _FormValidate.initForm({
+                FormObj: $(".form-horizontal").eq(0),
+                FormIdName: 'form-horizontal',
+                //ShowTip: "Highlights",
+                SubBtn: 'btn btn-success',   //提交按钮的class
+                CallBack: ""
+            });
+        }
+    });
+</script>

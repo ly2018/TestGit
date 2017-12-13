@@ -1,0 +1,94 @@
+﻿@model Vic.Core.Application.Dtos.ShortMsgConfigDto
+@{
+    ViewBag.Title = "短信配置管理";
+}
+<div id="content-header">
+    <div id="breadcrumb">
+        <a href="/" title="首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+        <a href="/ShortMsgConfig/Index" class="tip-bottom" title="@ViewBag.Title"><i class="icon-home"></i>@ViewBag.Title</a>
+        <a href="#" class="tip-bottom">编辑</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-content nopadding">
+                    <form class="form-horizontal" id="form-horizontal" url="/ShortMsgConfig/Edit" action="" method="post">
+                        <div class="control-group">
+                            <input type="hidden" name="ID" value="@Model.ID" />
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">登录账号：</label>
+                            <div class="controls">
+                                <input type="text" name="AccountName" value="@Model.AccountName" class="span7" placeholder="" isNot="true" verify="isAll" msg="登录账号不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">登录密码：</label>
+                            <div class="controls">
+                                <input type="text" name="AccountPwd" value="@Model.AccountPwd" class="span7" placeholder="" isNot="true" verify="isAll" msg="登录密码不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">APIKey：</label>
+                            <div class="controls">
+                                <input type="text" name="ApiKey" value="@Model.ApiKey" class="span7" placeholder="" isNot="true" verify="isAll" msg="APIKey不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">ApiSecret：</label>
+                            <div class="controls">
+                                <input type="text" name="ApiSecret" value="@Model.ApiSecret" class="span7" placeholder="" isNot="true" verify="isAll" msg="ApiSecret不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">链接地址：</label>
+                            <div class="controls">
+                                <input type="text" name="ApiUrl" value="@Model.ApiUrl" class="span7" placeholder="" isNot="true" verify="isAll" msg="链接地址不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">调用枚举值：</label>
+                            <div class="controls">
+                                <input type="text" name="CallEnumKey" value="@Model.CallEnumKey" class="span7" placeholder="" isNot="true" verify="isAll" msg="调用枚举值不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">是否默认：</label>
+                            <div class="controls">
+                                <span class="fl pdr15"><label><i class="radio_btn"><input type="radio" name="IsDefault" @(Model.IsDefault ? "checked" : "") value="true" /></i>是</label></span>
+                                <span class="fl pdr15"><label><i class="radio_btn"><input type="radio" name="IsDefault" @(!Model.IsDefault ? "checked" : "") value="false" /></i>否</label></span>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <label class="control-label">&nbsp;&nbsp;</label><button type="submit" class="btn btn-success">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-primary goLastPage">返回上一页</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/Validate/jquery.form.min.js"></script>
+<script src="~/js/Validate/jquery.ruiValidate.js"></script>
+<script src="~/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        //表单验证
+        if ($(".form-horizontal").size() > 0) {
+            var _FormValidate = new $.rui_validate();
+            _FormValidate.initload();
+            _FormValidate.initForm({
+                FormObj: $(".form-horizontal").eq(0),
+                FormIdName: 'form-horizontal',
+                //ShowTip: "Highlights",
+                SubBtn: 'btn btn-success',   //提交按钮的class
+                CallBack: ""
+            });
+        }
+    });
+</script>

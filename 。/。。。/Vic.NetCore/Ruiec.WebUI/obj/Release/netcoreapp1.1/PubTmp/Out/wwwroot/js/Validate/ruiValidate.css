@@ -1,0 +1,32 @@
+/* CSS Document */
+/*
+	开发公司：深圳源中瑞科技有限公司
+	服务范围：营销型网站建设、网上商城建设、高端网站建设、网站系统开发
+	网   址：www.ruiec.cn 
+	电   话：0755-33581131 
+*/ 
+/****************************************************************
+ *		Created: 2014-03-13
+ *		Name: ruiValidate.css (表单验证基础样式)
+ *		Author: ruiec lrx
+ ****************************************************************/
+ 
+/** 表单验证基础样式**/
+.page_container{ width:80%; height:auto; margin:100px auto; overflow:hidden; padding:50px; border:1px solid #ddd;  }
+.ruivalidate_form_class{ width:100%; height:auto; overflow:hidden; }
+.ruivalidate_form_class .form_line{ width:100%; height:auto; overflow:hidden; padding:10px 0px; }
+.ruivalidate_form_class .lable_name{ float:left; height:auto; min-height:30px; line-height:30px; width:30%; text-align:right; }
+.ruivalidate_form_class .lable_input{ float:left; height:auto; min-height:30px;  width:65%; padding-left:10px; text-align:left; }
+.ruivalidate_form_class .lable_input .ts_msg { line-height:30px; color:#666; text-align:left; padding-left:15px; }
+.ruivalidate_form_class .lable_input .middle_input{ border:1px solid #ddd; padding:5px 5px; height:16px; line-height:16px; width:250px; float:left;  }
+ 
+.ruivalidate_form_class .lable_input .sub_btn{ display:block; width:auto; padding:0px 10px; cursor:pointer; height:30px; overflow:hidden; }
+ 
+ 
+.ruivalidate_form_class .lable_input .ts_msg.error_tips{ padding-left:25px; background:url(../R/images/error.png) no-repeat 5px; color:#DE6045; }
+.ruivalidate_form_class .lable_input .IconTextInfo i{ width:auto; float:left; }
+.ruivalidate_form_class .lable_input .IconTextInfo .msg{ float:left; }
+ 
+/** 表单验证基础样式 **/
+ 
+

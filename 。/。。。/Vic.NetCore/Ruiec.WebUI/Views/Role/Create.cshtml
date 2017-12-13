@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "角色管理";
+}
+<div id="content-header">
+    <div id="breadcrumb">
+        <a href="/" title="首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+        <a href="/Role/Index" title="@ViewBag.Title" class="tip-bottom"><i class="icon-home"></i>@ViewBag.Title</a>
+        <a href="/Role/Create" class="tip-bottom">新增</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-content nopadding">
+                    <form class="form-horizontal createrole" id="createrole" onsubmit="return false;">
+                        <div class="control-group">
+                            <label class="control-label">编号：</label>
+                            <div class="controls">
+                                <input type="text" name="Code" class="span7" placeholder="" isNot="true" verify="isAll" msg="编号不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">角色名称：</label>
+                            <div class="controls">
+                                <input type="text" name="Name" class="span7" placeholder="" isNot="true" verify="isAll" msg="角色名称不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">备注：</label>
+                            <div class="controls">
+                                <input type="text" name="Remarks" class="span7" placeholder="" isNot="true" verify="isAll" msg="备注不能为空！" />
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <label class="control-label">&nbsp;&nbsp;</label><button type="submit" class="btn btn-success">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-primary goLastPage">返回上一页</a>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">管理权限：</label>
+                            <div class="controls">
+                                <table cellpadding="0" style="" class="table border-table table-bordered table-striped with-check" url="/Role/GetMenusByRoleID?roleId=" id="Quanxian_Tree" cellspacing="0" border="0" width="100%">
+                                    <colgroup>
+                                        <col width="5%" />
+                                        <col width="30%" />
+                                        <col width="10%" />
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <td>导航名称</td>
+                                            <td>权限分配</td>
+                                            <td style="text-align:center;">全选</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <label class="control-label">&nbsp;&nbsp;</label><button type="submit" class="btn btn-success">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-primary goLastPage">返回上一页</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--表单验证-->
+<script src="~/js/Validate/jquery.form.min.js"></script>
+<script src="~/js/Validate/jquery.ruiValidate.js"></script>
+<script src="~/js/jquery.datetimepicker.js"></script>
+<script src="~/js/basic.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //表单验证
+        if ($(".createrole").size() > 0) {
+            //提交form表单
+            function AjaxSub_EditorRol() {
+                var _Remarks = $(".createrole input[name='Remarks']").val();
+                var _Name = $(".createrole input[name='Name']").val();
+                var _Code = $(".createrole input[name='Code']").val();
+                var _Role_QxString = "";
+
+                $(".createrole .quanxian_checkbox").each(function () {
+                    if ($(this).is(":checked")) {
+                        var thevalue = $(this).val();
+                        _Role_QxString += thevalue + ",";
+                    }
+                });
+
+                if (_Role_QxString != "") _Role_QxString = _Role_QxString.substr(0, _Role_QxString.length - 1);
+
+                $.ajax({
+                    type: "post",
+                    url: "/Role/Create",
+                    data: {
+                        Remarks: _Remarks,
+                        Name: _Name,
+                        RoleValue: _Role_QxString,
+                        Code: _Code
+                    },
+                    success: function (data) {
+                        if (data) {
+                            if (data.result == "1") {
+                                if (data.message != null && data.message != "") {
+                                    alert(data.message);
+                                }
+                                if (data.url != undefined && data.url != "") {
+                                    window.location.href = data.url;
+                                }
+                                //obj.removeAttr("disabled");
+                                //obj.val("修改提交");
+                                return false;
+                            }
+                            else {
+                                if (data.message != null && data.message != "") {
+                                    alert(data.message);
+                                }
+                                //obj.removeAttr("disabled");
+                                //obj.val("再次提交");
+                                return false;
+                            }
+                        }
+                    }
+                });
+
+            }
+
+            var _FormValidate = new $.rui_validate();
+            _FormValidate.initload();
+            _FormValidate.initForm({
+                FormObj: $("#createrole"),
+                FormIdName: 'createrole',
+                SubBtn: "btn-success",
+                CallBack: AjaxSub_EditorRol
+            });
+        }
+    })
+</script> 

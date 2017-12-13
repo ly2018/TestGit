@@ -1,0 +1,173 @@
+﻿@model Vic.Core.Application.Dtos.UserMenuDto
+@{
+    ViewBag.Title = "前台菜单管理";
+}
+<div id="content-header">
+    <div id="breadcrumb">
+        <a href="/" title="首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+        <a href="/UserMenu/Index" class="tip-bottom" title="@ViewBag.Title"><i class="icon-home"></i>@ViewBag.Title</a>
+        <a href="#" class="tip-bottom">编辑</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-content nopadding">
+                    <form class="form-horizontal" id="form-horizontal" url="/UserMenu/Edit" action="" method="post">
+                        <div class="control-group">
+                            <input type="hidden" name="ID" value="@Model.ID" />
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">编号：</label>
+                            <div class="controls">
+                                <input type="text" name="Code" value="@Model.Code" class="span7" placeholder="" isNot="true" verify="isAll" msg="编号不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">图标：</label>
+                            <div class="controls">
+                                <span class="fl pdr15"><input type="text" id="txt_ImageUrl_Icon" value="@Model.Icon" name="Icon" class="input normal" isNot="false" readonly="readonly" /></span>
+                                <a href="javascript:void(0)" onclick="$('#uploadphoto').click();" class="btn bgc_c">上传图片</a>
+                                <span class="ts_msg c_6"></span>
+                                <img id="orgimg" src="/images/spinner.gif" style="display:none;" />
+                                <input type="file" id="uploadphoto" style="position:absolute;top:-999em;left:-999em;" onchange="G.ImgUpload('photo', 'txt_ImageUrl_Icon',1,false)" accept="image/*" capture="camera" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">语言类型：</label>
+                            <div class="controls">
+                                <select name="LanguageTypeID" id="LanguageTypeID" value="@Model.LanguageTypeID" class="span7">
+                                    @if (ViewBag.LangList != null)
+                                    {
+                                        foreach (var item in ViewBag.LangList as List<Vic.Core.Application.Dtos.LanguageTypeDto>)
+                                        {
+                                            @if (Model.LanguageTypeID == item.ID)
+                                            {
+                                                <option selected value="@item.ID">@(string.Format("{0}/{1}", item.Code, item.Title))</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@item.ID">@(string.Format("{0}/{1}", item.Code, item.Title))</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">名称：</label>
+                            <div class="controls">
+                                <input type="text" name="Name" value="@Model.Name" class="span7" placeholder="" isNot="true" verify="isAll" msg="名称不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">父级编号：</label>
+                            <div class="controls">
+                                <select name="ParentId" id="ParentId" class="span7">
+                                    <option value="00000000-0000-0000-0000-000000000000">请选择</option>
+                                    @if (ViewBag.ParentList != null)
+                                    {
+                                        foreach (var item in ViewBag.ParentList as List<Vic.Core.Application.Dtos.UserMenuDto>)
+                                        {
+                                            if (item.ID == Model.ParentId)
+                                            {
+                                                <option selected value="@item.ID">@(item.Name)</option> }
+                                            else
+                                            {
+                                                <option value="@item.ID">@(item.Name)</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">备注：</label>
+                            <div class="controls">
+                                <input type="text" name="Remarks" value="@Model.Remarks" class="span7" placeholder="" isNot="true" verify="isAll" msg="备注不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">序号：</label>
+                            <div class="controls">
+                                <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="SerialNumber" value="@Model.SerialNumber" class="span7" placeholder="" isNot="true" verify="isAll" msg="序号不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">菜单类型：</label>
+                            <div class="controls">
+                                <select id="Type" name="Type">
+                                    @if (Model.Type == 1)
+                                    {
+                                        <option selected value="1">父级菜单</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="1">父级菜单</option>
+
+                                    }@if (Model.Type == 2)
+                                    {
+                                        <option selected value="2">子级菜单</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="2">子级菜单</option>
+
+                                    }@if (Model.Type == 3)
+                                    {
+                                        <option selected value="3">子级按钮</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="3">子级按钮</option>
+
+                                    }@if (Model.Type == 4)
+                                    {
+                                        <option selected value="4">跳转按钮</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="4">跳转按钮</option>
+
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">链接地址：</label>
+                            <div class="controls">
+                                <input type="text" name="Url" value="@Model.Url" class="span7" placeholder="" isNot="true" verify="isAll" msg="链接地址不能为空！" />
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <label class="control-label">&nbsp;&nbsp;</label><button type="submit" class="btn btn-success">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-primary goLastPage">返回上一页</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/Validate/jquery.form.min.js"></script>
+<script src="~/js/Validate/jquery.ruiValidate.js"></script>
+<script src="~/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        //表单验证
+        if ($(".form-horizontal").size() > 0) {
+            var _FormValidate = new $.rui_validate();
+            _FormValidate.initload();
+            _FormValidate.initForm({
+                FormObj: $(".form-horizontal").eq(0),
+                FormIdName: 'form-horizontal',
+                //ShowTip: "Highlights",
+                SubBtn: 'btn btn-success',   //提交按钮的class
+                CallBack: ""
+            });
+        }
+    });
+</script>

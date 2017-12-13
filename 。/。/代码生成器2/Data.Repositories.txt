@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using $NameSpace$.Domain.Entities;
+using $NameSpace$.Domain.IRepositories;
+
+namespace $NameSpace$.Data.Repositories
+{
+    public class $ClassName$Repository : RepositoryBase<$ClassName$>, I$ClassName$Repository
+    {
+        public $ClassName$Repository(TradeDbContext dbcontext) : base(dbcontext)
+        {
+
+        }
+    }
+}
+

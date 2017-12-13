@@ -1,0 +1,112 @@
+﻿@model Vic.Core.Application.Dtos.MailConfigDto
+@{
+    ViewBag.Title = "邮件配置管理";
+}
+<div id="content-header">
+    <div id="breadcrumb">
+        <a href="/" title="首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+        <a href="/MailConfig/Index" class="tip-bottom" title="@ViewBag.Title"><i class="icon-home"></i>@ViewBag.Title</a>
+        <a href="#" class="tip-bottom">编辑</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-content nopadding">
+                    <form class="form-horizontal" id="form-horizontal" url="/MailConfig/Edit" action="" method="post">
+                        <div class="control-group">
+                            <input type="hidden" name="ID" value="@Model.ID" />
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">登录账号：</label>
+                            <div class="controls">
+                                <input type="text" name="AccountName" value="@Model.AccountName" class="span7" placeholder="" isNot="true" verify="isAll" msg="登录账号不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">登录密码：</label>
+                            <div class="controls">
+                                <input type="password" name="AccountPwd" value="@Model.AccountPwd" class="span7" placeholder="" isNot="true" verify="isAll" msg="登录密码不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">调用枚举：</label>
+                            <div class="controls">
+                                <input type="text" name="CallEnumKey" value="@Model.CallEnumKey" class="span7" placeholder="" isNot="true" verify="isAll" msg="调用枚举不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">内容：</label>
+                            <div class="controls">
+                                <input type="text" name="Content" value="@Model.Content" class="span7" placeholder="" isNot="true" verify="isAll" msg="内容不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">是否默认：</label>
+                            <div class="controls">
+                                <span class="fl pdr15"><label><i class="radio_btn"><input type="radio" name="IsDefault" @(Model.IsDefault ? "checked" : "") value="true" /></i>是</label></span>
+                                <span class="fl pdr15"><label><i class="radio_btn"><input type="radio" name="IsDefault" @(!Model.IsDefault ? "checked" : "") value="false" /></i>否</label></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">发件箱：</label>
+                            <div class="controls">
+                                <input type="text" name="MailFrom" value="@Model.MailFrom" class="span7" placeholder="" isNot="true" verify="isAll" msg="发件箱不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">收件箱：</label>
+                            <div class="controls">
+                                <input type="text" name="MailTo" value="@Model.MailTo" class="span7" placeholder="" isNot="true" verify="isAll" msg="收件箱不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">昵称：</label>
+                            <div class="controls">
+                                <input type="text" name="NickName" value="@Model.NickName" class="span7" placeholder="" isNot="true" verify="isAll" msg="昵称不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">端口：</label>
+                            <div class="controls">
+                                <input type="text" name="Port" value="@Model.Port" class="span7" placeholder="" isNot="true" verify="isAll" msg="端口不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Stmp服务器：</label>
+                            <div class="controls">
+                                <input type="text" name="Stmp" value="@Model.Stmp" class="span7" placeholder="" isNot="true" verify="isAll" msg="Stmp服务器不能为空！" />
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <label class="control-label">&nbsp;&nbsp;</label><button type="submit" class="btn btn-success">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-primary goLastPage">返回上一页</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/Validate/jquery.form.min.js"></script>
+<script src="~/js/Validate/jquery.ruiValidate.js"></script>
+<script src="~/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        //表单验证
+        if ($(".form-horizontal").size() > 0) {
+            var _FormValidate = new $.rui_validate();
+            _FormValidate.initload();
+            _FormValidate.initForm({
+                FormObj: $(".form-horizontal").eq(0),
+                FormIdName: 'form-horizontal',
+                //ShowTip: "Highlights",
+                SubBtn: 'btn btn-success',   //提交按钮的class
+                CallBack: ""
+            });
+        }
+    });
+</script>

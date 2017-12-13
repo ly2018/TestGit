@@ -1,0 +1,7 @@
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\bin\Debug\netcoreapp1.1\Vic.Core.Domain.deps.json
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\bin\Debug\netcoreapp1.1\Vic.Core.Domain.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\bin\Debug\netcoreapp1.1\Vic.Core.Domain.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\obj\Debug\netcoreapp1.1\Vic.Core.Domain.AssemblyInfo.cs
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\obj\Debug\netcoreapp1.1\Vic.Core.Domain.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\obj\Debug\netcoreapp1.1\Vic.Core.Domain.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\obj\Debug\netcoreapp1.1\Vic.Core.Domain.csprojResolveAssemblyReference.cache

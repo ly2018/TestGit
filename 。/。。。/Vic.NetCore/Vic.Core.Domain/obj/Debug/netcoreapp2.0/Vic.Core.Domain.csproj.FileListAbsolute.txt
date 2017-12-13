@@ -1,0 +1,9 @@
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\bin\Debug\netcoreapp2.0\Vic.Core.Domain.deps.json
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\bin\Debug\netcoreapp2.0\Vic.Core.Domain.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\bin\Debug\netcoreapp2.0\Vic.Core.Domain.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\obj\Debug\netcoreapp2.0\Vic.Core.Domain.csproj.CoreCompileInputs.cache
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\obj\Debug\netcoreapp2.0\Vic.Core.Domain.AssemblyInfoInputs.cache
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\obj\Debug\netcoreapp2.0\Vic.Core.Domain.AssemblyInfo.cs
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\obj\Debug\netcoreapp2.0\Vic.Core.Domain.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\obj\Debug\netcoreapp2.0\Vic.Core.Domain.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\obj\Debug\netcoreapp2.0\Vic.Core.Domain.csprojResolveAssemblyReference.cache

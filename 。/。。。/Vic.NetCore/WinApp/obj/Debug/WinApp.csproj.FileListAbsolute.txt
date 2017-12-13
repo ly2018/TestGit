@@ -1,0 +1,8 @@
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\WinApp\bin\Debug\WinApp.exe.config
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\WinApp\bin\Debug\WinApp.exe
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\WinApp\bin\Debug\WinApp.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\WinApp\obj\Debug\WinApp.Properties.Resources.resources
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\WinApp\obj\Debug\WinApp.csproj.GenerateResource.Cache
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\WinApp\obj\Debug\WinApp.csproj.CoreCompileInputs.cache
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\WinApp\obj\Debug\WinApp.exe
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\WinApp\obj\Debug\WinApp.pdb

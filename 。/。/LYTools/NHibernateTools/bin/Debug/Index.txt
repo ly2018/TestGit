@@ -1,0 +1,95 @@
+@using PerpetuumSoft.Knockout
+@model $NameSpaceStr$
+@{
+    var ko = Html.CreateKnockoutContext();
+    ViewBag.Title = "$ClassName$";
+}
+<link rel="stylesheet" href="~/Themes/BootStrap/css/uniform.css" />
+<link rel="stylesheet" href="~/Themes/BootStrap/css/select2.css" />
+<div id="content-header">
+    <div id="breadcrumb">
+        <a href="/" title="首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+        <a href="#" class="current">$ClassName$</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <h5>
+                        $ClassName$&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-mini btn-success" onclick="G.RedirectToUrl('$Url$Create');">新增</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="submit" class="btn btn-mini btn-danger commonDelete" url="$Url$Delete">批量删除</button>
+
+                    </h5>
+                </div>
+                <div class="chat-message well">
+                    <span class="input-box">
+                        关键字查询：<input type="text" style="width:40%;margin-left:10px;" id="msg-box" name="key" data-bind="value:Key" placeholder="请输入名称、单号等关键字进行模糊查询" value="" />
+                        &nbsp;&nbsp;开始时间：<input type="text" style="width:10%;margin-left:10px;" id="msg-box1" name="BeginTime" value="" data-bind="value:BeginTime()!=null?BeginTime().substring(0,10):''">
+                        &nbsp;&nbsp;结束时间：<input type="text" style="width:10%;margin-left:10px;" id="msg-box2" name="EndTime" value="" data-bind="value:EndTime()!=null?EndTime().substring(0,10):''">
+                        <input type="submit" class="btn btn-success" style="margin-left:20px;"  onclick="G.QueryList('$Url$Index')"  value="查询">
+                    </span>
+                </div>
+                <div class="widget-content ">
+                    <table class="table table-bordered table-striped with-check">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" id="title-table-checkbox" name="title-table-checkbox" />
+                                </th>
+                                $HeadHtml$
+                                <th>
+                                    操作
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: $ClassName$List">
+                            <tr>
+                                <td>
+                                    <input type="checkbox" id="" data-bind="attr:{id: $data.ID}" />
+                                </td>
+                                $BodyHtml$
+                                <td>
+                                    <div style="text-align:center">
+                                        <button class="btn btn-primary btn-mini singleEdit" url="$Url$Edit">编辑</button>&nbsp;&nbsp;
+                                        <button class="btn btn-danger btn-mini singleDelete" url="$Url$Delete">删除</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pages" data-bind="html: PagerHTML">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@ko.Apply(Model)
+<script type="text/javascript" src="~/Themes/BootStrap/js/jquery.uniform.js"></script>
+<script type="text/javascript" src="~/Themes/BootStrap/js/select2.min.js"></script>
+<script type="text/javascript" src="~/Themes/BootStrap/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="~/Themes/BootStrap/js/matrix.tables.js"></script>
+<script type="text/javascript" src="~/Themes/BootStrap/js/jquery.ui.custom.js"></script>
+<script type="text/javascript" src="/Themes/Scripts/DateTimePicker/jquery.datetimepicker.js"></script>
+
+<script type="text/javascript">
+    $('#msg-box1').datetimepicker({
+        onGenerate: function (ct) {
+            $(this).find('.xdsoft_date.xdsoft_weekend')
+
+        },
+        weekends: ['01.01.2014', '02.01.2014', '03.01.2014', '04.01.2014', '05.01.2014', '06.01.2014'],
+        timepicker: false
+    });
+    $('#msg-box2').datetimepicker({
+        onGenerate: function (ct) {
+            $(this).find('.xdsoft_date.xdsoft_weekend')
+
+        },
+        weekends: ['01.01.2014', '02.01.2014', '03.01.2014', '04.01.2014', '05.01.2014', '06.01.2014'],
+        timepicker: false
+    });
+</script>

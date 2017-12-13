@@ -1,0 +1,225 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Orchard.Logging;
+using $NameSpace$.Models;
+using $NameSpace$.Contracts;
+using Orchard.Data;
+using $NameSpace$.ViewModels;
+using System.Linq.Expressions;
+
+namespace $NameSpace$.Services
+{
+    public class $ClassName$Service: I$ClassName$Contract
+    {
+         #region interface inject
+        private readonly IRepository<$ClassName$> _$ClassName$Service;
+        public ILogger Log { get; set; }
+        #endregion
+        /// <summary>
+        /// service inject
+        /// </summary>
+        /// <param name="$ClassName$Service"></param>
+        public $ClassName$Service(IRepository<$ClassName$> $ClassName$Service)
+        {
+            _$ClassName$Service = $ClassName$Service;
+            Log = NullLogger.Instance;
+        }
+        /// <summary>
+        /// create signal record
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public bool Create($ClassName$ model)
+        {
+            try
+            {
+                if (model == null) return false;
+                _$ClassName$Service.Create(model);
+                _$ClassName$Service.Flush();
+            }
+            catch (Exception ex)
+            {
+                Log.Error("$ClassName$Service Create error occured:" + ex.Message);
+                return false;
+            }
+            return true;
+        }
+        /// <summary>
+        /// delete by ids
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns></returns>
+        public bool Delete(string[] array)
+        {
+            try
+            {
+                if (array.Length <= 0) return false;
+                foreach (string id in array)
+                {
+                    var Item = this.Get(id);
+                    _$ClassName$Service.Delete(Item);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error("$ClassName$Service Delete error occured:" + ex.Message);
+                return false;
+            }
+            return true;
+        }
+        /// <summary>
+        /// edit signal model
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public bool Edit($ClassName$ model)
+        {
+            try
+            {
+                if (model == null) return false;
+                _$ClassName$Service.Update(model);
+            }
+            catch (Exception ex)
+            {
+                Log.Error("$ClassName$Service Edit error occured:" + ex.Message);
+                return false;
+            }
+            return true;
+        }
+        /// <summary>
+        /// query by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public $ClassName$ Get(string id)
+        {
+            if (string.IsNullOrEmpty(id)) return null;
+            var model = _$ClassName$Service.Get(id);
+            return model;
+        }
+        /// <summary>
+        /// query all form table
+        /// </summary>
+        /// <returns></returns>
+        public List<$ClassName$> List()
+        {
+            List<$ClassName$> list = _$ClassName$Service.Table.ToList();
+            return list;
+        }
+        /// <summary>
+        /// query list by lanbuda expression
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+		public List<$ClassName$> QueryList(Expression<Func<$ClassName$, bool>> predicate)
+        {
+            try
+            {
+                List<$ClassName$> list = _$ClassName$Service.Table.Where(predicate).ToList();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Log.Error("$ClassName$Service QueryList error occured:" + ex.Message);
+                return null;
+            }
+        }
+        /// <summary>
+        /// query pager by lanbuda expression
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="curPage"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
+		public List<$ClassName$> PageList(Expression<Func<$ClassName$, bool>> predicate, int pageSize, int curPage, out int count)
+        {
+            try
+            {
+                count = _$ClassName$Service.Count(predicate);
+                List<$ClassName$> list = _$ClassName$Service.Table.Where(predicate).Skip((curPage - 1) * pageSize).Take(pageSize).ToList();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Log.Error("$ClassName$Service PageList error occured:" + ex.Message);
+                count = 0;
+                return null;
+            }
+        }
+        /// <summary>
+        ///query signal record by lanbuda expression
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public $ClassName$ Get(Expression<Func<$ClassName$, bool>> predicate)
+        {
+            try
+            {
+                $ClassName$ model = _$ClassName$Service.Table.FirstOrDefault(predicate);
+                return model;
+            }
+            catch (Exception ex)
+            {
+                Log.Error("$ClassName$Service Get error occured:" + ex.Message);
+                return null;
+            }
+        }
+        /// <summary>
+        ///query total count by lanbuda expression
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public int Count(Expression<Func<$ClassName$, bool>> predicate)
+        {
+            try
+            {
+                int count = _$ClassName$Service.Count(predicate);
+                return count;
+            }
+            catch (Exception ex)
+            {
+                Log.Error("$ClassName$Service Get error occured:" + ex.Message);
+                return 0;
+            }
+        }
+
+		/// <summary>
+        ///query key value list by lanbuda expression
+        /// </summary>
+        public List<KeyValuePair<string, string>> QueryKeyValueList(Expression<Func<$ClassName$, bool>> predicate, Expression<Func<$ClassName$, KeyValuePair<string, string>>> selector)
+        {
+            try
+            {
+                List<KeyValuePair<string, string>> list = new List<KeyValuePair<string, string>>();
+                list = _$ClassName$Service.Table.Where(predicate).Select(selector).ToList();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Log.Error("$ClassName$Service Get error occured:" + ex.Message);
+                return null;
+            }
+        }
+
+
+        /// <summary>
+        ///query properties by lanbuda expression
+        /// </summary>
+        public IQueryable<object> QueryProperty(Expression<Func<$ClassName$, bool>> predicate, Expression<Func<$ClassName$, object>> selector)
+        {
+            try
+            {
+                var obj = _$ClassName$Service.Table.Where(predicate).Select(selector);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                Log.Error("$ClassName$Service Get error occured:" + ex.Message);
+                return null;
+            }
+        }
+    }
+}

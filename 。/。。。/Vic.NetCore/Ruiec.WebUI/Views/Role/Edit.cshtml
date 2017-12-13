@@ -1,0 +1,153 @@
+﻿@model Vic.Core.Application.Dtos.RoleDto
+@{
+    ViewBag.Title = "角色管理";
+}
+<div id="content-header">
+    <div id="breadcrumb">
+        <a href="/" title="首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+        <a href="/Role/Index" class="tip-bottom" title="@ViewBag.Title"><i class="icon-home"></i>@ViewBag.Title</a>
+        <a href="#" class="tip-bottom">编辑</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-content nopadding">
+                    <form class="form-horizontal editor_role" id="editor_role" onsubmit="return false;">
+                        <div class="control-group">
+                            <input type="hidden" name="ID" value="@Model.ID" />
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">编号：</label>
+                            <div class="controls">
+                                <input type="text" name="Code" value="@Model.Code" class="span7" placeholder="" isNot="true" verify="isAll" msg="编号不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">角色名称：</label>
+                            <div class="controls">
+                                <input type="text" name="Name" value="@Model.Name" class="span7" placeholder="" isNot="true" verify="isAll" msg="角色名称不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">备注：</label>
+                            <div class="controls">
+                                <input type="text" name="Remarks" value="@Model.Remarks" class="span7" placeholder="" isNot="true" verify="isAll" msg="备注不能为空！" />
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <label class="control-label">&nbsp;&nbsp;</label><button type="submit" class="btn btn-success">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-primary goLastPage">返回上一页</a>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">管理权限：</label>
+                            <div class="controls">
+                                <table cellpadding="0" class="border-table table border-table table-bordered table-striped with-check" url="/Role/GetMenusByRoleID?roleId=@Model.ID" id="Quanxian_Tree" cellspacing="0" border="0" width="100%">
+                                    <colgroup>
+                                        <col width="30%" />
+                                        <col />
+                                        <col width="10%" />
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <td>导航名称</td>
+                                            <td>权限分配</td>
+                                            <td style="text-align:center;">全选</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <label class="control-label">&nbsp;&nbsp;</label><button type="submit" class="btn btn-success">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-primary goLastPage">返回上一页</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/Validate/jquery.form.min.js"></script>
+<script src="~/js/Validate/jquery.ruiValidate.js"></script>
+<script src="~/js/jquery.datetimepicker.js"></script>
+<script src="~/js/basic.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".allquan").click(function () {
+            if ($(this).is(":checked")) {
+                //全部选中
+                $(".controls input[type='checkbox']").prop("checked", true);
+            } else {
+                //全部不选中
+                $(".controls input[type='checkbox']").prop("checked", false);
+            }
+        })
+        //表单验证
+        if ($(".editor_role").size() > 0) {
+            //提交form表单
+            function AjaxSub_EditorRol() {
+                var _Remarks = $(".editor_role input[name='Remarks']").val();
+                var _Name = $(".editor_role input[name='Name']").val();
+                var _Code = $(".editor_role input[name='Code']").val();
+                var _Role_QxString = "";
+
+                $(".editor_role .quanxian_checkbox").each(function () {
+                    if ($(this).is(":checked")) {
+                        var thevalue = $(this).val();
+                        _Role_QxString += thevalue + ",";
+                    }
+                });
+
+                if (_Role_QxString != "") _Role_QxString = _Role_QxString.substr(0, _Role_QxString.length - 1);
+
+                $.ajax({
+                    type: "post",
+                    url: "",
+                    data: {
+                        Remarks: _Remarks,
+                        Name: _Name,
+                        RoleValue: _Role_QxString,
+                        Code: _Code
+                    },
+                    success: function (data) {
+                        if (data) {
+                            if (data.result == "1") {
+                                if (data.message != null && data.message != "") {
+                                    alert(data.message);
+                                }
+                                if (data.url != undefined && data.url != "") {
+                                    window.location.href = data.url;
+                                }
+                                //obj.removeAttr("disabled");
+                                //obj.val("修改提交");
+                                return false;
+                            }
+                            else {
+                                if (data.message != null && data.message != "") {
+                                    alert(data.message);
+                                }
+                                //obj.removeAttr("disabled");
+                                //obj.val("再次提交");
+                                return false;
+                            }
+                        }
+                    }
+                });
+
+            }
+
+            var _FormValidate = new $.rui_validate();
+            _FormValidate.initload();
+            _FormValidate.initForm({
+                FormObj: $(".editor_role"),
+                FormIdName: 'editor_role',
+                SubBtn: "btn-success",
+                CallBack: AjaxSub_EditorRol
+            });
+        }
+    })
+</script> 

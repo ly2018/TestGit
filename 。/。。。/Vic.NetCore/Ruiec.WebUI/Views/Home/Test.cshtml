@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<div>
+    <p>@Localizer["Hello world!"]</p>
+
+    <p>@Localizer.Plural(1, "There is one item.", "There are {0} items.")</p>
+    <p>@Localizer.Plural(2, "There is one item.", "There are {0} items.")</p>
+    <p>@Localizer.Plural(5, "There is one item.", "There are {0} items.")</p>
+    <p>@Html.Raw(ViewBag.Text)</p>
+    <p>@Html.Raw(ViewBag.Te)</p>
+    <p><input type="button" class="btn" data="zh-CN" value="切换语言zh-CN" /></p>
+    <p><input type="button" class="btn" data="en" value="切换语言en" /></p>
+</div>
+<script src="~/js/jquery-1.9.1.min.js"></script>
+<script>
+    $(function () {
+        $('.btn').click(function () {
+            var lang = $(this).attr('data');
+            $.post("/Home/SetLanguage", "culture=" + lang + "&returnUrl=/Home/test", function (data) {
+                window.location.reload();
+            });
+        });
+    });
+</script>

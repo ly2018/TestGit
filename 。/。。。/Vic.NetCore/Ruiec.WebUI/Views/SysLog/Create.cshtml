@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "系统日志管理";
+}
+<div id="content-header">
+    <div id="breadcrumb">
+        <a href="/" title="首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+        <a href="/SysLog/Index" title="@ViewBag.Title" class="tip-bottom"><i class="icon-home"></i>@ViewBag.Title</a>
+        <a href="/SysLog/Create" class="tip-bottom">新增</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-content nopadding">
+                    <form class="form-horizontal" id="form-horizontal" url="/SysLog/Create" action="" method="post">
+                        <div class="control-group">
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">内容：</label>
+                            <div class="controls">
+                                <input type="text" name="Content" class="span7" placeholder="" isNot="true" verify="isAll" msg="内容不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">IP：</label>
+                            <div class="controls">
+                                <input type="text" name="IP" class="span7" placeholder="" isNot="true" verify="isAll" msg="IP不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">是否管理员：</label>
+                            <div class="controls">
+                                <span class="fl pdr15"><label><i class="radio_btn"><input type="radio" name="IsAdmin" checked value="true" /></i>是</label></span>
+                                <span class="fl pdr15"><label><i class="radio_btn"><input type="radio" name="IsAdmin"  value="false" /></i>否</label></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">日志类型枚举：</label>
+                            <div class="controls">
+                                <input type="text" name="LogType" class="span7" placeholder="" isNot="true" verify="isAll" msg="日志类型枚举不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">数量：</label>
+                            <div class="controls">
+                                <input type="text" onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')" name="Num" class="span7" placeholder="" isNot="true" verify="isAll" msg="数量不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">安全级别：</label>
+                            <div class="controls">
+                                <input type="text" name="SecurityLevel" class="span7" placeholder="" isNot="true" verify="isAll" msg="安全级别不能为空！" />
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <label class="control-label">&nbsp;&nbsp;</label><button type="submit" class="btn btn-success">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-primary goLastPage">返回上一页</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--表单验证-->
+<script src="~/js/Validate/jquery.form.min.js"></script>
+<script src="~/js/Validate/jquery.ruiValidate.js"></script>
+<script src="~/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript">
+    //实例化编辑器
+    //descriptionEditor.setSource(document.getElementById("XHEditor_Hidden_Text").value);
+    $(function () {
+
+        //表单验证
+        if ($(".form-horizontal").size() > 0) {
+            var _FormValidate = new $.rui_validate();
+            _FormValidate.initload();
+            _FormValidate.initForm({
+                FormObj: $(".form-horizontal").eq(0),
+                FormIdName: 'form-horizontal',
+                //ShowTip: "Highlights",
+                SubBtn: 'btn btn-success',   //提交按钮的class
+                CallBack: ""
+            });
+        }
+    });
+</script>

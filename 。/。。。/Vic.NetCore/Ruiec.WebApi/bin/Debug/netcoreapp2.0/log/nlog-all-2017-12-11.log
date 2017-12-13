@@ -1,0 +1,185 @@
+2017-12-11 13:37:55.9182|Vic.Core.Utils.WebApi.ApiLogMiddleware|ERROR|apiLog: Url: /api/values/get,
+Headers: [{"Connection":"Keep-Alive"},{"Content-Type":"application/json"},{"Host":"localhost:58528"},{"User-Agent":"Fiddler"},{"Content-Length":"64"},{"auth_key":"12313"},{"auth_timestamp":"12313"},{"auth_signature":"12313"},{"auth_nonce":"12313"},{"auth_version":"12313"},{"MS-ASPNETCORE-TOKEN":"5e006ab8-6a22-4153-a8b9-40c7bdcc8489"},{"X-Original-Proto":"http"},{"X-Original-For":"127.0.0.1:58552"}],
+Method: POST,
+RequestBody: {  "Key":"API接口",  "Value":"API接口",  "Tag":"API接口" },
+ExcuteStartTime: 2017-12-11 13:37:19.061,
+ExcuteStartTime: 2017-12-11 13:37:55.907 
+2017-12-11 13:37:55.9552|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 36904.4343ms 404  
+2017-12-11 13:40:03.1532|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 POST http://localhost:58528/api/values/get application/json 64 
+2017-12-11 13:40:03.1872|Vic.Core.Utils.WebApi.ApiLogMiddleware|ERROR|apiLog: Url: /api/values/get,
+Headers: [{"Connection":"Keep-Alive"},{"Content-Type":"application/json"},{"Host":"localhost:58528"},{"User-Agent":"Fiddler"},{"Content-Length":"64"},{"auth_key":"12313"},{"auth_timestamp":"12313"},{"auth_signature":"12313"},{"auth_nonce":"12313"},{"auth_version":"12313"},{"MS-ASPNETCORE-TOKEN":"5e006ab8-6a22-4153-a8b9-40c7bdcc8489"},{"X-Original-Proto":"http"},{"X-Original-For":"127.0.0.1:58828"}],
+Method: POST,
+RequestBody: {  "Key":"API接口",  "Value":"API接口",  "Tag":"API接口" },
+ExcuteStartTime: 2017-12-11 13:40:03.178,
+ExcuteStartTime: 2017-12-11 13:40:03.183 
+2017-12-11 13:40:33.9582|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 30796.6253ms 404  
+2017-12-11 13:40:49.4512|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://localhost:58528/api/values/Get   
+2017-12-11 13:40:49.4712|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method Ruiec.WebApi.Controllers.ValuesController.Get (Ruiec.WebApi) with arguments ((null)) - ModelState is Valid 
+2017-12-11 13:40:49.4842|Ruiec.WebApi.Controllers.ValuesController|ERROR|日志测试2017 
+2017-12-11 13:40:49.5052|Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.0.1-rtm-125 initialized 'TradeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2017-12-11 13:40:49.5122|Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[FID], [t].[FCreateTime], [t].[FCreatorID], [t].[FKey], [t].[FLastUpdateTime], [t].[FLastUpdateUserID], [t].[FTag], [t].[FValue]
+FROM [T_PL_PlateSetting] AS [t]
+WHERE [t].[FID] = '00000000-0000-0000-0000-000000000000' 
+2017-12-11 13:40:49.5392|Microsoft.EntityFrameworkCore.Database.Command|ERROR|Failed executing DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?' (Size = 50), @p4='?', @p5='?', @p6='?' (Size = 50), @p7='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [T_PL_PlateSetting] ([FID], [FCreateTime], [FCreatorID], [FKey], [FLastUpdateTime], [FLastUpdateUserID], [FTag], [FValue])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7); 不能在具有唯一索引“IX_T_PL_PlateSetting”的对象“dbo.T_PL_PlateSetting”中插入重复键的行。重复键值为 (API接口)。
+语句已终止。
+2017-12-11 13:40:49.6082|Microsoft.EntityFrameworkCore.Update|ERROR|An exception occurred in the database while saving changes for context type 'Vic.Core.Data.TradeDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: 不能在具有唯一索引“IX_T_PL_PlateSetting”的对象“dbo.T_PL_PlateSetting”中插入重复键的行。重复键值为 (API接口)。
+语句已终止。
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(Tuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess) An error occurred while updating the entries. See the inner exception for details.
+2017-12-11 13:40:49.6692|Vic.Core.Application.Services.PlateSettingAppService|ERROR|PlateSettingAppService Create error occured:An error occurred while updating the entries. See the inner exception for details. 
+2017-12-11 13:40:49.6692|Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.0.1-rtm-125 initialized 'ReadOnlyTradeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2017-12-11 13:40:49.6692|Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (0ms) [Parameters=[@__Empty_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [it].[FID], [it].[FCreateTime], [it].[FCreatorID], [it].[FKey], [it].[FLastUpdateTime], [it].[FLastUpdateUserID], [it].[FTag], [it].[FValue]
+FROM [T_PL_PlateSetting] AS [it]
+WHERE [it].[FID] <> @__Empty_0 
+2017-12-11 13:40:49.6842|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|INFO|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+2017-12-11 13:40:49.7072|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action Ruiec.WebApi.Controllers.ValuesController.Get (Ruiec.WebApi) in 224.5088ms 
+2017-12-11 13:40:49.7322|Vic.Core.Utils.WebApi.ApiLogMiddleware|ERROR|apiLog: Url: /api/values/Get,
+Headers: [{"Cache-Control":"max-age=0"},{"Connection":"Keep-Alive"},{"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"},{"Accept-Encoding":"gzip, deflate, br"},{"Accept-Language":"zh-CN,zh;q=0.9"},{"Cookie":"CCKF_visitor_id_123520=1004454046; culture=zh-CN; GTRememberName=admin; showNotice=76c6bf67bc4e8666; ASP.NET_SessionId=jq52bdv1os1qcrj55fkaz5wk; menuLeftSidebarCookie=/project.html%u9879%u76EE"},{"Host":"localhost:58528"},{"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"},{"Upgrade-Insecure-Requests":"1"},{"MS-ASPNETCORE-TOKEN":"5e006ab8-6a22-4153-a8b9-40c7bdcc8489"},{"X-Original-Proto":"http"},{"X-Original-For":"127.0.0.1:58828"}],
+Method: GET,
+RequestBody: ,
+ExcuteStartTime: 2017-12-11 13:40:49.461,
+ExcuteStartTime: 2017-12-11 13:40:49.710 
+2017-12-11 13:40:55.0192|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 5554.7642ms 200 application/json; charset=utf-8 
+2017-12-11 13:41:14.6062|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://localhost:58528/api/values/Get   
+2017-12-11 13:41:14.6462|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method Ruiec.WebApi.Controllers.ValuesController.Get (Ruiec.WebApi) with arguments ((null)) - ModelState is Valid 
+2017-12-11 13:41:16.6332|Ruiec.WebApi.Controllers.ValuesController|ERROR|日志测试2017 
+2017-12-11 13:41:16.6592|Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.0.1-rtm-125 initialized 'TradeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2017-12-11 13:41:16.6912|Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[FID], [t].[FCreateTime], [t].[FCreatorID], [t].[FKey], [t].[FLastUpdateTime], [t].[FLastUpdateUserID], [t].[FTag], [t].[FValue]
+FROM [T_PL_PlateSetting] AS [t]
+WHERE [t].[FID] = '00000000-0000-0000-0000-000000000000' 
+2017-12-11 13:41:16.7202|Microsoft.EntityFrameworkCore.Database.Command|ERROR|Failed executing DbCommand (0ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?' (Size = 50), @p4='?', @p5='?', @p6='?' (Size = 50), @p7='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [T_PL_PlateSetting] ([FID], [FCreateTime], [FCreatorID], [FKey], [FLastUpdateTime], [FLastUpdateUserID], [FTag], [FValue])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7); 不能在具有唯一索引“IX_T_PL_PlateSetting”的对象“dbo.T_PL_PlateSetting”中插入重复键的行。重复键值为 (API接口)。
+语句已终止。
+2017-12-11 13:41:16.7952|Microsoft.EntityFrameworkCore.Update|ERROR|An exception occurred in the database while saving changes for context type 'Vic.Core.Data.TradeDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: 不能在具有唯一索引“IX_T_PL_PlateSetting”的对象“dbo.T_PL_PlateSetting”中插入重复键的行。重复键值为 (API接口)。
+语句已终止。
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(Tuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess) An error occurred while updating the entries. See the inner exception for details.
+2017-12-11 13:41:16.8572|Vic.Core.Application.Services.PlateSettingAppService|ERROR|PlateSettingAppService Create error occured:An error occurred while updating the entries. See the inner exception for details. 
+2017-12-11 13:41:16.8572|Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.0.1-rtm-125 initialized 'ReadOnlyTradeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2017-12-11 13:41:16.8572|Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (0ms) [Parameters=[@__Empty_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [it].[FID], [it].[FCreateTime], [it].[FCreatorID], [it].[FKey], [it].[FLastUpdateTime], [it].[FLastUpdateUserID], [it].[FTag], [it].[FValue]
+FROM [T_PL_PlateSetting] AS [it]
+WHERE [it].[FID] <> @__Empty_0 
+2017-12-11 13:41:16.8902|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|INFO|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+2017-12-11 13:41:16.8902|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action Ruiec.WebApi.Controllers.ValuesController.Get (Ruiec.WebApi) in 2252.8316ms 
+2017-12-11 13:41:16.8902|Vic.Core.Utils.WebApi.ApiLogMiddleware|ERROR|apiLog: Url: /api/values/Get,
+Headers: [{"Cache-Control":"max-age=0"},{"Connection":"Keep-Alive"},{"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"},{"Accept-Encoding":"gzip, deflate, br"},{"Accept-Language":"zh-CN,zh;q=0.9"},{"Cookie":"CCKF_visitor_id_123520=1004454046; culture=zh-CN; GTRememberName=admin; showNotice=76c6bf67bc4e8666; ASP.NET_SessionId=jq52bdv1os1qcrj55fkaz5wk; menuLeftSidebarCookie=/project.html%u9879%u76EE"},{"Host":"localhost:58528"},{"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"},{"Upgrade-Insecure-Requests":"1"},{"MS-ASPNETCORE-TOKEN":"5e006ab8-6a22-4153-a8b9-40c7bdcc8489"},{"X-Original-Proto":"http"},{"X-Original-For":"127.0.0.1:58828"}],
+Method: GET,
+RequestBody: ,
+ExcuteStartTime: 2017-12-11 13:41:14.640,
+ExcuteStartTime: 2017-12-11 13:41:16.897 
+2017-12-11 13:41:21.9932|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 7389.4954ms 200 application/json; charset=utf-8 
+2017-12-11 13:41:25.4012|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://localhost:58528/api/values/Get   
+2017-12-11 13:42:38.6202|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method Ruiec.WebApi.Controllers.ValuesController.Get (Ruiec.WebApi) with arguments ((null)) - ModelState is Valid 
+2017-12-11 13:42:41.0182|Ruiec.WebApi.Controllers.ValuesController|ERROR|日志测试2017 
+2017-12-11 13:42:41.0362|Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.0.1-rtm-125 initialized 'TradeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2017-12-11 13:42:41.0362|Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[FID], [t].[FCreateTime], [t].[FCreatorID], [t].[FKey], [t].[FLastUpdateTime], [t].[FLastUpdateUserID], [t].[FTag], [t].[FValue]
+FROM [T_PL_PlateSetting] AS [t]
+WHERE [t].[FID] = '00000000-0000-0000-0000-000000000000' 
+2017-12-11 13:42:41.0722|Microsoft.EntityFrameworkCore.Database.Command|ERROR|Failed executing DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?' (Size = 50), @p4='?', @p5='?', @p6='?' (Size = 50), @p7='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [T_PL_PlateSetting] ([FID], [FCreateTime], [FCreatorID], [FKey], [FLastUpdateTime], [FLastUpdateUserID], [FTag], [FValue])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7); 不能在具有唯一索引“IX_T_PL_PlateSetting”的对象“dbo.T_PL_PlateSetting”中插入重复键的行。重复键值为 (API接口)。
+语句已终止。
+2017-12-11 13:42:41.1422|Microsoft.EntityFrameworkCore.Update|ERROR|An exception occurred in the database while saving changes for context type 'Vic.Core.Data.TradeDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: 不能在具有唯一索引“IX_T_PL_PlateSetting”的对象“dbo.T_PL_PlateSetting”中插入重复键的行。重复键值为 (API接口)。
+语句已终止。
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(Tuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess) An error occurred while updating the entries. See the inner exception for details.
+2017-12-11 13:42:41.2012|Vic.Core.Application.Services.PlateSettingAppService|ERROR|PlateSettingAppService Create error occured:An error occurred while updating the entries. See the inner exception for details. 
+2017-12-11 13:42:41.2012|Microsoft.EntityFrameworkCore.Infrastructure|INFO|Entity Framework Core 2.0.1-rtm-125 initialized 'ReadOnlyTradeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None 
+2017-12-11 13:42:41.2092|Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (0ms) [Parameters=[@__Empty_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [it].[FID], [it].[FCreateTime], [it].[FCreatorID], [it].[FKey], [it].[FLastUpdateTime], [it].[FLastUpdateUserID], [it].[FTag], [it].[FValue]
+FROM [T_PL_PlateSetting] AS [it]
+WHERE [it].[FID] <> @__Empty_0 
+2017-12-11 13:42:41.2322|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|INFO|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+2017-12-11 13:42:41.2572|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action Ruiec.WebApi.Controllers.ValuesController.Get (Ruiec.WebApi) in 2636.4335ms 
+2017-12-11 13:42:42.0162|Vic.Core.Utils.WebApi.ApiLogMiddleware|ERROR|apiLog: Url: /api/values/Get,
+Headers: [{"Cache-Control":"max-age=0"},{"Connection":"Keep-Alive"},{"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"},{"Accept-Encoding":"gzip, deflate, br"},{"Accept-Language":"zh-CN,zh;q=0.9"},{"Cookie":"CCKF_visitor_id_123520=1004454046; culture=zh-CN; GTRememberName=admin; showNotice=76c6bf67bc4e8666; ASP.NET_SessionId=jq52bdv1os1qcrj55fkaz5wk; menuLeftSidebarCookie=/project.html%u9879%u76EE"},{"Host":"localhost:58528"},{"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"},{"Upgrade-Insecure-Requests":"1"},{"MS-ASPNETCORE-TOKEN":"5e006ab8-6a22-4153-a8b9-40c7bdcc8489"},{"X-Original-Proto":"http"},{"X-Original-For":"127.0.0.1:58828"}],
+Method: GET,
+RequestBody: ,
+ExcuteStartTime: 2017-12-11 13:41:38.478,
+ExcuteStartTime: 2017-12-11 13:42:42.011 
+2017-12-11 13:42:42.9962|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 77581.5477ms 200 application/json; charset=utf-8 
+2017-12-11 13:42:44.6682|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://localhost:58528/api/values/Get   
+2017-12-11 14:56:22.2042|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://localhost:58528/api/values   
+2017-12-11 14:56:24.1522|Microsoft.AspNetCore.Server.Kestrel|WARN|Heartbeat took longer than "00:00:01" at "12/11/2017 06:56:24 +00:00". 
+2017-12-11 14:56:24.3552|Vic.Core.Utils.WebApi.ApiLogMiddleware|ERROR|apiLog: Url: /api/values,
+Headers: [{"Connection":"Keep-Alive"},{"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"},{"Accept-Encoding":"gzip, deflate, br"},{"Accept-Language":"zh-CN,zh;q=0.9"},{"Cookie":"CCKF_visitor_id_123520=1004454046; culture=zh-CN; GTRememberName=admin; showNotice=76c6bf67bc4e8666; ASP.NET_SessionId=jq52bdv1os1qcrj55fkaz5wk; menuLeftSidebarCookie=/project.html%u9879%u76EE"},{"Host":"localhost:58528"},{"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"},{"Upgrade-Insecure-Requests":"1"},{"MS-ASPNETCORE-TOKEN":"ca6c05b2-0af8-48b6-bcb3-819756a9774a"},{"X-Original-Proto":"http"},{"X-Original-For":"127.0.0.1:49646"}],
+Method: GET,
+RequestBody: ,
+ExcuteStartTime: 2017-12-11 14:56:24.152,
+ExcuteStartTime: 2017-12-11 14:56:24.351 
+2017-12-11 14:56:24.4192|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 2236.509ms 404  
+2017-12-11 14:56:32.9382|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://localhost:58528/api/values   

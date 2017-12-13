@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Vic.Core.Data</id>
+    <version>1.0.0</version>
+    <authors>Vic.Core.Data</authors>
+    <owners>Vic.Core.Data</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp1.1">
+        <dependency id="Vic.Core.Utils" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Vic.Core.Domain" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="1.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Design" version="1.1.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.NETCore.App" version="1.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.SqlServer" version="1.1.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.SqlServer.Design" version="1.1.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Component.Data\bin\Debug\netcoreapp1.1\Vic.Core.Data.dll" target="lib\netcoreapp1.1\Vic.Core.Data.dll" />
+  </files>
+</package>

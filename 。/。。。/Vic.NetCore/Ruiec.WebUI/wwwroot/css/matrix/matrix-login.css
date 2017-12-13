@@ -1,0 +1,843 @@
+﻿/* CSS Document */
+/** 通用CSS样式 **/
+* {
+    margin: 0px;
+    padding: 0px;
+    _min-height: 1px;
+}
+.label_input_two {
+    width: 410px !important;
+}
+.login_form .form_line .label_input_two .middle_input {
+    width: 228px !important;
+}
+a, body, div, html, img, li, ul, dl, dt, dd {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    height: auto;
+    width: 100%;
+    min-width: 1180px;
+    font-size: 12px;
+    font-family: "微软雅黑","宋体",\5b8b\4f53,'Liberation Sans', FreeSans, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    color: #000;
+}
+
+img {
+    color: transparent;
+    font-size: 12px;
+    vertical-align: middle;
+    -ms-interpolation-mode: bicubic;
+}
+
+ol, ul, dl, dt, dd {
+    list-style: none;
+}
+
+input {
+    border: 0px;
+    outline: none;
+    font-family: "微软雅黑";
+}
+
+a {
+    cursor: pointer;
+    color: #1a1a1a;
+}
+
+em, i, b, sub, sup {
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5 {
+    padding: 0px;
+    margin: 0px;
+}
+/** 通用CSS样式 **/
+
+/** 常用公共样式 **/
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clr {
+    clear: both;
+}
+
+.textl {
+    text-align: left;
+}
+
+.textr {
+    text-align: right;
+}
+
+.indent {
+    text-indent: 20px;
+}
+
+.lh24 {
+    line-height: 24px;
+}
+
+.tc {
+    text-align: center;
+}
+
+.fb {
+    font-weight: bolder;
+}
+
+.btp {
+    border-top: 1px solid #ddd;
+}
+
+.bbt {
+    border-bottom: 1px solid #ddd;
+}
+
+.bbl {
+    border-left: 1px solid #ddd;
+}
+
+.bbr {
+    border-right: 1px solid #ddd;
+}
+
+.b0 {
+    border: 0px !important;
+}
+
+.b1 {
+    border: 1px solid #ddd;
+}
+
+.c_0 {
+    color: #0a0101;
+}
+
+.c_3 {
+    color: #333;
+}
+
+.c_5 {
+    color: #555;
+}
+
+.c_6 {
+    color: #666;
+}
+
+.c_8 {
+    color: #888;
+}
+
+.c_9 {
+    color: #9fa0a0;
+}
+
+.c_e1 {
+    color: #e1e1e1;
+}
+
+.c_a2 {
+    color: #a2acb3;
+}
+
+.c_red {
+    color: #f24040;
+}
+
+.c_blue {
+    color: #3f81c7;
+}
+
+.c_green {
+    color: #00a368;
+}
+
+.c_fenhong {
+    color: #d3022a;
+}
+
+.c_yell {
+    color: #f2b800;
+}
+
+.c_zise {
+    color: #9d209e;
+}
+
+.c_org {
+    color: #ffbf30;
+}
+
+.c_juhuanse {
+    color: #fd6834;
+}
+
+.c_cc {
+    color: #ccc;
+}
+
+.c_gray {
+    color: #c8b897
+}
+/** 灰色 **/
+.c_hese {
+    color: #63514f
+}
+/** 灰褐色 **/
+.c_lanse {
+    color: #005bac;
+}
+
+.c_huibai {
+    color: #a2acb3;
+}
+/* 灰白色 */
+.c_hailan {
+    color: #358DE6;
+}
+
+.c_wite {
+    color: #fff;
+}
+
+.bgc_c {
+    background-color: #ccc;
+}
+
+.bgc_c7 {
+    background-color: #f7f8f8;
+}
+
+.bgc_org {
+    background-color: #ffa201;
+}
+
+.bgc_gray {
+    background-color: #f3f3f3;
+}
+
+.bgc_blue {
+    background-color: #3f81c7;
+}
+
+.bgc_black {
+    background: #363b3f;
+}
+
+    .bgc_black:hover {
+        background: #484e52;
+    }
+
+.bgc_c:hover {
+    background-color: #d4dbde;
+}
+
+.bgc_org:hover {
+    background-color: #EFAF42;
+}
+
+.bgc_blue:hover {
+    background-color: #5694d6;
+}
+
+.bgc_gray:hover {
+    background-color: #E8E8E8;
+}
+
+.bgc_hailan {
+    background-color: #1ca4dc;
+}
+
+    .bgc_hailan:hover {
+        background-color: #33AEE0;
+    }
+
+.bgc_blue:hover {
+    background-color: #306DAE;
+}
+
+.bgc_3 {
+    background-color: #333;
+}
+
+.bg_wite {
+    background-color: #fff;
+}
+
+.bgc_green {
+    background-color: #6eb92b;
+}
+
+.bgc_fenhong {
+    background-color: #fd7d83;
+}
+
+.disblock {
+    display: block;
+}
+
+.fz12 {
+    font-size: 12px !important;
+}
+
+.fz13 {
+    font-size: 13px !important;
+}
+
+.fz14 {
+    font-size: 14px !important;
+}
+
+.fz16 {
+    font-size: 16px;
+}
+
+.fz18 {
+    font-size: 18px;
+}
+
+.fz20 {
+    font-size: 20px;
+}
+
+.fz22 {
+    font-size: 22px;
+}
+
+.fz24 {
+    font-size: 24px;
+}
+
+.fz26 {
+    font-size: 26px;
+}
+
+.fz30 {
+    font-size: 30px;
+}
+
+.fw_normal {
+    font-weight: normal
+}
+
+.fw_500 {
+    font-weight: 500 !important;
+}
+
+.fw_600 {
+    font-weight: 600;
+}
+
+.fw_normal {
+    font-weight: bold;
+}
+
+.fm_weiruan {
+    font-family: "微软雅黑";
+}
+
+.fm_st {
+    font-family: "宋体";
+}
+
+.fm_en {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.fm_numb {
+    font-family: Tahoma,Arial, Helvetica, sans-serif;
+}
+
+.AllW {
+    width: 100%;
+}
+
+.h20 {
+    height: 20px;
+}
+
+.lh20 {
+    line-height: 20px;
+}
+
+.lh24 {
+    line-height: 24px;
+}
+
+.h24 {
+    height: 24px;
+}
+
+.lh25 {
+    line-height: 25px;
+}
+
+.h25 {
+    height: 25px;
+}
+
+.lh30 {
+    line-height: 30px;
+}
+
+.h30 {
+    height: 30px;
+}
+
+.lh35 {
+    line-height: 35px;
+}
+
+.h35 {
+    height: 35px;
+}
+
+.lh40 {
+    line-height: 40px;
+}
+
+.h40 {
+    height: 40px;
+}
+
+.blod {
+    font-weight: bold;
+}
+
+.spcing5 {
+    height: 5px;
+    clear: both;
+    width: 100%;
+}
+
+.spcing10 {
+    height: 10px;
+    clear: both;
+    width: 100%;
+}
+
+.spcing15 {
+    height: 15px;
+    clear: both;
+    width: 100%;
+}
+
+.spcing30 {
+    height: 30px;
+    clear: both;
+    width: 100%;
+}
+
+.mgt0 {
+    margin-top: 0px !important;
+}
+
+.mgt2 {
+    margin-top: 2px;
+}
+
+.mgt3 {
+    margin-top: 3px;
+}
+
+.mgt5 {
+    margin-top: 5px;
+}
+
+.mgt10 {
+    margin-top: 10px;
+}
+
+.mgt15 {
+    margin-top: 15px;
+}
+
+.mgb0 {
+    margin-bottom: 0px !important;
+}
+
+.mgb2 {
+    margin-bottom: 2px;
+}
+
+.mgb3 {
+    margin-bottom: 3px;
+}
+
+.mgb5 {
+    margin-bottom: 5px;
+}
+
+.mgb10 {
+    margin-bottom: 10px;
+}
+
+.mgb15 {
+    margin-bottom: 15px;
+}
+
+.mgl0 {
+    margin-left: 0px !important;
+}
+
+.mgl2 {
+    margin-left: 2px;
+}
+
+.mgl3 {
+    margin-left: 3px;
+}
+
+.mgl5 {
+    margin-left: 5px;
+}
+
+.mgl10 {
+    margin-left: 10px;
+}
+
+.mgl15 {
+    margin-left: 15px;
+}
+
+.mgr0 {
+    margin-right: 0px !important;
+}
+
+.mgr2 {
+    margin-right: 2px;
+}
+
+.mgr3 {
+    margin-right: 3px;
+}
+
+.mgr5 {
+    margin-right: 5px;
+}
+
+.mgr10 {
+    margin-right: 10px;
+}
+
+.mgr15 {
+    margin-right: 15px;
+}
+
+.pd0 {
+    padding: 0px !important;
+}
+
+.pdl0 {
+    padding-left: 0px !important;
+}
+
+.pdl5 {
+    padding-left: 5px;
+}
+
+.pdl10 {
+    padding-left: 10px;
+}
+
+.pdl15 {
+    padding-left: 15px;
+}
+
+.pdr0 {
+    padding-right: 0px !important;
+}
+
+.pdr5 {
+    padding-right: 5px;
+}
+
+.pdr10 {
+    padding-right: 10px;
+}
+
+.pdr15 {
+    padding-right: 15px;
+}
+
+.pdt0 {
+    padding-top: 0px !important;
+}
+
+.pdt3 {
+    padding-top: 3px;
+}
+
+.pdt5 {
+    padding-top: 5px;
+}
+
+.pdt8 {
+    padding-top: 8px;
+}
+
+.pdt10 {
+    padding-top: 10px;
+}
+
+.pdb0 {
+    padding-bottom: 0px !important;
+}
+
+.pdb5 {
+    padding-bottom: 5px;
+}
+
+.pdb10 {
+    padding-bottom: 10px;
+}
+
+.over_hide {
+    overflow: hidden;
+}
+
+.w500 {
+    width: 500px;
+}
+
+.w940 {
+    width: 940px;
+    margin: 0px auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.w1000 {
+    width: 1000px;
+    margin: 0px auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.w1004 {
+    width: 1004px;
+    margin: 0px auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.w1100 {
+    width: 1100px;
+    margin: 0px auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.w1200 {
+    width: 1200px;
+    margin: 0px auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.w1180 {
+    width: 1180px;
+    margin: 0px auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.pos-absol {
+    position: absolute;
+}
+
+.w_50_pct {
+    width: 50%;
+}
+
+.w_58_pct {
+    width: 58%;
+}
+
+.w_33_pct {
+    width: 33%;
+}
+
+.hideThis {
+    display: none;
+}
+
+.clearfix {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    clear: both;
+}
+
+.linethrow {
+    text-decoration: line-through;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.undeline {
+    text-decoration: underline;
+}
+
+.td_b1 {
+    border-right: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+
+    .td_b1 td {
+        border: 1px solid #ddd;
+        border-top: 0px;
+        border-right: 0px;
+    }
+/** 常用公共样式 **/
+
+/** css箭头 **/
+.arrow_up {
+    width: 0px;
+    height: 0px;
+    border-width: 0px 10px 10px 10px;
+    border-color: transparent transparent #fff transparent;
+    border-style: solid;
+}
+
+.arrow_bottom {
+    width: 0px;
+    height: 0px;
+    border-width: 10px 10px 0px 10px;
+    border-color: #fff transparent transparent transparent;
+    border-style: solid;
+}
+
+/** css箭头 **/
+
+/**  ico图标库 **/
+@font-face {
+    font-family: 'iconfont';
+    src: url('../iconfont/iconfont.eot');
+    src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'), url('../iconfont/iconfont.woff') format('woff'), url('../iconfont/iconfont.ttf') format('truetype'), url('../iconfont/iconfont.svg#uxiconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+/**  ico图标库 **/
+
+html {
+    height: 100%;
+}
+
+.Login_Page {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+    .Login_Page .login_container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: url('../../images/login_bg.jpg') no-repeat center;
+        background-size: 100% 100%;
+        text-align: center;
+        display: block;
+    }
+
+.login_container .banner {
+    width: 500px;
+    height: 340px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin: 10% auto;
+}
+
+.Login_Page .login_container {
+    width: 100%;
+    overflow: hidden;
+    padding: 50px 0px;
+}
+
+.Login_Page .login_form {
+    width: 410px;
+    margin: 10% auto;
+    height: auto;
+}
+
+.login_container .login_form .form_line {
+    width: 100%;
+    height: auto;
+    clear: both;
+    overflow: hidden;
+    padding: 10px 0px;
+}
+
+    .login_container .login_form .form_line .fr img {
+        border-radius: 3px;
+    }
+
+.login_form .form_line .ico {
+    float: left;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+
+    .login_form .form_line .ico img {
+        border-radius: 3px;
+    }
+
+.login_form .form_line .label_input {
+    float: left;
+    width: 370px;
+}
+
+.login_form .form_line .middle_input {
+    width: 358px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    height: 16px;
+    line-height: 16px;
+    padding: 11px 5px;
+    font-size: 14px;
+}
+
+.login_form .form_line .yzm_infos {
+    float: left;
+    width: 228px;
+    height: 14px;
+    border-radius: 3px;
+    line-height: 14px;
+    padding: 13px 5px;
+    border: 1px solid #ddd;
+}
+
+.login_form .form_line .btn {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 3px;
+    text-align: center;
+    border: 0px;
+    cursor: pointer;
+    font-size: 16px;
+}

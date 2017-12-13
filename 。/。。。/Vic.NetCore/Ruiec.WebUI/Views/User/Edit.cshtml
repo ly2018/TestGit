@@ -1,0 +1,102 @@
+﻿@model Vic.Core.Application.Dtos.UserDto
+@{
+    ViewBag.Title = "子账号管理";
+}
+<div id="content-header">
+    <div id="breadcrumb">
+        <a href="/" title="首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+        <a href="/User/Index" class="tip-bottom" title="@ViewBag.Title"><i class="icon-home"></i>@ViewBag.Title</a>
+        <a href="#" class="tip-bottom">编辑</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-content nopadding">
+                    <form class="form-horizontal" id="form-horizontal" url="/User/Edit" action="" method="post">
+                        <div class="control-group">
+                            <input type="hidden" name="ID" value="@Model.ID" />
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">部门编号：</label>
+                            <div class="controls">
+                                <select name="DepartmentId" id="DepartmentId" value="@Model.DepartmentId" class="span7">
+                                    @if (ViewBag.DepList != null)
+                                    {
+                                        foreach (var item in ViewBag.DepList as List<Vic.Core.Application.Dtos.DepartmentDto>)
+                                        {
+                                            @if (Model.DepartmentId == item.ID)
+                                            {
+                                                <option selected value="@item.ID">@(item.Name)</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@item.ID">@(item.Name)</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">姓名：</label>
+                            <div class="controls">
+                                <input type="text" name="Name" value="@Model.Name" class="span7" placeholder="" isNot="true" verify="isAll" msg="姓名不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">手机号：</label>
+                            <div class="controls">
+                                <input type="text" name="MobileNumber" value="@Model.MobileNumber" class="span7" placeholder="" isNot="true" verify="isAll" msg="手机号不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">邮箱：</label>
+                            <div class="controls">
+                                <input type="text" name="EMail" value="@Model.EMail" class="span7" placeholder="" isNot="true" verify="isAll" msg="邮箱不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">登录账号：</label>
+                            <div class="controls">
+                                <input type="text" name="UserName" value="@Model.UserName" class="span7" placeholder="" isNot="true" verify="isAll" msg="登录账号不能为空！" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">备注：</label>
+                            <div class="controls">
+                                <input type="text" name="Remarks" value="@Model.Remarks" class="span7" placeholder="" isNot="true" verify="isAll" msg="备注不能为空！" />
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <label class="control-label">&nbsp;&nbsp;</label><button type="submit" class="btn btn-success">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-primary goLastPage">返回上一页</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/Validate/jquery.form.min.js"></script>
+<script src="~/js/Validate/jquery.ruiValidate.js"></script>
+<script src="~/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        //表单验证
+        if ($(".form-horizontal").size() > 0) {
+            var _FormValidate = new $.rui_validate();
+            _FormValidate.initload();
+            _FormValidate.initForm({
+                FormObj: $(".form-horizontal").eq(0),
+                FormIdName: 'form-horizontal',
+                //ShowTip: "Highlights",
+                SubBtn: 'btn btn-success',   //提交按钮的class
+                CallBack: ""
+            });
+        }
+    });
+</script>

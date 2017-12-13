@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root maxid="5">
+  <db id="1" name="Ruiec.Common" path="E:\实习生项目\GeneratedCode" startStr="T_CMS_;T_CPJS_;T_SYS_;T_UTS_;T_PRO_;" constr="Data Source=192.168.0.192;Initial Catalog=ZSCoin;Persist Security Info=True;User ID=sa;Password=Ruiec.com2018" />
+  <db id="2" name="Ruiec.Common" path="E:\LY_Project\WorkPlace_2017\艺术品微信\GenCode" startStr="T_SYS_;T_VTS_;" constr="Data Source=192.168.0.252;Initial Catalog=Ysp;Persist Security Info=True;User ID=sa;Password=Ruiec.com2016" />
+  <db id="3" name="Ruiec.Common" path="E:\LY_Project\WorkPlace_2017\第三交易所\GenCode" startStr="T_SYS_;T_VTS_;T_SUB_;" constr="Data Source=192.168.0.85,32577;Initial Catalog=EmpireCoin;Persist Security Info=True;User ID=sa;Password=Ruiec.com2016" />
+  <db id="4" name="Ruiec.Common" path="E:\LY_Project\WorkPlace_2017\GeneratedCode" startStr="T_VTS_;" constr="Data Source=192.168.0.85,32577;Initial Catalog=TYsp;Persist Security Info=True;User ID=sa;Password=Ruiec.com2016" />
+</root>

@@ -1,0 +1,26 @@
+2017-06-01 16:40:29.7190 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Info
+2017-06-09 10:09:56.0376 Warn Auto loading assembly file: E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Home\bin\Release\PublishOutput\NLog.Extensions.Logging.dll failed! Skipping this file. Exception: System.IO.FileLoadException: Could not load file or assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c'.
+   at System.Runtime.Loader.AssemblyLoadContext.LoadFromPath(IntPtr ptrNativeAssemblyLoadContext, String ilPath, String niPath, ObjectHandleOnStack retAssembly)
+   at System.Runtime.Loader.AssemblyLoadContext.LoadFromAssemblyPath(String assemblyPath)
+   at NLog.Config.ConfigurationItemFactory.BuildDefaultFactory()
+2017-06-09 10:09:56.1216 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Info
+2017-06-15 11:00:20.3080 Warn Auto loading assembly file: E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Home\bin\Release\PublishOutput\NLog.Extensions.Logging.dll failed! Skipping this file. Exception: System.IO.FileLoadException: Could not load file or assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c'.
+   at System.Runtime.Loader.AssemblyLoadContext.LoadFromPath(IntPtr ptrNativeAssemblyLoadContext, String ilPath, String niPath, ObjectHandleOnStack retAssembly)
+   at System.Runtime.Loader.AssemblyLoadContext.LoadFromAssemblyPath(String assemblyPath)
+   at NLog.Config.ConfigurationItemFactory.BuildDefaultFactory()
+2017-06-15 11:00:20.4990 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Info
+2017-07-18 09:53:00.9370 Warn Auto loading assembly file: E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Home\bin\Release\PublishOutput\NLog.Extensions.Logging.dll failed! Skipping this file. Exception: System.IO.FileLoadException: Could not load file or assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c'.
+   at System.Runtime.Loader.AssemblyLoadContext.LoadFromPath(IntPtr ptrNativeAssemblyLoadContext, String ilPath, String niPath, ObjectHandleOnStack retAssembly)
+   at System.Runtime.Loader.AssemblyLoadContext.LoadFromAssemblyPath(String assemblyPath)
+   at NLog.Config.ConfigurationItemFactory.BuildDefaultFactory()
+2017-07-18 09:53:01.1530 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Info
+2017-08-11 18:05:38.3124 Warn Auto loading assembly file: E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Home\bin\Release\PublishOutput\NLog.Extensions.Logging.dll failed! Skipping this file. Exception: System.IO.FileLoadException: Could not load file or assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c'.
+   at System.Runtime.Loader.AssemblyLoadContext.LoadFromPath(IntPtr ptrNativeAssemblyLoadContext, String ilPath, String niPath, ObjectHandleOnStack retAssembly)
+   at System.Runtime.Loader.AssemblyLoadContext.LoadFromAssemblyPath(String assemblyPath)
+   at NLog.Config.ConfigurationItemFactory.BuildDefaultFactory()
+2017-08-11 18:05:38.4394 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Info
+2017-08-11 19:26:46.2674 Warn Auto loading assembly file: E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Home\bin\Release\PublishOutput\NLog.Extensions.Logging.dll failed! Skipping this file. Exception: System.IO.FileLoadException: Could not load file or assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c'.
+   at System.Runtime.Loader.AssemblyLoadContext.LoadFromPath(IntPtr ptrNativeAssemblyLoadContext, String ilPath, String niPath, ObjectHandleOnStack retAssembly)
+   at System.Runtime.Loader.AssemblyLoadContext.LoadFromAssemblyPath(String assemblyPath)
+   at NLog.Config.ConfigurationItemFactory.BuildDefaultFactory()
+2017-08-11 19:26:46.3294 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Info

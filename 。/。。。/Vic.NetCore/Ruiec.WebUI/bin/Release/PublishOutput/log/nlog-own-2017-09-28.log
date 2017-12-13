@@ -1,0 +1,20 @@
+2017-09-28 09:06:27.6722|Vic.Core.Application.Services.SiteSettingAppService|ERROR|  SiteSettingAppService PageList error occured:Error mapping types.
+
+Mapping types:
+EntityQueryable`1 -> List`1
+Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[Vic.Core.Domain.Entities.SiteSetting, Vic.Core.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Vic.Core.Application.Dtos.SiteSettingDto, Vic.Core.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] 
+2017-09-28 09:06:37.7212|Vic.Core.Application.Services.LanguageTypeAppService|ERROR|  LanguageTypeAppService PageList error occured:Error mapping types.
+
+Mapping types:
+EntityQueryable`1 -> List`1
+Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[Vic.Core.Domain.Entities.LanguageType, Vic.Core.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Vic.Core.Application.Dtos.LanguageTypeDto, Vic.Core.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] 
+2017-09-28 09:07:03.7932|Vic.Core.Application.Services.LanguageTypeAppService|ERROR|  LanguageTypeAppService PageList error occured:Error mapping types.
+
+Mapping types:
+EntityQueryable`1 -> List`1
+Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[Vic.Core.Domain.Entities.LanguageType, Vic.Core.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Vic.Core.Application.Dtos.LanguageTypeDto, Vic.Core.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] 
+2017-09-28 09:07:06.0442|Vic.Core.Application.Services.SiteSettingAppService|ERROR|  SiteSettingAppService PageList error occured:Error mapping types.
+
+Mapping types:
+EntityQueryable`1 -> List`1
+Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[Vic.Core.Domain.Entities.SiteSetting, Vic.Core.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Vic.Core.Application.Dtos.SiteSettingDto, Vic.Core.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] 

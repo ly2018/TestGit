@@ -1,0 +1,42 @@
+2017-12-11 13:37:55.9182|Vic.Core.Utils.WebApi.ApiLogMiddleware|ERROR|  apiLog: Url: /api/values/get,
+Headers: [{"Connection":"Keep-Alive"},{"Content-Type":"application/json"},{"Host":"localhost:58528"},{"User-Agent":"Fiddler"},{"Content-Length":"64"},{"auth_key":"12313"},{"auth_timestamp":"12313"},{"auth_signature":"12313"},{"auth_nonce":"12313"},{"auth_version":"12313"},{"MS-ASPNETCORE-TOKEN":"5e006ab8-6a22-4153-a8b9-40c7bdcc8489"},{"X-Original-Proto":"http"},{"X-Original-For":"127.0.0.1:58552"}],
+Method: POST,
+RequestBody: {  "Key":"API接口",  "Value":"API接口",  "Tag":"API接口" },
+ExcuteStartTime: 2017-12-11 13:37:19.061,
+ExcuteStartTime: 2017-12-11 13:37:55.907 
+2017-12-11 13:40:03.1872|Vic.Core.Utils.WebApi.ApiLogMiddleware|ERROR|  apiLog: Url: /api/values/get,
+Headers: [{"Connection":"Keep-Alive"},{"Content-Type":"application/json"},{"Host":"localhost:58528"},{"User-Agent":"Fiddler"},{"Content-Length":"64"},{"auth_key":"12313"},{"auth_timestamp":"12313"},{"auth_signature":"12313"},{"auth_nonce":"12313"},{"auth_version":"12313"},{"MS-ASPNETCORE-TOKEN":"5e006ab8-6a22-4153-a8b9-40c7bdcc8489"},{"X-Original-Proto":"http"},{"X-Original-For":"127.0.0.1:58828"}],
+Method: POST,
+RequestBody: {  "Key":"API接口",  "Value":"API接口",  "Tag":"API接口" },
+ExcuteStartTime: 2017-12-11 13:40:03.178,
+ExcuteStartTime: 2017-12-11 13:40:03.183 
+2017-12-11 13:40:49.4842|Ruiec.WebApi.Controllers.ValuesController|ERROR|  日志测试2017 
+2017-12-11 13:40:49.6692|Vic.Core.Application.Services.PlateSettingAppService|ERROR|  PlateSettingAppService Create error occured:An error occurred while updating the entries. See the inner exception for details. 
+2017-12-11 13:40:49.7322|Vic.Core.Utils.WebApi.ApiLogMiddleware|ERROR|  apiLog: Url: /api/values/Get,
+Headers: [{"Cache-Control":"max-age=0"},{"Connection":"Keep-Alive"},{"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"},{"Accept-Encoding":"gzip, deflate, br"},{"Accept-Language":"zh-CN,zh;q=0.9"},{"Cookie":"CCKF_visitor_id_123520=1004454046; culture=zh-CN; GTRememberName=admin; showNotice=76c6bf67bc4e8666; ASP.NET_SessionId=jq52bdv1os1qcrj55fkaz5wk; menuLeftSidebarCookie=/project.html%u9879%u76EE"},{"Host":"localhost:58528"},{"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"},{"Upgrade-Insecure-Requests":"1"},{"MS-ASPNETCORE-TOKEN":"5e006ab8-6a22-4153-a8b9-40c7bdcc8489"},{"X-Original-Proto":"http"},{"X-Original-For":"127.0.0.1:58828"}],
+Method: GET,
+RequestBody: ,
+ExcuteStartTime: 2017-12-11 13:40:49.461,
+ExcuteStartTime: 2017-12-11 13:40:49.710 
+2017-12-11 13:41:16.6332|Ruiec.WebApi.Controllers.ValuesController|ERROR|  日志测试2017 
+2017-12-11 13:41:16.8572|Vic.Core.Application.Services.PlateSettingAppService|ERROR|  PlateSettingAppService Create error occured:An error occurred while updating the entries. See the inner exception for details. 
+2017-12-11 13:41:16.8902|Vic.Core.Utils.WebApi.ApiLogMiddleware|ERROR|  apiLog: Url: /api/values/Get,
+Headers: [{"Cache-Control":"max-age=0"},{"Connection":"Keep-Alive"},{"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"},{"Accept-Encoding":"gzip, deflate, br"},{"Accept-Language":"zh-CN,zh;q=0.9"},{"Cookie":"CCKF_visitor_id_123520=1004454046; culture=zh-CN; GTRememberName=admin; showNotice=76c6bf67bc4e8666; ASP.NET_SessionId=jq52bdv1os1qcrj55fkaz5wk; menuLeftSidebarCookie=/project.html%u9879%u76EE"},{"Host":"localhost:58528"},{"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"},{"Upgrade-Insecure-Requests":"1"},{"MS-ASPNETCORE-TOKEN":"5e006ab8-6a22-4153-a8b9-40c7bdcc8489"},{"X-Original-Proto":"http"},{"X-Original-For":"127.0.0.1:58828"}],
+Method: GET,
+RequestBody: ,
+ExcuteStartTime: 2017-12-11 13:41:14.640,
+ExcuteStartTime: 2017-12-11 13:41:16.897 
+2017-12-11 13:42:41.0182|Ruiec.WebApi.Controllers.ValuesController|ERROR|  日志测试2017 
+2017-12-11 13:42:41.2012|Vic.Core.Application.Services.PlateSettingAppService|ERROR|  PlateSettingAppService Create error occured:An error occurred while updating the entries. See the inner exception for details. 
+2017-12-11 13:42:42.0162|Vic.Core.Utils.WebApi.ApiLogMiddleware|ERROR|  apiLog: Url: /api/values/Get,
+Headers: [{"Cache-Control":"max-age=0"},{"Connection":"Keep-Alive"},{"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"},{"Accept-Encoding":"gzip, deflate, br"},{"Accept-Language":"zh-CN,zh;q=0.9"},{"Cookie":"CCKF_visitor_id_123520=1004454046; culture=zh-CN; GTRememberName=admin; showNotice=76c6bf67bc4e8666; ASP.NET_SessionId=jq52bdv1os1qcrj55fkaz5wk; menuLeftSidebarCookie=/project.html%u9879%u76EE"},{"Host":"localhost:58528"},{"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"},{"Upgrade-Insecure-Requests":"1"},{"MS-ASPNETCORE-TOKEN":"5e006ab8-6a22-4153-a8b9-40c7bdcc8489"},{"X-Original-Proto":"http"},{"X-Original-For":"127.0.0.1:58828"}],
+Method: GET,
+RequestBody: ,
+ExcuteStartTime: 2017-12-11 13:41:38.478,
+ExcuteStartTime: 2017-12-11 13:42:42.011 
+2017-12-11 14:56:24.3552|Vic.Core.Utils.WebApi.ApiLogMiddleware|ERROR|  apiLog: Url: /api/values,
+Headers: [{"Connection":"Keep-Alive"},{"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"},{"Accept-Encoding":"gzip, deflate, br"},{"Accept-Language":"zh-CN,zh;q=0.9"},{"Cookie":"CCKF_visitor_id_123520=1004454046; culture=zh-CN; GTRememberName=admin; showNotice=76c6bf67bc4e8666; ASP.NET_SessionId=jq52bdv1os1qcrj55fkaz5wk; menuLeftSidebarCookie=/project.html%u9879%u76EE"},{"Host":"localhost:58528"},{"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"},{"Upgrade-Insecure-Requests":"1"},{"MS-ASPNETCORE-TOKEN":"ca6c05b2-0af8-48b6-bcb3-819756a9774a"},{"X-Original-Proto":"http"},{"X-Original-For":"127.0.0.1:49646"}],
+Method: GET,
+RequestBody: ,
+ExcuteStartTime: 2017-12-11 14:56:24.152,
+ExcuteStartTime: 2017-12-11 14:56:24.351 

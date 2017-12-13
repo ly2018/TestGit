@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root maxid="3">
+  <db id="1" name="Vic.Core" path="E:\LY_Project\WorkPlace_2017\GeneratedCode" startStr="T_CMS_;T_PL_;T_SYS_;T_AM_;T_PST_;" constr="Data Source=192.168.0.85,32577;Initial Catalog=VicCore;Persist Security Info=True;User ID=sa;Password=Ruiec.com2016" />
+  <db id="2" name="Ruiec.Common" path="E:\LY_Project\WorkPlace_2017\GeneratedCode" startStr="T_CMS_;T_PL_;T_SYS_;T_AM_;T_PST_;" constr="Data Source=192.168.0.85,32577;Initial Catalog=EmpireCoin;Persist Security Info=True;User ID=sa;Password=Ruiec.com2016" />
+</root>

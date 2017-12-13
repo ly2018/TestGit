@@ -1,0 +1,48 @@
+2017-06-01 16:45:07.9680|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL58P64E420K" started. 
+2017-06-01 16:45:07.9730|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.0.85:994/   
+2017-06-01 16:45:07.9730|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|DEBUG|The request path / does not match a supported file type 
+2017-06-01 16:45:07.9730|Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector|TRACE|Performing protect operation to key {569dc676-d03b-4303-923e-1d0b669a8e0f} with purposes ('E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Home\bin\Release\PublishOutput', 'SessionMiddleware'). 
+2017-06-01 16:45:07.9730|Microsoft.AspNetCore.Routing.RouteBase|DEBUG|Request successfully matched the route with name 'default' and template '{controller=Home}/{action=Index}/{id?}'. 
+2017-06-01 16:45:07.9730|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|DEBUG|Executing action Ruiec.Home.Controllers.HomeController.Index (Ruiec.Home) 
+2017-06-01 16:45:07.9730|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executing action method Ruiec.Home.Controllers.HomeController.Index (Ruiec.Home) with arguments ((null)) - ModelState is Valid 
+2017-06-01 16:45:07.9730|Ruiec.Home.Controllers.HomeController|DEBUG|Logger 测试1 
+2017-06-01 16:45:07.9730|Ruiec.Home.Controllers.HomeController|ERROR|Logger 测试2 
+2017-06-01 16:45:07.9890|Ruiec.Home.Controllers.HomeController|INFO|Logger 测试3 
+2017-06-01 16:45:07.9890|Ruiec.Home.Controllers.HomeController|WARN|Logger 测试4 
+2017-06-01 16:45:07.9890|Vic.Core.Application.Services.DepartmentAppService|ERROR|Logger 测试 
+2017-06-01 16:45:07.9890|Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerConnection|DEBUG|Opening connection to database 'VicCore' on server '192.168.0.85,32577'. 
+2017-06-01 16:45:08.1210|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|INFO|Executed DbCommand (0ms) [Parameters=[@__Empty_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [it].[FID], [it].[FCode], [it].[FContactNumber], [it].[FCreateTime], [it].[FCreatorID], [it].[FIsDeleted], [it].[FLastUpdateTime], [it].[FLastUpdateUserID], [it].[FManager], [it].[FName], [it].[FParentId], [it].[FRemarks]
+FROM [T_AM_Department] AS [it]
+WHERE [it].[FID] <> @__Empty_0 
+2017-06-01 16:45:08.1210|Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerConnection|DEBUG|Closing connection to database 'VicCore' on server '192.168.0.85,32577'. 
+2017-06-01 16:45:08.1210|Microsoft.AspNetCore.Session.DistributedSession|ERROR|Session cache read exception, Key:5b5f4de0-ccf5-d12d-32e2-dad996600682 No connection is available to service this operation: EVAL
+2017-06-01 16:45:08.1330|Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerConnection|DEBUG|Opening connection to database 'VicCore' on server '192.168.0.85,32577'. 
+2017-06-01 16:45:08.1330|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|INFO|Executed DbCommand (0ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [it].[FID], [it].[FCreateTime], [it].[FCreatorID], [it].[FDepartmentId], [it].[FEMail], [it].[FIsDeleted], [it].[FLastLoginTime], [it].[FLastUpdateTime], [it].[FLastUpdateUserID], [it].[FLoginTimes], [it].[FMobileNumber], [it].[FName], [it].[FPassword], [it].[FRemarks], [it].[FUserName]
+FROM [T_AM_User] AS [it]
+WHERE [it].[FID] = @__id_0 
+2017-06-01 16:45:08.1330|Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerConnection|DEBUG|Closing connection to database 'VicCore' on server '192.168.0.85,32577'. 
+2017-06-01 16:45:08.1330|Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerConnection|DEBUG|Opening connection to database 'VicCore' on server '192.168.0.85,32577'. 
+2017-06-01 16:45:08.1330|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|INFO|Executed DbCommand (0ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [it].[FUserId], [it].[FRoleId]
+FROM [T_AM_UserRole] AS [it]
+WHERE [it].[FUserId] = @__id_0 
+2017-06-01 16:45:08.1330|Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerConnection|DEBUG|Closing connection to database 'VicCore' on server '192.168.0.85,32577'. 
+2017-06-01 16:45:08.1330|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|DEBUG|Executed action method Ruiec.Home.Controllers.HomeController.Index (Ruiec.Home), returned result Microsoft.AspNetCore.Mvc.ViewResult. 
+2017-06-01 16:45:08.1430|Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine|DEBUG|View lookup cache hit for view 'Index' in controller 'Home'. 
+2017-06-01 16:45:08.1430|Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor|DEBUG|The view 'Index' was found. 
+2017-06-01 16:45:08.1430|Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor|INFO|Executing ViewResult, running view at path /Views/Home/Index.cshtml. 
+2017-06-01 16:45:08.1430|Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine|DEBUG|View lookup cache hit for view '_Layout' in controller 'Home'. 
+2017-06-01 16:45:08.1430|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|INFO|Executed action Ruiec.Home.Controllers.HomeController.Index (Ruiec.Home) in 165.8699ms 
+2017-06-01 16:45:08.1430|Microsoft.AspNetCore.Session.SessionMiddleware|ERROR|Error closing the session. No connection is available to service this operation: EVAL
+2017-06-01 16:45:08.1650|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL58P64E420K" completed keep alive response. 
+2017-06-01 16:45:08.1650|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 192.7616ms 200 text/html; charset=utf-8 
+2017-06-01 16:45:08.2010|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request starting HTTP/1.1 GET http://192.168.0.85:994/favicon.ico   
+2017-06-01 16:45:08.2010|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|INFO|Sending file. Request path: '/favicon.ico'. Physical path: 'E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.Home\bin\Release\PublishOutput\wwwroot\favicon.ico' 
+2017-06-01 16:45:08.2010|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL58P64E420K" completed keep alive response. 
+2017-06-01 16:45:08.2010|Microsoft.AspNetCore.Hosting.Internal.WebHost|INFO|Request finished in 1.8229ms 200 image/x-icon 
+2017-06-01 16:46:10.4210|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL58P64E420K" reset. 
+2017-06-01 16:46:10.4210|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL58P64E420K" disconnecting. 
+2017-06-01 16:46:10.4210|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HL58P64E420K" stopped. 
+2017-06-01 17:06:07.8670|Microsoft.AspNetCore.Hosting.Internal.WebHost|DEBUG|Hosting shutdown 

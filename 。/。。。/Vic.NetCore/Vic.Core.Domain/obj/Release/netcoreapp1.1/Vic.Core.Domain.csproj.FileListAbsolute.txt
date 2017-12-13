@@ -1,0 +1,6 @@
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\bin\Release\netcoreapp1.1\Vic.Core.Domain.deps.json
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\bin\Release\netcoreapp1.1\Vic.Core.Domain.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\bin\Release\netcoreapp1.1\Vic.Core.Domain.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\obj\Release\netcoreapp1.1\Vic.Core.Domain.AssemblyInfo.cs
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\obj\Release\netcoreapp1.1\Vic.Core.Domain.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.Domain\obj\Release\netcoreapp1.1\Vic.Core.Domain.pdb

@@ -1,0 +1,177 @@
+﻿@using Vic.Core.Application.Dtos
+@model SiteSettingDto
+@{
+    ViewData["Title"] = string.IsNullOrEmpty(Model.Title) ? "管理后台" : Model.Title;
+    Layout = null;
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <!--CSS Begin-->
+    <link href="~/css/bootstrap/bootstrap.min.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/css/bootstrap/bootstrap-responsive.min.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/css/matrix/matrix-style.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/css/matrix/matrix-media.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/css/matrix/jquery.gritter.css" asp-append-version="true" rel="stylesheet" />
+    <!--CSS End-->
+    <!--JS Begin-->
+    <script src="~/js/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.ui.custom.js" asp-append-version="true"></script>
+    <script src="~/js/bootstrap.min.js" asp-append-version="true"></script>
+    <script src="~/js/matrix.js" asp-append-version="true"></script>
+    <script src="~/js/basic.js" asp-append-version="true"></script>
+    <script src="~/js/custom.js" asp-append-version="true"></script>
+    <!--JS End-->
+    <link href="@(string.IsNullOrEmpty(Model.LogoIco) ? "~/images/logo.png" : Model.LogoIco)" rel="shortcut icon" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="main_l" id="main_l">
+        <div id="header">
+            <img src="@(string.IsNullOrEmpty(Model.Logo)?"~/images/logo.png":Model.Logo)" style="margin: 20px 10px;max-width: 180px;" />
+        </div>
+        <div id="sidebar">
+            <ul id="top-sidebar-sys">
+                @await Component.InvokeAsync("NavigationLeft")
+            </ul>
+        </div>
+    </div>
+    <div class="main_r" id="main_r">
+        <div id="user-nav" class="navbar navbar-inverse">
+            <ul class="nav" id="top-nav-sys" style="width: auto; margin: 0px;">
+                @await Component.InvokeAsync("NavigationTop")
+            </ul>
+        </div>
+        <div id="content" style="margin:40px 0px 0px 0px!important;">
+            <iframe width="100%" height="100%" scrolling="auto" style="overflow-x:hidden;" id="mainframe" name="mainframe" frameborder="0px" src="/home/Index"></iframe>
+        </div>
+    </div>
+    <div class="row-fluid">
+        @if (Model != null && !string.IsNullOrEmpty(Model.SiteRight))
+        {
+            <div id="footer" class="span12">
+                @Html.Raw(Model.SiteRight)
+            </div>
+        }
+        else
+        {
+            <div id="footer" class="span12">
+                管理后台 2017 © <a href="#" target="_blank">管理后台</a>
+            </div>
+        }
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+
+    //设定页面布局
+    SiteHomeLayout();
+    function SiteHomeLayout() {
+        var winWidth = 1600;
+        var winHeight = 900;
+        if (window.innerWidth) {
+            winWidth = window.innerWidth;
+            winHeight = window.innerHeight;
+        } else if ((document.body) && (document.body.clientWidth)) {
+            winWidth = document.body.clientWidth;
+            WinHeight = document.body.clientHeight;
+            // 获取窗口高度
+            if (window.innerHeight) {
+                winHeight = window.innerHeight;
+            } else if ((document.body) && (document.body.clientHeight)) {
+                winHeight = document.body.clientHeight;
+            }
+            // 通过深入 Document 内部对 body 进行检测，获取窗口大小
+            if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth) {
+                winHeight = document.documentElement.clientHeight;
+                winWidth = document.documentElement.clientWidth;
+            }
+        }
+
+        if (document.getElementById('content') && document.getElementById('content') != undefined) {
+            var HomeRightObj = document.getElementById('content');
+            HomeRightObj.style.width = winWidth - 220 + "px";
+            var mainFram_height = winHeight - 80;
+
+            HomeRightObj.style.height = mainFram_height + "px";
+            HomeRightObj.style.minHeight = mainFram_height + "px";
+
+            var _leftH = document.getElementById('main_l');//左侧
+            _leftH.style.height = winHeight - 40 + "px";
+
+            var _rightH = document.getElementById('main_r');//右侧
+            _rightH.style.height = winHeight - 40 + "px";
+
+            var HomeRBody = document.getElementById('mainframe');
+            HomeRBody.setAttribute("height", mainFram_height + "px");
+        }
+    }
+
+    //缩小页面重置窗口
+    window.onresize = function () {
+        SiteHomeLayout();
+        iframeLoaded();
+    };
+
+</script>
+<!--管理后台主页-->
+<script type="text/javascript">
+    $(function () {
+        //切换
+        $(".Home_RTop li").click(function () {
+            $(this).addClass("curr");
+            $(this).siblings().removeClass("curr");
+            var num = $(this).index();
+
+            $(this).parents(".Home_right").siblings(".Home_left").eq(num).show();
+            $(this).parents(".Home_right").siblings(".Home_left").eq(num).siblings(".Home_left").hide();
+        })
+        var WinHeight = $(window).height() - $(".Home_left .cate_title").height() - $(".Home_left .logo").height();
+        var HomeLeftCateList_Cate = $(".CateTreeBox");
+        HomeLeftCateList_Cate.each(function (index, element) {
+            $(this).css({
+                "height": WinHeight + "px",
+                "overflow-x": "hidden",
+                "overflow-y": "auto"
+            })
+        });
+
+        $(window).resize(function () {
+            var WinHeight = $(window).height() - $(".Home_left .cate_title").height() - $(".Home_left .logo").height();
+            var HomeLeftCateList_Cate = $(".CateTreeBox");
+            HomeLeftCateList_Cate.each(function (index, element) {
+                $(this).css({
+                    "height": WinHeight + "px",
+                    "overflow-x": "hidden",
+                    "overflow-y": "auto"
+                })
+            });
+        });
+    });
+
+    /**
+     * #content 框架内容加载完成之后触发的函数
+     * #author  lrxiang
+     */
+    function iframeLoaded() {
+        //var iframeContentObj = window.iframobj.getiframContent("mainframe");
+        /*
+        var iframeObj = window.iframobj.getifram("mainframe");
+        var iframeObjHeight = $(iframeObj).height();
+        var iframeObjWidth = $(iframeObj).width();
+
+
+        iframeContentObj.style.height = Number(iframeObjHeight) - 20 + 'px';
+        iframeContentObj.style.width = Number(iframeObjWidth) - 20 + 'px';
+        */
+        return false;
+    }
+
+    $("#sidebar").on("click", "a[target='mainframe']", function () {
+        $("#sidebar a[target='mainframe']").removeClass("curr");
+        $(this).addClass("curr");
+    });
+
+</script>
+

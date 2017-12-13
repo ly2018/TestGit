@@ -1,0 +1,14 @@
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.DataSpider\bin\Debug\netcoreapp2.0\Ruiec.DataSpider.deps.json
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.DataSpider\bin\Debug\netcoreapp2.0\Ruiec.DataSpider.runtimeconfig.json
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.DataSpider\bin\Debug\netcoreapp2.0\Ruiec.DataSpider.runtimeconfig.dev.json
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.DataSpider\bin\Debug\netcoreapp2.0\Ruiec.DataSpider.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.DataSpider\bin\Debug\netcoreapp2.0\Ruiec.DataSpider.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.DataSpider\bin\Debug\netcoreapp2.0\AipSdk.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.DataSpider\bin\Debug\netcoreapp2.0\Vic.Core.Utils.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.DataSpider\bin\Debug\netcoreapp2.0\Vic.Core.Utils.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.DataSpider\obj\Debug\netcoreapp2.0\Ruiec.DataSpider.csprojResolveAssemblyReference.cache
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.DataSpider\obj\Debug\netcoreapp2.0\Ruiec.DataSpider.csproj.CoreCompileInputs.cache
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.DataSpider\obj\Debug\netcoreapp2.0\Ruiec.DataSpider.AssemblyInfoInputs.cache
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.DataSpider\obj\Debug\netcoreapp2.0\Ruiec.DataSpider.AssemblyInfo.cs
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.DataSpider\obj\Debug\netcoreapp2.0\Ruiec.DataSpider.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.DataSpider\obj\Debug\netcoreapp2.0\Ruiec.DataSpider.pdb

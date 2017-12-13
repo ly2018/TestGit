@@ -1,0 +1,105 @@
+﻿@model Vic.Core.Utils.Models.Home_ViewModel
+<div id="content-header">
+    <div id="breadcrumb">
+        <a href="/Home/Index" title="返回首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+        <a href="javascript:void(0)">数据统计</a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <h5 style="font-weight:bold;">
+                        选择日期：
+                    </h5>
+                    <input type="hidden" value="@Model.CurrCurrency" id="_CurrCurrency" />
+                    <input type="hidden" value="@Model.CurrYear" id="_CurrYear" />
+                    <select name="CurrYear" id="year_select" style="margin-top:3px;width:80px;float: left;">
+                        @if (Model.YearList != null)
+                        {
+                            foreach (var item in Model.YearList)
+                            {
+                                if (item == Model.CurrYear)
+                                {
+                                    <option selected value="@item">@item</option>
+                                }
+                                else
+                                {
+                                    <option value="@item">@item</option>
+                                }
+                            }
+                        }
+                    </select>
+                    @*<h5 style="font-weight:bold;position:relative">
+                            选择货币：
+                        </h5>
+                        <select data-bind="options : CurrencyList,
+                                                   value: CurrYear,
+                                                   optionsText : function(myitem) { return myitem.value; },
+                                                   optionsValue : function(myitem) { return myitem.key; }
+                                                   " name="CurrCurrency" id="currency_select" style="margin-top:3px;width:80px;"></select>*@
+                </div>
+                <div class="widget-content">
+                    <div id="userMain" style="width: 100%;height:410px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/echarts.js"></script>
+<script type="text/javascript">
+    var userChart = echarts.init(document.getElementById('userMain'));
+    //var currencyChart = echarts.init(document.getElementById('currencyMain'));
+    var option, currYear = 2017;
+    var _currYear;
+    var _currencyId;
+    //初始化页面数据
+    $(function () {
+        _currencyId = document.getElementById('_CurrCurrency').value;
+        _currYear = parseInt(document.getElementById('_CurrYear').value);
+        InitUserData(_currYear);
+        //InitCoinData(_currYear, _currencyId);
+
+        $("#year_select").change(function () {
+            InitSelect(1);
+        })
+
+
+        //$("#currency_select").change(function () {
+        //    InitSelect(2);
+        //})
+
+    });
+    //更新日期
+    function InitSelect(type) {
+        if (type == '1') {
+            var selectUser = document.getElementById("year_select");
+            _currYear = parseInt(selectUser.value);
+            InitUserData(_currYear);
+
+        } else {
+            var selectCurrency = document.getElementById("currency_select");
+            _currencyId = selectCurrency.value;
+            InitCoinData(_currYear, _currencyId);
+        }
+    }
+    //初始化用户数据
+    function InitUserData(_currYear) {
+        $.post("/Home/GetUserData", "currYear=" + _currYear, function (x) {
+            if (x) {
+                option = x;
+                userChart.setOption(option);
+            }
+        });
+    }
+    //初始化虚拟币数据
+    function InitCoinData(_currYear, _currencyId) {
+        $.post("/Home/GetCoinData", "currYear=" + _currYear + "&currencyId=" + _currencyId, function (x) {
+            if (x) {
+                option = x;
+                currencyChart.setOption(option);
+            }
+        });
+    }
+</script>

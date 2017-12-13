@@ -1,0 +1,14 @@
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.UnitTest\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.UnitTest\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.UnitTest\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.UnitTest\bin\Debug\netcoreapp1.1\Vic.Core.UnitTest.deps.json
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.UnitTest\bin\Debug\netcoreapp1.1\Vic.Core.UnitTest.runtimeconfig.json
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.UnitTest\bin\Debug\netcoreapp1.1\Vic.Core.UnitTest.runtimeconfig.dev.json
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.UnitTest\bin\Debug\netcoreapp1.1\Vic.Core.UnitTest.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.UnitTest\bin\Debug\netcoreapp1.1\Vic.Core.UnitTest.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.UnitTest\obj\Debug\netcoreapp1.1\Vic.Core.UnitTest.csproj.CoreCompileInputs.cache
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.UnitTest\obj\Debug\netcoreapp1.1\Vic.Core.UnitTest.AssemblyInfoInputs.cache
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.UnitTest\obj\Debug\netcoreapp1.1\Vic.Core.UnitTest.AssemblyInfo.cs
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.UnitTest\obj\Debug\netcoreapp1.1\Vic.Core.UnitTest.dll
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.UnitTest\obj\Debug\netcoreapp1.1\Vic.Core.UnitTest.pdb
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Vic.Core.UnitTest\obj\Debug\netcoreapp1.1\Vic.Core.UnitTest.csprojResolveAssemblyReference.cache

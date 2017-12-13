@@ -1,0 +1,15 @@
+D:\NHibernate\Project\LiYangTools\LYTools\LYTools\bin\Debug\LYTools.dll
+D:\NHibernate\Project\LiYangTools\LYTools\LYTools\bin\Debug\LYTools.pdb
+D:\NHibernate\Project\LiYangTools\LYTools\LYTools\obj\Debug\LYTools.dll
+D:\NHibernate\Project\LiYangTools\LYTools\LYTools\obj\Debug\LYTools.pdb
+E:\Project_LiYang\Projects\LiYangTools\LYTools\LYTools\bin\Debug\LYTools.dll
+E:\Project_LiYang\Projects\LiYangTools\LYTools\LYTools\bin\Debug\LYTools.pdb
+E:\Project_LiYang\Projects\LiYangTools\LYTools\LYTools\obj\Debug\LYTools.dll
+E:\Project_LiYang\Projects\LiYangTools\LYTools\LYTools\obj\Debug\LYTools.pdb
+E:\Project_LiYang\Projects\LiYangTools\LYTools\LYTools\obj\Debug\LYTools.csprojResolveAssemblyReference.cache
+E:\LY_Project\WorkPlace_2017\LYTools\LYTools\bin\Debug\LYTools.dll
+E:\LY_Project\WorkPlace_2017\LYTools\LYTools\bin\Debug\LYTools.pdb
+E:\LY_Project\WorkPlace_2017\LYTools\LYTools\obj\Debug\LYTools.dll
+E:\LY_Project\WorkPlace_2017\LYTools\LYTools\obj\Debug\LYTools.pdb
+E:\LY_Project\WorkPlace_2017\LYTools\LYTools\obj\Debug\LYTools.csprojResolveAssemblyReference.cache
+E:\LY_Project\WorkPlace_2017\LYTools\LYTools\obj\Debug\LYTools.csproj.CoreCompileInputs.cache

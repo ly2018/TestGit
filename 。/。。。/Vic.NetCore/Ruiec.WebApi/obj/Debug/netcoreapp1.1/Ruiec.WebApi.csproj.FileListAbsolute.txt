@@ -1,0 +1,4 @@
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.WebApi\obj\Debug\netcoreapp1.1\Ruiec.WebApi.csprojResolveAssemblyReference.cache
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.WebApi\obj\Debug\netcoreapp1.1\Ruiec.WebApi.csproj.CoreCompileInputs.cache
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.WebApi\obj\Debug\netcoreapp1.1\Ruiec.WebApi.AssemblyInfoInputs.cache
+E:\LY_Project\WorkPlace_2017\Vic.NetCore\Ruiec.WebApi\obj\Debug\netcoreapp1.1\Ruiec.WebApi.AssemblyInfo.cs
